@@ -1,6 +1,6 @@
 MASK WordPress Theme Framework
 ================================
-![](https://raw.github.com/micalexander/mask/master/screenshot.png)
+<img align="right" src="https://raw.github.com/micalexander/mask/master/screenshot.png" alt="mask">
 
 A SASS based starter theme for WordPress forked from <a href="http://kylelarkin.com/" target="_blank">Kyle Larkin</a> and <a href="http://astockwell.com/" target="_blank">Alex Stockwell's</a> KL[AS] framework and re-imagined by <a href="http://micalexander.com/" target="_blank">Mic Alexander</a>.
 
