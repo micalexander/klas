@@ -81,8 +81,8 @@ if ( WP_ENV == 'local' ) {
 	define('WP_HOME', ".com"); // production_home_url
 
 }
-/** Set klas to the default template for WordPress to use. */
-define('WP_DEFAULT_THEME', 'klas');
+/** Set mask to the default template for WordPress to use. */
+define('WP_DEFAULT_THEME', 'mask');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
