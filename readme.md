@@ -1,7 +1,8 @@
-KL[AS] WordPress Theme Framework
+MASK WordPress Theme Framework
 ================================
+![](https://raw.github.com/micalexander/mask/master/screenshot.png)
 
-A SASS based starter theme for WordPress created by <a href="http://kylelarkin.com/">Kyle Larkin</a> and <a href="http://astockwell.com/">Alex Stockwell</a>.
+A SASS based starter theme for WordPress forked from <a href="http://kylelarkin.com/" target="_blank">Kyle Larkin</a> and <a href="http://astockwell.com/" target="_blank">Alex Stockwell's</a> KL[AS] framework and re-imagined by <a href="http://micalexander.com/" target="_blank"></a>.
 
 ## Installation
 1. Copy the repository to your /wp-content/themes folder
