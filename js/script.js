@@ -7,7 +7,6 @@ $(document).ready(function() {
 
 $(window).load(function() {
 	// Window load here
-    });
 });
 
 $(window).resize(function() {
