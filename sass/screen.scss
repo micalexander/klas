@@ -1,7 +1,9 @@
 @import "partials/mask-framework";
 @import "partials/font-styles";
-@import "icon/*.png";
-@include all-icon-sprites;
+
+// To use Compass Sprites uncomment next two lines and follow the example below
+// @import "icon/*.png";
+// @include all-icon-sprites;
 
 // COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
 
