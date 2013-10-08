@@ -1,12 +1,28 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard 'sass', :input => 'wp-content/themes/mask/sass', :output => 'wp-content/themes/mask/css', :compass => true
+theme_folder = 'wp-content/themes/mask'
+guard 'sass',
+:input => "#{theme_folder}/sass",
+:output => "#{theme_folder}/css",
+:compass => true,
+:compass => {
+	:http_path => "/",
+	:css_dir => "#{theme_folder}/css",
+	:sass_dir => "#{theme_folder}/sass",
+	:images_dir => "#{theme_folder}/img",
+	:javascripts_dir => "#{theme_folder}/js",
+	:output_style => :compressed,
+	:environment => :development,
+	:relative_assets => true,
+	:line_comments => false,
+	:color_output => false,
+}
 
-guard 'sprockets', :destination => 'wp-content/themes/mask/js/public', :asset_paths => ['wp-content/themes/mask/js', 'bower_components/'], :minify => true do
-  watch 'wp-content/themes/mask/js/script.js'
+guard 'sprockets', :destination => "#{theme_folder}/js/public", :asset_paths => ["#{theme_folder}/js", 'bower_components/'], :minify => true do
+  watch "#{theme_folder}/js/script.js"
 end
 
 guard 'livereload' do
-  watch(%r{wp-content/themes/mask/.+\.(erb|haml|slim|php|css)$})
+  watch(%r{#{theme_folder}/.+\.(erb|haml|slim|php|css|js)$})
 end
