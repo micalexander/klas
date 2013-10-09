@@ -109,37 +109,14 @@ body,select,input,textarea{color:#333;}
 	letter-spacing: .15em;
 }
 
-@mixin a-white-to-black {
-	color: white;
-	&:hover { color: black; }
-}
-
-@mixin header-box($w) {
-	$header_width: $w;
-	position: relative;
-	width: $header_width;
-	padding: 11em 1.7em 1.1em;
-	//display: table-cell;
-	vertical-align: bottom;
-	margin: 0 0 1.1em;
-	overflow: hidden;
-
-	&:after {
-		position: absolute;
-		width: 50.4em;
-		height: 44em;
-		bottom: -6.8em;
-		right: -7.4em;
-		content: '';
-		background-color: $gold_alt;
-		@include rotate(-45deg);
-	}
-
-	h2 {
-		position: relative;
-		z-index: 2;
-		margin: 0;
-	}
+@mixin hyphenate {
+	-ms-word-break: break-all;
+	word-break: break-all;
+	// Non standard for webkit
+	word-break: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
 }
 
 @mixin column-50-pct {

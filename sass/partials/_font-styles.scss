@@ -43,3 +43,9 @@ ul {
 		a { text-decoration: none; }
 	}
 }
+ol {
+	list-style: decimal;
+	margin: 0 0 1em 2em;
+	li { margin: .5em 0; }
+	ol { list-style: lower-alpha; }
+}
