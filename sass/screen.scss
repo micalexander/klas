@@ -1,6 +1,6 @@
-@import "partials/reset";
-@import "partials/mask-framework";
-@import "partials/font-styles";
+@import "framework/reset";
+@import "framework/mask-framework";
+@import "framework/font-styles";
 
 // Uncomment @import, to import Bower assets
 // Example: bower install [vendor] (in the root of your project)
@@ -11,11 +11,9 @@
 // @include all-icon-sprites;
 
 // COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
-
 // .icon-logo {
 // 	@include sprite-dimensions($icon-sprites, logo );
 // }
-
 
 /* -------------------------------------------------
 ** TEMPLATE
@@ -37,7 +35,6 @@ body:after { content: 'mobile'; display: none; }
 // /* styles here */
 // } // END @media: $mq-desktop
 
-
 // SLECTOR SPECIFIC MEDIA QUERY EXAMPLE
 // .example-selector
 // /* mobile styles here */
@@ -49,40 +46,28 @@ body:after { content: 'mobile'; display: none; }
 // }
 // }
 
-
-/*--------------START BASE STRUCTURE-------------- */
 /* -------------------------------------------------
-** Body
+** Body structure
 ** ---------------------------------------------- */
-
-/* -------------------------------------------------
-** Wrapper
-** ---------------------------------------------- */
-
-/* -------------------------------------------------
-** Header
-** ---------------------------------------------- */
-
-/* -------------------------------------------------
-** Section
-** ---------------------------------------------- */
-
-/* -------------------------------------------------
-** Sidebar
-** ---------------------------------------------- */
+body {
+	// Wrapper
+	.wrapper {
+		// Header
+		@import "partials/header";
+		.content-wrapper {
+			// Section
+			@import "partials/section";
+			// Sidebar
+			@import "partials/sidebar";
+		}
+		// Footer
+		@import "partials/footer";
+	}
+}
 
 /* -------------------------------------------------
-** Footer
+** Pages and additional Partials
 ** ---------------------------------------------- */
-
-
-
-/*--------------END BASE STRUCTURE--------------- */
-/* -------------------------------------------------
-** SITE SPECIFIC IMPORTS AND MODULES
-** ---------------------------------------------- */
-
-// @import "partials/page-home";
-// @import "partials/page-about-us";
-// @import "partials/page-contact-us";
-// @import "partials/sidebar";
+// @import "page/home";
+// @import "page/about-us";
+// @import "page/contact-us";
