@@ -208,7 +208,6 @@ function run_options_once() {
 
 	if ( $check != "set" ) {
 
-		flush_rewrite_rules();
 
 	    // Add marker so it doesn't run in future
 	    add_option('mask_activation_check', "set");
@@ -218,9 +217,10 @@ function run_options_once() {
 add_action('after_theme_setup', 'run_options_once');
 
 // set permalinks
-add_action( 'init', function() {
+add_action( 'after_theme_setup', function() {
     global $wp_rewrite;
     $wp_rewrite->set_permalink_structure( '/%postname%/' );
+	$wp_rewrite->flush_rules();
 } );
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
