@@ -9,11 +9,11 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 function mask_menus_init() {
-	// register_nav_menus(
-	// 	array(
-	// 			'primary-header-menu' => __( 'Primary Header Menu' )
-	// 		)
-	// );
+	register_nav_menus(
+		array(
+				'primary-header-menu' => __( 'Primary Header Menu' )
+			)
+	);
 	// Add custom navigation to theme and adds Primary Navigation menu
 	if (!term_exists('Primary Header Navigation', 'nav_menu')) {
 
