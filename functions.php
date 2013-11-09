@@ -209,7 +209,7 @@ function run_options_once() {
 	if ( $check != "set" ) {
 
 		// set permalinks
-		add_action( 'after_theme_setup', function() {
+		add_action( 'init', function() {
 		    global $wp_rewrite;
 		    $wp_rewrite->set_permalink_structure( '/%postname%/' );
 			$wp_rewrite->flush_rules();
