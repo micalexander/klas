@@ -28,7 +28,7 @@ if (!term_exists('primary-nav', 'nav_menu')) {
     update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
 
     // Insert new page
-    $page = wp_insert_post(array(
+    $home = wp_insert_post(array(
 		  'post_type'    => 'page',
 		  'post_title'    => 'Home',
 		  'post_status'   => 'publish',
@@ -36,24 +36,69 @@ if (!term_exists('primary-nav', 'nav_menu')) {
 		  'post_category' => array(8,39)
 		));
 
+	$about = wp_insert_post(array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'About us',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		));
+
+	$contact = wp_insert_post(array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'Contact us',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		));
+
     // Insert new nav_menu_item
-    $nav_item = wp_insert_post(array('post_title' => 'Home',
+    $home_nav_item = wp_insert_post(array('post_title' => 'Home',
                                      'post_content' => '',
                                      'post_status' => 'publish',
                                      'post_type' => 'nav_menu_item'));
-		// wp_insert_post( $homepage );
+
+    $about_nav_item = wp_insert_post(array('post_title' => 'About us',
+                                     'post_content' => '',
+                                     'post_status' => 'publish',
+                                     'post_type' => 'nav_menu_item'));
+
+    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
+                                     'post_content' => '',
+                                     'post_status' => 'publish',
+                                     'post_type' => 'nav_menu_item'));
 
 
-    add_post_meta($nav_item, '_menu_item_type', 'post_type');
-    add_post_meta($nav_item, '_menu_item_menu_item_parent', '0');
-    add_post_meta($nav_item, '_menu_item_object_id', $page);
-    add_post_meta($nav_item, '_menu_item_object', 'page');
-    add_post_meta($nav_item, '_menu_item_target', '');
-    add_post_meta($nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
-    add_post_meta($nav_item, '_menu_item_xfn', '');
-    add_post_meta($nav_item, '_menu_item_url', '');
+    add_post_meta($home_nav_item, '_menu_item_type', 'post_type');
+    add_post_meta($home_nav_item, '_menu_item_menu_item_parent', '0');
+    add_post_meta($home_nav_item, '_menu_item_object_id', $home);
+    add_post_meta($home_nav_item, '_menu_item_object', 'page');
+    add_post_meta($home_nav_item, '_menu_item_target', '');
+    add_post_meta($home_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
+    add_post_meta($home_nav_item, '_menu_item_xfn', '');
+    add_post_meta($home_nav_item, '_menu_item_url', '');
 
-    wp_set_object_terms($nav_item, 'primary-nav', 'nav_menu');
+    add_post_meta($about_nav_item, '_menu_item_type', 'post_type');
+    add_post_meta($about_nav_item, '_menu_item_menu_item_parent', '0');
+    add_post_meta($about_nav_item, '_menu_item_object_id', $about);
+    add_post_meta($about_nav_item, '_menu_item_object', 'page');
+    add_post_meta($about_nav_item, '_menu_item_target', '');
+    add_post_meta($about_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
+    add_post_meta($about_nav_item, '_menu_item_xfn', '');
+    add_post_meta($about_nav_item, '_menu_item_url', '');
+
+    add_post_meta($contact_nav_item, '_menu_item_type', 'post_type');
+    add_post_meta($contact_nav_item, '_menu_item_menu_item_parent', '0');
+    add_post_meta($contact_nav_item, '_menu_item_object_id', $contact);
+    add_post_meta($contact_nav_item, '_menu_item_object', 'page');
+    add_post_meta($contact_nav_item, '_menu_item_target', '');
+    add_post_meta($contact_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
+    add_post_meta($contact_nav_item, '_menu_item_xfn', '');
+    add_post_meta($contact_nav_item, '_menu_item_url', '');
+
+    wp_set_object_terms($home_nav_item, 'primary-nav', 'nav_menu');
+    wp_set_object_terms($about_nav_item, 'primary-nav', 'nav_menu');
+    wp_set_object_terms($contact_nav_item, 'primary-nav', 'nav_menu');
 }
 
 // Registers Primary Widget Area
