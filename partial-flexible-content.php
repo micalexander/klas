@@ -29,7 +29,7 @@
 				        <ul class="slides">
 				            <?php foreach( $images as $image ): ?>
 				                <li>
-				                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                    <img src="<?php echo $image['sizes']['rotator-image']; ?>" alt="<?php echo $image['alt']; ?>" />
 				                    <?php
 										$image_text = get_post_meta($image['id'], 'text', true);
 										$image_url = get_post_meta($image['id'], 'url', true);

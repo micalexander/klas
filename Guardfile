@@ -19,7 +19,7 @@ guard 'sass',
 	:color_output => false,
 }
 
-guard 'sprockets', :destination => "#{theme_folder}/js/public", :asset_paths => ["#{theme_folder}/js", 'bower_components/'], :minify => true do
+guard 'sprockets', :destination => "#{theme_folder}/js/public", :asset_paths => ["#{theme_folder}/js/", 'bower_components/'], :minify => true do
   watch "#{theme_folder}/js/script.js"
 end
 

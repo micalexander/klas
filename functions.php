@@ -120,7 +120,7 @@ function run_activate_plugin( $plugin ) {
     return null;
 }
 
-function first_run_options() {
+function run_options_once() {
   $check = get_option('mask_activation_check');
 
 	if ( $check != "set" ) {
@@ -129,21 +129,37 @@ function first_run_options() {
 		$homepage = array(
 		  'post_type'    => 'page',
 		  'post_title'    => 'Home',
-		  'post_content'  => 'This is my home.',
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array(8,39)
 		);
 
+		$about_us = array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'About us',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		);
+
+		$contact_us = array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'Contact us',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		);
 		// Insert the post into the database
 		wp_insert_post( $homepage );
+		wp_insert_post( $about_us );
+		wp_insert_post( $contact_us );
 
 	    // Add marker so it doesn't run in future
 	    add_option('mask_activation_check', "set");
 	}
 }
 
-add_action('init', 'first_run_options');
+add_action('init', 'run_options_once');
 
 // set permalinks
 add_action( 'init', function() {

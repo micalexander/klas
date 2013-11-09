@@ -14,7 +14,7 @@ Description: Site specific code changes for mask
 
 
 if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'slide-image', 1000, 345, true ); //(cropped)
+    add_image_size( 'rotator-image', 1000, 345, true ); //(cropped)
     add_image_size( 'main-image', 745, 175, true ); //(cropped)
     add_image_size( 'gallery-thumbnail', 200, 260, true ); //(cropped)
     add_image_size( 'carousel-image', 80, 80, false ); //(cropped)
