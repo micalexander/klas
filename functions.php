@@ -99,6 +99,9 @@ if (!term_exists('primary-nav', 'nav_menu')) {
     wp_set_object_terms($home_nav_item, 'primary-nav', 'nav_menu');
     wp_set_object_terms($about_nav_item, 'primary-nav', 'nav_menu');
     wp_set_object_terms($contact_nav_item, 'primary-nav', 'nav_menu');
+
+    set_theme_mod( 'nav_menu_locations', 'primary-header-menu' );
+
 }
 
 // Registers Primary Widget Area
