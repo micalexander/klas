@@ -28,24 +28,25 @@ if (!term_exists('primary-nav', 'nav_menu')) {
     update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
 
     // Insert new page
-    $page = array(
+    $page = wp_insert_post(array(
 		  'post_type'    => 'page',
 		  'post_title'    => 'Home',
 		  'post_status'   => 'publish',
 		  'post_author'   => 1,
 		  'post_category' => array(8,39)
-		);
+		));
 
     // Insert new nav_menu_item
     $nav_item = wp_insert_post(array('post_title' => 'Home',
                                      'post_content' => '',
                                      'post_status' => 'publish',
                                      'post_type' => 'nav_menu_item'));
+		// wp_insert_post( $homepage );
 
 
     add_post_meta($nav_item, '_menu_item_type', 'post_type');
     add_post_meta($nav_item, '_menu_item_menu_item_parent', '0');
-    // add_post_meta($nav_item, '_menu_item_object_id', $page);
+    add_post_meta($nav_item, '_menu_item_object_id', $page);
     add_post_meta($nav_item, '_menu_item_object', 'page');
     add_post_meta($nav_item, '_menu_item_target', '');
     add_post_meta($nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
