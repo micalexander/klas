@@ -222,7 +222,7 @@ function setup_permalinks_by_default() {
     $wp_rewrite->set_permalink_structure('/%postname%/');
     $wp_rewrite->flush_rules();
 }
-add_action('after_switch_theme', 'setup_permalinks_by_default')
+add_action('after_switch_theme', 'setup_permalinks_by_default');
 
 add_action('init', 'run_options_once');
 
