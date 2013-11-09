@@ -12,7 +12,7 @@ function mask_menus_init() {
 
 		register_nav_menus(
 		array(
-				'primary-header-menu' => __( 'Primary Header Menu' )
+				'primary-header-navigation' => __( 'Primary Header Navigation' )
 			)
 		);
 
