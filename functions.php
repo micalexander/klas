@@ -15,7 +15,7 @@ function mask_menus_init() {
 			)
 	);
 // Add custom navigation to theme and adds Primary Navigation menu
-if (!term_exists('primary-nav', 'nav_menu')) {
+if (!term_exists('Primary Header Navigation', 'nav_menu')) {
 
     $menu = get_term('Primary Header Menu', 'nav_menu');
 
@@ -91,9 +91,9 @@ if (!term_exists('primary-nav', 'nav_menu')) {
     add_post_meta($contact_nav_item, '_menu_item_xfn', '');
     add_post_meta($contact_nav_item, '_menu_item_url', '');
 
-    wp_set_object_terms($home_nav_item, 'primary-nav', 'nav_menu');
-    wp_set_object_terms($about_nav_item, 'primary-nav', 'nav_menu');
-    wp_set_object_terms($contact_nav_item, 'primary-nav', 'nav_menu');
+    wp_set_object_terms($home_nav_item, 'Primary Header Navigation', 'nav_menu');
+    wp_set_object_terms($about_nav_item, 'Primary Header Navigation', 'nav_menu');
+    wp_set_object_terms($contact_nav_item, 'Primary Header Navigation', 'nav_menu');
 
     set_theme_mod( 'nav_menu_locations', 'primary-header-menu' );
 
