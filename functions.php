@@ -6,24 +6,24 @@ function mask_scripts_init() {
     wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js','','',false);
     wp_enqueue_script( 'jquery' );
 }
-// add_action('wp_enqueue_scripts', 'mask_scripts_init');
+add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
-// function mask_menus_init() {
-
-// }
-
-// add_action( 'init', 'mask_menus_init' );
-
-// Add custom navigation to theme and adds Primary Navigation menu
-if (!term_exists('primary-nav', 'nav_menu')) {
-
- // wp_insert_term('Primary Navigation', 'nav_menu', array('slug' => 'primary-nav'));
-
-    $menu =	register_nav_menus(
+function mask_menus_init() {
+	register_nav_menus(
 		array(
 				'primary-header-menu' => __( 'Primary Header Menu' )
 			)
 	);
+
+}
+
+add_action( 'init', 'mask_menus_init' );
+
+// Add custom navigation to theme and adds Primary Navigation menu
+if (!term_exists('primary-nav', 'nav_menu')) {
+
+    $menu = get_term('Primary Header Menu', 'nav_menu');
+
     // Select this menu in the current theme
     update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
 
