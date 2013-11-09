@@ -11,37 +11,18 @@ Description: Site specific code changes for mask
 
 
 //add pages to wordpress
-global $user_ID;
+// Create post object
+$homepage = array(
+  'post_type'    => 'page',
+  'post_title'    => 'Home',
+  'post_content'  => 'This is my home.',
+  'post_status'   => 'publish',
+  'post_author'   => 1,
+  'post_category' => array(8,39)
+);
 
-$page['post_type']    = 'page';
-$page['post_content'] = '';
-$page['post_parent']  = 0;
-$page['post_author']  = $user_ID;
-$page['post_status']  = 'publish';
-$page['post_title']   = 'Home';
-$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
-$pageid = wp_insert_post ($page);
-if ($pageid == 0) { /* Add Page Failed */ }
-
-$page['post_type']    = 'page';
-$page['post_content'] = '';
-$page['post_parent']  = 0;
-$page['post_author']  = $user_ID;
-$page['post_status']  = 'publish';
-$page['post_title']   = 'About us';
-$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
-$pageid = wp_insert_post ($page);
-if ($pageid == 0) { /* Add Page Failed */ }
-
-$page['post_type']    = 'page';
-$page['post_content'] = '';
-$page['post_parent']  = 0;
-$page['post_author']  = $user_ID;
-$page['post_status']  = 'publish';
-$page['post_title']   = 'Contact us';
-$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
-$pageid = wp_insert_post ($page);
-if ($pageid == 0) { /* Add Page Failed */ }
+// Insert the post into the database
+wp_insert_post( $homepage );
 
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'slide-image', 1000, 345, true ); //(cropped)
