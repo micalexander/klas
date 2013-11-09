@@ -24,13 +24,14 @@ add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  __('About us'),
-	        'menu-item-url' => home_url( '/custom/' ),
+	        'menu-item-url' => home_url( '/about-us/' ),
 	        'menu-item-status' => 'publish'));
 
 	    wp_update_nav_menu_item($menu_id, 0, array(
 	        'menu-item-title' =>  __('Contact us'),
-	        'menu-item-url' => home_url( '/custom/' ),
+	        'menu-item-url' => home_url( '/contact-us/' ),
 	        'menu-item-status' => 'publish'));
+	}
 	}
 
 // Registers Primary Widget Area
