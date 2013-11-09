@@ -126,7 +126,7 @@ function run_activate_plugin( $plugin ) {
 
 	// Insert the post into the database
 // }
-add_action( 'after_setup_theme', 'mask_setup' );
+add_action( 'wp_loaded', 'mask_setup' );
 function mask_setup() {
 	$homepage = array(
 	  'post_type'    => 'page',
