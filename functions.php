@@ -120,14 +120,12 @@ function run_activate_plugin( $plugin ) {
     return null;
 }
 
-// if(!get_page_by_title('Home'))
-// {
-	// Create post object
+function first_run_options() {
+  $check = get_option('theme_name_activation_check');
 
-	// Insert the post into the database
-// }
-add_action( 'wp_loaded', 'mask_setup' );
-function mask_setup() {
+  if ( $check != "set" ) {
+
+	// Create post object
 	$homepage = array(
 	  'post_type'    => 'page',
 	  'post_title'    => 'Home',
@@ -136,10 +134,21 @@ function mask_setup() {
 	  'post_author'   => 1,
 	  'post_category' => array(8,39)
 	);
+
+	// Insert the post into the database
 	wp_insert_post( $homepage );
+
+    // Add marker so it doesn't run in future
+    add_option('mask_activation_check', "set");
+  }
+
+add_action('wp_head', 'first_run_option');
+
+// set permalinks
+add_action( 'init', function() {
     global $wp_rewrite;
     $wp_rewrite->set_permalink_structure( '/%postname%/' );
-}
+} );
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
