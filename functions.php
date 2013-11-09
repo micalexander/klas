@@ -119,6 +119,18 @@ function run_activate_plugin( $plugin ) {
 
     return null;
 }
+// Create post object
+$homepage = array(
+  'post_type'    => 'page',
+  'post_title'    => 'Home',
+  'post_content'  => 'This is my home.',
+  'post_status'   => 'publish',
+  'post_author'   => 1,
+  'post_category' => array(8,39)
+);
+
+// Insert the post into the database
+wp_insert_post( $homepage );
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
 ?>

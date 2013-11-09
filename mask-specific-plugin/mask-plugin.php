@@ -11,18 +11,7 @@ Description: Site specific code changes for mask
 
 
 //add pages to wordpress
-// Create post object
-$homepage = array(
-  'post_type'    => 'page',
-  'post_title'    => 'Home',
-  'post_content'  => 'This is my home.',
-  'post_status'   => 'publish',
-  'post_author'   => 1,
-  'post_category' => array(8,39)
-);
 
-// Insert the post into the database
-wp_insert_post( $homepage );
 
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'slide-image', 1000, 345, true ); //(cropped)
