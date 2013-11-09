@@ -95,7 +95,7 @@ function mask_menus_init() {
 	    wp_set_object_terms($about_nav_item, 'Primary Header Navigation', 'nav_menu');
 	    wp_set_object_terms($contact_nav_item, 'Primary Header Navigation', 'nav_menu');
 
-	    set_theme_mod( 'nav_menu_locations', 'primary-header-menu' );
+	    // set_theme_mod( 'nav_menu_locations', 'primary-header-menu' );
 
 	}
 
