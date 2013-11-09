@@ -1,0 +1,63 @@
+/* -------------------------------------------------
+** FANCYBOX CLEANUP & OVERIDES
+** ---------------------------------------------- */
+
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+	background: url(../img/fancybox/fancybox_sprite.png);
+}
+#fancybox-loading div {
+	background: url(../img/fancybox/fancybox_loading.gif);
+}
+.fancybox-nav {
+	background: url(../img/fancybox/blank.gif);
+}
+.fancybox-overlay, .fancybox-overlay  * {
+	@include box-sizing('content-box');
+}
+.fancybox-wrap, .fancybox-wrap *  {
+	@include box-sizing('content-box');
+}
+.fancybox-outer, .fancybox-outer *   {
+	@include box-sizing('content-box');
+}
+.fancybox-overlay {
+	z-index: 99999;
+	background: url(../img/fancybox/fancybox_overlay.png);
+}
+.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
+	z-index: 9999999;
+}
+.fancybox-skin {
+	border-radius: 0;
+}
+.fancybox-close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 40px;
+	height: 40px;
+	background: url(../img/fancybox/square_close_x.png);
+	opacity: .8;
+	&:hover  { opacity: 1; }
+}
+.fancybox-prev span, .fancybox-next span {
+	top: 50%;
+	width: 40px;
+	height: 80px;
+	margin-top: -40px;
+}
+/*this line needs to stay commented out in fancybox.css line 154 left: -9999px; */
+.fancybox-next span {
+	right: 0;
+	background: url(../img/fancybox/bg_direction_nav_lb.png) -40px 0px no-repeat;
+
+}
+.fancybox-prev span {
+	left: 0;
+	background: url(../img/fancybox/bg_direction_nav_lb.png) 0px 0px no-repeat;
+
+}
+.fancybox-next span .fancybox-prev span  {
+	opacity: .8;
+	&:hover  { opacity: 1; }
+}

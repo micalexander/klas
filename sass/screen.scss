@@ -1,14 +1,21 @@
 @import "framework/reset";
 @import "framework/mask-framework";
 @import "framework/font-styles";
+@import "../../../../bower_components/flexslider/flexslider";
+@import "../../../../bower_components/fancybox/source/jquery.fancybox";
+@import "../../../../bower_components/leaflet/dist/leaflet";
+@import "../../../../bower_components/responsive-nav/responsive-nav";
+@import "framework/vendor-overrides/flexslider";
+@import "framework/vendor-overrides/fancybox";
+@import "framework/vendor-overrides/responsive-nav";
 
 // Uncomment @import, to import Bower assets
 // Example: bower install [vendor] (in the root of your project)
 // @import "../../../../bower_components/";
 
-// To use Compass Sprites uncomment next two lines and follow the example below
-// @import "icon/*.png";
-// @include all-icon-sprites;
+// To use NOT Compass Sprites comment next two lines out
+@import "../img/icon/*.png";
+@include all-icon-sprites;
 
 // COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
 // .icon-logo {
@@ -50,7 +57,13 @@ body:after { content: 'mobile'; display: none; }
 ** Body structure
 ** ---------------------------------------------- */
 body {
-	// Wrapper
+	padding: 0 3%;
+	@include breakpoint(desktop) {
+		width: $page-width;
+		margin: 0 auto;
+		padding: 0;
+	}
+ 	// Wrapper
 	.wrapper {
 		// Header
 		@import "partials/header";

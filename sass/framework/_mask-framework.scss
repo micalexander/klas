@@ -18,15 +18,15 @@
 // -------------------------------------------------
 // MASK Variables
 // ---------------------------------------------- */
-$heading-font: Helvetica, Arial, sans-serif;
-$body-font: Helvetica, Arial, sans-serif;
+$heading-font: 'Open Sans', sans-serif;;
+$body-font: 'Open Sans', sans-serif;;
 
 $body-color: #555;
 $heading-color: #333;
 $link-color: #000;
 $link-hover: #555;
 
-$page-width: 1280px;
+$page-width: 1000px;
 
 $ani-speed: 250ms;
 
@@ -38,7 +38,7 @@ $mq-mobile: 420px;
 $mq-mob-tab: 520px;
 $mq-tablet: 620px;
 $mq-tab-desk: 820px;
-$mq-desktop: 920px;
+$mq-desktop: 60em;
 
 
 // -------------------------------------------------
@@ -47,6 +47,78 @@ $mq-desktop: 920px;
 
 body,select,input,textarea{color:#333;}
 
+
+/*-----------------------------------*\
+	map
+\*-----------------------------------*/
+#map-1, #map-2 {
+	height: 300px;
+}
+/*-----------------------------------*\
+	$GRID
+\*-----------------------------------*/
+
+.container {
+	/* Whatever you want. They’re your oats. */
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 30px;
+	padding: 0 1.5rem;
+}
+
+.grid {
+	margin-left: -2.5%;
+	max-width: 105%;
+}
+
+.unit {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin-left: 2.5%;
+	margin-right: -.25em;
+	/* Clearfix */
+	overflow: hidden;
+	*overflow: visible;
+}
+
+.one-of-one { width: 97.5%; }
+.one-of-two { width: 47.5%; }
+
+.one-of-three { width: 30.8333333%; }
+.two-of-three { width: 64.1666666%; }
+
+.one-of-four { width: 22.5%; }
+.three-of-four { width: 72.5%; }
+
+.one-of-five { width: 17.44%; }
+.two-of-five { width: 37.44%; }
+.three-of-five { width: 57.44%; }
+.four-of-five { width: 77.44%; }
+
+@media screen and (max-width: $mq-desktop) {
+	.grid {
+		margin-left: 0;
+		max-width: none;
+	}
+
+	.unit {
+		width: auto;
+		margin-left: 0;
+		display: block;
+	}
+}
+.container {
+	max-width: 100%;
+	padding: 0;
+	.grid {
+		.unit {
+			margin-bottom: 30px;
+			// background: #ccc;
+		}
+	}
+}
 // -------------------------------------------------
 // MASK Mixins
 // ---------------------------------------------- */

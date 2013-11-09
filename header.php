@@ -34,9 +34,11 @@
 
 		<header role="banner">
 
-			<nav role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
-			</nav>
+	        <div class="nav-wrapper">
+	            <nav class="nav-collapse">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
+	            </nav>
+	        </div>
 
 		</header>
 

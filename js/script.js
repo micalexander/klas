@@ -1,46 +1,19 @@
-// Inspired by media-query-specific js functionality via http://adactio.com/journal/5429/
-$(document).ready(function() {
-	// Call media query function
-	media_query();
-	// Document ready here
-});
+//= #require "jquery.flexslider"
 
-$(window).load(function() {
-	// Window load here
-});
+// Above is an example of how to import a javascript file,
+// that will be concatenated and uglified by guard and sprockets.
+// This particular example is importing the flexslider script
+// from a bower install. To use the require statement above
+// the hash/pound to the left of the keyword "require" needs to be removed.
 
-$(window).resize(function() {
-	// Call media query function
-	media_query();
-});
-
-function media_query() {
-	if (window.getComputedStyle) { // Check for IE
-		viewport_size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	} else {
-		if ($(window).width() > 620) { // Set IE
-			viewport_size = 'desktop';
-		} else {
-			viewport_size = 'mobile';
-		}
-	}
-	if (viewport_size.indexOf("desktop") !== -1) { // aka if viewport_size == 'desktop':
-		// Call desktop function
-		desktop();
-
-	} else {
-		// Call mobile function
-		mobile();
-	}
-}
-
-
-function mobile() {
-	// Mobile behavior here
-}
-
-function desktop() {
-	// Desktop behavior here
-}
-
-
+//= require "responsive-nav/responsive-nav"
+//= require "media-match/media.match"
+//= require "matchmedia/matchMedia.addListener"
+//= require "enquire/dist/enquire"
+//= require "flexslider/jquery.flexslider"
+//= require "fancybox/source/jquery.fancybox.pack"
+//= require "fancybox/source/helpers/jquery.fancybox-media"
+//= require "framework/mask-framework"
+//= require "framework/vendor-overrides/responsive-nav"
+//= require "framework/vendor-overrides/flexslider"
+//= require "framework/vendor-overrides/fancybox"
