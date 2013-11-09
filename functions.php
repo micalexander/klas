@@ -14,10 +14,13 @@ function mask_menus_init() {
 				'primary-header-menu' => __( 'Primary Header Menu' )
 			)
 	);
+}
+
 add_action( 'init', 'mask_menus_init' );
 
 // Add custom navigation to theme and adds Primary Navigation menu
 if (!term_exists('primary-nav', 'nav_menu')) {
+	wp_create_nav_menu( 'Primary Navigation', array( 'slug' => 'primary-nav' ) );
 
     $menu = wp_insert_term('Primary Navigation', 'nav_menu', array('slug' => 'primary-nav'));
 
