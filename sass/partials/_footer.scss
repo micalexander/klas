@@ -1,0 +1,6 @@
+footer {
+	padding: 0 3%;
+	@include breakpoint(desktop) {
+		padding: 0;
+	}
+}

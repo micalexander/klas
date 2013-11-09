@@ -1,6 +1,5 @@
 @import "framework/reset";
 @import "framework/mask-framework";
-@import "framework/font-styles";
 @import "../../../../bower_components/flexslider/flexslider";
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
@@ -57,7 +56,6 @@ body:after { content: 'mobile'; display: none; }
 ** Body structure
 ** ---------------------------------------------- */
 body {
-	padding: 0 3%;
 	@include breakpoint(desktop) {
 		width: $page-width;
 		margin: 0 auto;
@@ -68,6 +66,10 @@ body {
 		// Header
 		@import "partials/header";
 		.content-wrapper {
+			padding: 0 3%;
+			@include breakpoint(desktop) {
+				padding: 0;
+			}
 			// Section
 			@import "partials/section";
 			// Sidebar

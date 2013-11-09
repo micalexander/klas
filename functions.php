@@ -206,7 +206,7 @@ function run_activate_plugin( $plugin ) {
 function run_options_once() {
   $check = get_option('newmask_activation_check');
 
-	// if ( $check != "set" ) {
+	if ( $check != "set" ) {
 
 		// set permalinks
 	    global $wp_rewrite;
@@ -215,9 +215,9 @@ function run_options_once() {
 
 	    // Add marker so it doesn't run in future
 	    add_option('newmask_activation_check', "set");
-	// }
+	}
 }
- // flush_rewrite_rules(true);
+
 
 add_action('init', 'run_options_once');
 
