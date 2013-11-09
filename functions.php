@@ -10,6 +10,12 @@ add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
 function mask_menus_init() {
+	register_nav_menus(
+		array(
+				'primary-header-menu' => __( 'Primary Header Menu' )
+			)
+	);
+
 	$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
 
 	// If it doesn't exist, let's create it.
@@ -35,6 +41,8 @@ function mask_menus_init() {
 
 	    $wpdb->insert($wpdb->term_relationships, array("object_id" => $thisMenuItem, "term_taxonomy_id" => $menuID), array("%d", "%d"));
 	}
+}
+
 }
 add_action( 'init', 'mask_menus_init' );
 
