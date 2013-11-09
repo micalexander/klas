@@ -92,6 +92,3 @@ add_filter( 'attachment_fields_to_save', 'mask_attachment_field_credit_save', 10
 
 
 ?>
-
-
-?>
