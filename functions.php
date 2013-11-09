@@ -50,7 +50,7 @@ function mask_menus_init() {
 			));
 
 	    // Insert new nav_menu_item
-	    $home_nav_item = wp_insert_post(array('post_title' => 'Home',
+	    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
@@ -60,11 +60,10 @@ function mask_menus_init() {
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
 
-	    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
+	    $home_nav_item = wp_insert_post(array('post_title' => 'Home',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
-
 
 	    add_post_meta($home_nav_item, '_menu_item_type', 'post_type');
 	    add_post_meta($home_nav_item, '_menu_item_menu_item_parent', '0');
