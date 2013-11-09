@@ -126,8 +126,8 @@ function run_activate_plugin( $plugin ) {
 
 	// Insert the post into the database
 // }
-
-add_action( 'init', function() {
+add_action( 'after_setup_theme', 'mask_setup' );
+function mask_setup() {
 	$homepage = array(
 	  'post_type'    => 'page',
 	  'post_title'    => 'Home',
