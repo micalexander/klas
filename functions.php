@@ -9,32 +9,22 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
-function mask_menus_init() {
-	$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
+//register nav menu and footer nav.
+register_nav_menus(
+    array(
+        'main-nav'   => 'Main Navigation',
+        'footer-nav' => 'Footer Navigation'
+    )
+);
 
-	// If it doesn't exist, let's create it.
-	if( !$menu_exists){
-	    $menu_id = wp_create_nav_menu( 'Primary Navigation' );
-
-		// Set up default menu items
-	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Home'),
-	        'menu-item-classes' => 'home',
-	        'menu-item-url' => home_url( '/' ),
-	        'menu-item-status' => 'publish'));
-
-	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('About us'),
-	        'menu-item-url' => home_url( '/custom/' ),
-	        'menu-item-status' => 'publish'));
-
-	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Contact us'),
-	        'menu-item-url' => home_url( '/custom/' ),
-	        'menu-item-status' => 'publish'));
-	}
+//now see if the main navigation menu is there - if not, create it.
+if (!wp_get_nav_menu_object('Main Navigation'))
+{
+    $menu_id = wp_create_nav_menu('Main Navigation'); //create the menu
+    $locations = get_theme_mod('nav_menu_locations'); //get the menu locations
+    $locations['main-nav'] = $menu_id; //set our new menu to be the main nav
+    set_theme_mod('nav_menu_locations', $locations); //update
 }
-add_action( 'init', 'mask_menus_init' );
 
 // Registers Primary Widget Area
 function mask_widgets_init() {
