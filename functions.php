@@ -123,24 +123,25 @@ function run_activate_plugin( $plugin ) {
 function first_run_options() {
   $check = get_option('theme_name_activation_check');
 
-  if ( $check != "set" ) {
+	if ( $check != "set" ) {
 
-	// Create post object
-	$homepage = array(
-	  'post_type'    => 'page',
-	  'post_title'    => 'Home',
-	  'post_content'  => 'This is my home.',
-	  'post_status'   => 'publish',
-	  'post_author'   => 1,
-	  'post_category' => array(8,39)
-	);
+		// Create post object
+		$homepage = array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'Home',
+		  'post_content'  => 'This is my home.',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		);
 
-	// Insert the post into the database
-	wp_insert_post( $homepage );
+		// Insert the post into the database
+		wp_insert_post( $homepage );
 
-    // Add marker so it doesn't run in future
-    add_option('mask_activation_check', "set");
-  }
+	    // Add marker so it doesn't run in future
+	    add_option('mask_activation_check', "set");
+	}
+}
 
 add_action('wp_head', 'first_run_option');
 
