@@ -20,7 +20,7 @@ function mask_menus_init() {
 	    $menu = get_term('Primary Header Menu', 'nav_menu');
 
 	    // Select this menu in the current theme
-	    update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary-header-menu" => 2)));
+	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => 2)));
 
 	    // Insert new page
 	    $home = wp_insert_post(array(
