@@ -121,7 +121,7 @@ function run_activate_plugin( $plugin ) {
 }
 
 function first_run_options() {
-  $check = get_option('theme_name_activation_check');
+  $check = get_option('mask_activation_check');
 
 	if ( $check != "set" ) {
 
