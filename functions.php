@@ -20,7 +20,7 @@ function mask_menus_init() {
 	    $menu = get_term('Primary Header Menu', 'nav_menu');
 
 	    // Select this menu in the current theme
-	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => 2)));
+	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => $menu->id)));
 
 	    // Insert new page
 	    $home = wp_insert_post(array(
@@ -94,8 +94,6 @@ function mask_menus_init() {
 	    wp_set_object_terms($home_nav_item, 'Primary Header Navigation', 'nav_menu');
 	    wp_set_object_terms($about_nav_item, 'Primary Header Navigation', 'nav_menu');
 	    wp_set_object_terms($contact_nav_item, 'Primary Header Navigation', 'nav_menu');
-
-	    // set_theme_mod( 'nav_menu_locations', 'primary-header-menu' );
 
 	}
 
