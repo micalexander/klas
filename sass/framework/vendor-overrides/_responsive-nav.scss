@@ -1,0 +1,63 @@
+div.primary-nav-wrapper {
+	nav.nav-collapse {
+		@include breakpoint(desktop) {
+			overflow: visible;
+			height: 22px;
+		}
+		ul {
+			@include breakpoint(desktop){
+				border-radius: 5px;
+				overflow: hidden;
+			}
+			li {
+				padding: 5px 20px;
+				border-top: 1px solid;
+				@include breakpoint(desktop) {
+					position: relative;
+					float: left;
+					width: auto;
+					padding: 0 25px 0 25px;
+					line-height: 1.4em;
+					border-top: none;
+					&:hover {
+						background: #3d3d3d;
+					}
+
+					.sub-menu {
+						display: block;
+						display: none;
+						position: absolute;
+						top: 20px;
+						width: 200px;
+						height: 200px;
+						border-top: 20px solid black;
+						background: #5e5e5f;
+						z-index: 99999;
+						@include transition-property(background);
+						@include transition-duration(5s);
+					}
+					&:hover .sub-menu {
+						display: block;
+						background: blue;
+						.menu-item {
+							float: none;
+						}
+					}
+				}
+				a {
+					font-weight: 300;
+					font-size: .9em;
+					color: #fff;
+					@include breakpoint(desktop) {
+						color: #333333;
+						font-size: 1em;
+						line-height: .8em;
+					}
+				}
+			}
+			& > li.menu-item:first-child {
+				border-top: none;
+			}
+		}
+	}
+}

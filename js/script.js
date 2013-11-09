@@ -15,5 +15,6 @@
 //= require "fancybox/source/helpers/jquery.fancybox-media"
 //= require "framework/mask-framework"
 //= require "framework/vendor-overrides/responsive-nav"
+//= require "framework/vendor-overrides/enquire"
 //= require "framework/vendor-overrides/flexslider"
 //= require "framework/vendor-overrides/fancybox"

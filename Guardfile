@@ -5,6 +5,7 @@ theme_folder = 'wp-content/themes/mask'
 guard 'sass',
 :input => "#{theme_folder}/sass",
 :output => "#{theme_folder}/css",
+:all_on_start => true,
 :compass => true,
 :compass => {
 	:http_path => "/",
