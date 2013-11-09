@@ -10,6 +10,12 @@ add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 function mask_menus_init() {
 
+		register_nav_menus(
+		array(
+				'primary-header-menu' => __( 'Primary Header Menu' )
+			)
+		);
+
 	// Add custom navigation to theme and adds Primary Navigation menu
 	if (!term_exists('Primary Header Navigation', 'nav_menu')) {
 
@@ -92,11 +98,7 @@ function mask_menus_init() {
 	    wp_set_object_terms($contact_nav_item, 'Primary Header Navigation', 'nav_menu');
 
 	}
-		register_nav_menus(
-			array(
-					'primary-header-menu' => __( 'Primary Header Menu' )
-				)
-		);
+
 
 
 }
