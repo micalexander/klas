@@ -210,14 +210,14 @@ function run_options_once() {
 
 		// set permalinks
 	    global $wp_rewrite;
-	    $wp_rewrite->set_permalink_structure( '/%postname%/' );
+		update_option('permalink_structure','/%postname%/');
 		$wp_rewrite->flush_rules();
+
 
 	    // Add marker so it doesn't run in future
 	    add_option('newmask_activation_check', "set");
 	}
 }
- flush_rewrite_rules(true);
 
 add_action('init', 'run_options_once');
 
