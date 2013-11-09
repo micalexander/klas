@@ -9,9 +9,9 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
-if (!term_exists('footer-nav', 'nav_menu')) {
+if (!term_exists('primary-nav', 'nav_menu')) {
 
-    $menu = wp_insert_term('Footer nav', 'nav_menu', array('slug' => 'footer-nav'));
+    $menu = wp_insert_term('Primary Navigation', 'nav_menu', array('slug' => 'primary-nav'));
 
     // Select this menu in the current theme
     update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
@@ -23,7 +23,7 @@ if (!term_exists('footer-nav', 'nav_menu')) {
                                  'post_type' => 'page'));
 
     // Insert new nav_menu_item
-    $nav_item = wp_insert_post(array('post_title' => 'News',
+    $nav_item = wp_insert_post(array('post_title' => 'Home',
                                      'post_content' => '',
                                      'post_status' => 'publish',
                                      'post_type' => 'nav_menu_item'));
@@ -31,14 +31,14 @@ if (!term_exists('footer-nav', 'nav_menu')) {
 
     add_post_meta($nav_item, '_menu_item_type', 'post_type');
     add_post_meta($nav_item, '_menu_item_menu_item_parent', '0');
-    add_post_meta($nav_item, '_menu_item_object_id', $page);
+    // add_post_meta($nav_item, '_menu_item_object_id', $page);
     add_post_meta($nav_item, '_menu_item_object', 'page');
     add_post_meta($nav_item, '_menu_item_target', '');
     add_post_meta($nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
     add_post_meta($nav_item, '_menu_item_xfn', '');
     add_post_meta($nav_item, '_menu_item_url', '');
 
-    wp_set_object_terms($nav_item, 'footer-nav', 'nav_menu');
+    wp_set_object_terms($nav_item, 'primary-nav', 'nav_menu');
 }
 
 // Registers Primary Widget Area
