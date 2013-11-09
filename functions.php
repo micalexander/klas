@@ -24,6 +24,23 @@ if (!wp_get_nav_menu_object('Main Navigation'))
     $locations = get_theme_mod('nav_menu_locations'); //get the menu locations
     $locations['main-nav'] = $menu_id; //set our new menu to be the main nav
     set_theme_mod('nav_menu_locations', $locations); //update
+
+	    wp_update_nav_menu_item($menu_id, 0, array(
+	        'menu-item-title' =>  __('Home'),
+	        'menu-item-classes' => 'home',
+	        'menu-item-url' => home_url( '/' ),
+	        'menu-item-status' => 'publish'));
+
+	    wp_update_nav_menu_item($menu_id, 0, array(
+	        'menu-item-title' =>  __('About us'),
+	        'menu-item-url' => home_url( '/custom/' ),
+	        'menu-item-status' => 'publish'));
+
+	    wp_update_nav_menu_item($menu_id, 0, array(
+	        'menu-item-title' =>  __('Contact us'),
+	        'menu-item-url' => home_url( '/custom/' ),
+	        'menu-item-status' => 'publish'));
+
 }
 
 // Registers Primary Widget Area
