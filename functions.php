@@ -14,7 +14,7 @@ function mask_menus_init() {
 
 	// If it doesn't exist, let's create it.
 	if( !$menu_exists){
-	    $menu_id = wp_create_nav_menu( 'Primary Navigation' ) );
+	    $menu_id = wp_create_nav_menu( 'Primary Navigation' );
 
 		// Set up default menu items
 	    wp_update_nav_menu_item($menu_id, 0, array(
