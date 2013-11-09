@@ -8,6 +8,14 @@ function mask_scripts_init() {
 }
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
+function mask_menus_init() {
+	register_nav_menus(
+		array(
+				'primary-header-menu' => __( 'Primary Header Menu' )
+			)
+	);
+add_action( 'init', 'mask_menus_init' );
+
 // Add custom navigation to theme and adds Primary Navigation menu
 if (!term_exists('primary-nav', 'nav_menu')) {
 
