@@ -207,35 +207,6 @@ function run_options_once() {
 
 	if ( $check != "set" ) {
 
-		// Create post object
-		// $homepage = array(
-		//   'post_type'    => 'page',
-		//   'post_title'    => 'Home',
-		//   'post_status'   => 'publish',
-		//   'post_author'   => 1,
-		//   'post_category' => array(8,39)
-		// );
-
-		$about_us = array(
-		  'post_type'    => 'page',
-		  'post_title'    => 'About us',
-		  'post_status'   => 'publish',
-		  'post_author'   => 1,
-		  'post_category' => array(8,39)
-		);
-
-		$contact_us = array(
-		  'post_type'    => 'page',
-		  'post_title'    => 'Contact us',
-		  'post_status'   => 'publish',
-		  'post_author'   => 1,
-		  'post_category' => array(8,39)
-		);
-		// Insert the post into the database
-		// wp_insert_post( $homepage );
-		wp_insert_post( $about_us );
-		wp_insert_post( $contact_us );
-
 	    // Add marker so it doesn't run in future
 	    add_option('mask_activation_check', "set");
 	}
