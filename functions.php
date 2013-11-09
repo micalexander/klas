@@ -49,7 +49,7 @@ function mask_menus_init() {
 			  'post_category' => array(8,39)
 			));
 
-	    // Insert new nav_menu_item
+	    // Insert new nav_menu_item (order matters for display purposes)
 	    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
@@ -70,7 +70,6 @@ function mask_menus_init() {
 	    add_post_meta($home_nav_item, '_menu_item_object_id', $home);
 	    add_post_meta($home_nav_item, '_menu_item_object', 'page');
 	    add_post_meta($home_nav_item, '_menu_item_target', '');
-	    add_post_meta($home_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
 	    add_post_meta($home_nav_item, '_menu_item_xfn', '');
 	    add_post_meta($home_nav_item, '_menu_item_url', '');
 
@@ -79,7 +78,6 @@ function mask_menus_init() {
 	    add_post_meta($about_nav_item, '_menu_item_object_id', $about);
 	    add_post_meta($about_nav_item, '_menu_item_object', 'page');
 	    add_post_meta($about_nav_item, '_menu_item_target', '');
-	    add_post_meta($about_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
 	    add_post_meta($about_nav_item, '_menu_item_xfn', '');
 	    add_post_meta($about_nav_item, '_menu_item_url', '');
 
@@ -88,13 +86,12 @@ function mask_menus_init() {
 	    add_post_meta($contact_nav_item, '_menu_item_object_id', $contact);
 	    add_post_meta($contact_nav_item, '_menu_item_object', 'page');
 	    add_post_meta($contact_nav_item, '_menu_item_target', '');
-	    add_post_meta($contact_nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
 	    add_post_meta($contact_nav_item, '_menu_item_xfn', '');
 	    add_post_meta($contact_nav_item, '_menu_item_url', '');
 
-	    wp_set_object_terms($contact_nav_item, 'Primary Header Menu', 'nav_menu');
-	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
 	    wp_set_object_terms($home_nav_item, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($contact_nav_item, 'Primary Header Menu', 'nav_menu');
 
 	}
 
@@ -210,6 +207,8 @@ function run_options_once() {
   $check = get_option('mask_activation_check');
 
 	if ( $check != "set" ) {
+
+		flush_rewrite_rules();
 
 	    // Add marker so it doesn't run in future
 	    add_option('mask_activation_check', "set");

@@ -1,26 +1,27 @@
-div.primary-nav-wrapper {
+div.nav-wrapper {
 	nav.nav-collapse {
 		@include breakpoint(desktop) {
 			overflow: visible;
-			height: 22px;
+			height: 40px;
 		}
 		ul {
 			@include breakpoint(desktop){
-				border-radius: 5px;
+				padding: 0 10px;
 				overflow: hidden;
+				background: #ccc;
 			}
 			li {
-				padding: 5px 20px;
+				padding: 10px 0;
 				border-top: 1px solid;
 				@include breakpoint(desktop) {
 					position: relative;
 					float: left;
 					width: auto;
-					padding: 0 25px 0 25px;
-					line-height: 1.4em;
+					padding: 0 25px;
+					line-height: 2em;
 					border-top: none;
-					&:hover {
-						background: #3d3d3d;
+					&:hover a {
+						color: orange;
 					}
 
 					.sub-menu {
@@ -43,11 +44,15 @@ div.primary-nav-wrapper {
 							float: none;
 						}
 					}
+					&.left-end {
+						margin-right: 221px;
+						border-top: none;
+					}
 				}
 				a {
 					font-weight: 300;
-					font-size: .9em;
-					color: #fff;
+					font-size: 1em;
+					color: #333;
 					@include breakpoint(desktop) {
 						color: #333333;
 						font-size: 1em;
@@ -57,7 +62,15 @@ div.primary-nav-wrapper {
 			}
 			& > li.menu-item:first-child {
 				border-top: none;
+				@include breakpoint(desktop) {
+					padding-left: 0;
+				}
 			}
 		}
+	}
+	.nav-toggle {
+		font-weight: 300;
+		font-size: 1em;
+		color: #333;
 	}
 }
