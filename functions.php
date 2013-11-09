@@ -123,6 +123,11 @@ function run_activate_plugin( $plugin ) {
 // if(!get_page_by_title('Home'))
 // {
 	// Create post object
+
+	// Insert the post into the database
+// }
+
+add_action( 'init', function() {
 	$homepage = array(
 	  'post_type'    => 'page',
 	  'post_title'    => 'Home',
@@ -131,13 +136,8 @@ function run_activate_plugin( $plugin ) {
 	  'post_author'   => 1,
 	  'post_category' => array(8,39)
 	);
-
-	// Insert the post into the database
-// }
-
-add_action( 'init', function() {
-    global $wp_rewrite;
 	wp_insert_post( $homepage );
+    global $wp_rewrite;
     $wp_rewrite->set_permalink_structure( '/%postname%/' );
 } );
 
