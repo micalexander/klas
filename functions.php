@@ -93,9 +93,9 @@ function mask_menus_init() {
 	    add_post_meta($contact_nav_item, '_menu_item_xfn', '');
 	    add_post_meta($contact_nav_item, '_menu_item_url', '');
 
-	    wp_set_object_terms($home_nav_item, 'Primary Header Menu', 'nav_menu');
-	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
 	    wp_set_object_terms($contact_nav_item, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($home_nav_item, 'Primary Header Menu', 'nav_menu');
 
 	}
 
