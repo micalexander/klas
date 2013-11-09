@@ -9,11 +9,11 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
-	$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
+	$menu_exists = wp_get_nav_menu_object( 'Primary' );
 
 	// If it doesn't exist, let's create it.
 	if( !$menu_exists){
-	    $menu_id = wp_create_nav_menu( 'Primary Navigation' );
+	    $menu_id = wp_create_nav_menu( 'Primary' );
 
 		// Set up default menu items
 	    wp_update_nav_menu_item($menu_id, 0, array(
@@ -31,7 +31,6 @@ add_action('wp_enqueue_scripts', 'mask_scripts_init');
 	        'menu-item-title' =>  __('Contact us'),
 	        'menu-item-url' => home_url( '/contact-us/' ),
 	        'menu-item-status' => 'publish'));
-	}
 	}
 
 // Registers Primary Widget Area
