@@ -119,9 +119,9 @@ function run_activate_plugin( $plugin ) {
 
     return null;
 }
+
 if(!get_page_by_title('Home'))
 {
-
 	// Create post object
 	$homepage = array(
 	  'post_type'    => 'page',
@@ -135,7 +135,10 @@ if(!get_page_by_title('Home'))
 	// Insert the post into the database
 	wp_insert_post( $homepage );
 }
-
+add_action( 'init', function() {
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure( '/%postname%/' );
+} );
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
 ?>
