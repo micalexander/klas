@@ -143,7 +143,7 @@ function first_run_options() {
 	}
 }
 
-add_action('wp_head', 'first_run_option');
+add_action('init', 'first_run_option');
 
 // set permalinks
 add_action( 'init', function() {
