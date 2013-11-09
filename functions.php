@@ -10,7 +10,7 @@ add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
 function mask_menus_init() {
-	menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
+	$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
 
 	// If it doesn't exist, let's create it.
 	if( !$menu_exists){
