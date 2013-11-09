@@ -9,18 +9,18 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 function mask_menus_init() {
-	register_nav_menus(
-		array(
-				'primary-header-menu' => __( 'Primary Header Menu' )
-			)
-	);
+	// register_nav_menus(
+	// 	array(
+	// 			'primary-header-menu' => __( 'Primary Header Menu' )
+	// 		)
+	// );
 	// Add custom navigation to theme and adds Primary Navigation menu
 	if (!term_exists('Primary Header Navigation', 'nav_menu')) {
 
-	    $menu = get_term('Primary Header Menu', 'nav_menu');
+	    $menu = wp_insert_term('Primary Header Menu', 'nav_menu', array('slug' => 'primary-nav'));
 
 	    // Select this menu in the current theme
-	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => $menu)));
+	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => $menu['term_id'])));
 
 	    // Insert new page
 	    $home = wp_insert_post(array(
