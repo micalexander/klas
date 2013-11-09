@@ -14,7 +14,7 @@ function mask_menus_init() {
 				'primary-header-menu' => __( 'Primary Header Menu' )
 			)
 	);
-	wp_create_nav_menu( 'Primary Navigation', array( 'slug' => 'primary-nav' ) );
+
 }
 
 add_action( 'init', 'mask_menus_init' );
