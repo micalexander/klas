@@ -9,42 +9,37 @@ function mask_scripts_init() {
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
 // Add custom navigation to theme and adds Primary Navigation menu
-function mask_menus_init() {
-	register_nav_menus(
-		array(
-				'primary-header-menu' => __( 'Primary Header Menu' )
-			)
-	);
+if (!term_exists('footer-nav', 'nav_menu')) {
 
-	$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
+    $menu = wp_insert_term('Footer nav', 'nav_menu', array('slug' => 'footer-nav'));
 
-	// If it doesn't exist, let's create it.
-	if( !$menu_exists){
-	    $menu_id = wp_create_nav_menu( 'Primary Navigation' );
+    // Select this menu in the current theme
+    update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
 
-		// Set up default menu items
-	    $thisMenuItem = wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Home'),
-	        'menu-item-classes' => 'home',
-	        'menu-item-url' => home_url( '/' ),
-	        'menu-item-status' => 'publish'));
+    // Insert new page
+    $page = wp_insert_post(array('post_title' => 'Blog',
+                                 'post_content' => '',
+                                 'post_status' => 'publish',
+                                 'post_type' => 'page'));
 
-	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('About us'),
-	        'menu-item-url' => home_url( '/about-us/' ),
-	        'menu-item-status' => 'publish'));
+    // Insert new nav_menu_item
+    $nav_item = wp_insert_post(array('post_title' => 'News',
+                                     'post_content' => '',
+                                     'post_status' => 'publish',
+                                     'post_type' => 'nav_menu_item'));
 
-	    wp_update_nav_menu_item($menu_id, 0, array(
-	        'menu-item-title' =>  __('Contact us'),
-	        'menu-item-url' => home_url( '/contact-us/' ),
-	        'menu-item-status' => 'publish'));
 
-	    $wpdb->insert($wpdb->term_relationships, array("object_id" => $thisMenuItem, "term_taxonomy_id" => $menuID), array("%d", "%d"));
-	}
+    add_post_meta($nav_item, '_menu_item_type', 'post_type');
+    add_post_meta($nav_item, '_menu_item_menu_item_parent', '0');
+    add_post_meta($nav_item, '_menu_item_object_id', $page);
+    add_post_meta($nav_item, '_menu_item_object', 'page');
+    add_post_meta($nav_item, '_menu_item_target', '');
+    add_post_meta($nav_item, '_menu_item_classes', 'a:1:{i:0;s:0:"";}');
+    add_post_meta($nav_item, '_menu_item_xfn', '');
+    add_post_meta($nav_item, '_menu_item_url', '');
+
+    wp_set_object_terms($nav_item, 'footer-nav', 'nav_menu');
 }
-
-}
-add_action( 'init', 'mask_menus_init' );
 
 // Registers Primary Widget Area
 function mask_widgets_init() {
