@@ -28,10 +28,13 @@ if (!term_exists('primary-nav', 'nav_menu')) {
     update_option('theme_mods_'.get_current_theme(), array("nav_menu_locations" => array("primary" => $menu['term_id'])));
 
     // Insert new page
-    $page = wp_insert_post(array('post_title' => 'Blog',
-                                 'post_content' => '',
-                                 'post_status' => 'publish',
-                                 'post_type' => 'page'));
+    $page = array(
+		  'post_type'    => 'page',
+		  'post_title'    => 'Home',
+		  'post_status'   => 'publish',
+		  'post_author'   => 1,
+		  'post_category' => array(8,39)
+		);
 
     // Insert new nav_menu_item
     $nav_item = wp_insert_post(array('post_title' => 'Home',
