@@ -139,7 +139,7 @@ function mask_setup() {
 	wp_insert_post( $homepage );
     global $wp_rewrite;
     $wp_rewrite->set_permalink_structure( '/%postname%/' );
-} );
+}
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
