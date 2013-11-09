@@ -8,7 +8,7 @@ function mask_scripts_init() {
 }
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
-$menu_exists = wp_get_nav_menu_object( $menu_name );
+$menu_exists = wp_get_nav_menu_object( 'Primary Navigation' );
 
 // If it doesn't exist, let's create it.
 if( !$menu_exists){
