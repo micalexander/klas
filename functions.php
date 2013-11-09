@@ -215,7 +215,7 @@ function run_options_once() {
 	}
 }
 
-add_action('init', 'run_options_once');
+add_action('after_theme_setup', 'run_options_once');
 
 // set permalinks
 add_action( 'init', function() {
