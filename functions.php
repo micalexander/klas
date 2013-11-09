@@ -208,20 +208,20 @@ function run_options_once() {
 
 	if ( $check != "set" ) {
 
+		// set permalinks
+		add_action( 'after_theme_setup', function() {
+		    global $wp_rewrite;
+		    $wp_rewrite->set_permalink_structure( '/%postname%/' );
+			$wp_rewrite->flush_rules();
+		} );
 
 	    // Add marker so it doesn't run in future
 	    add_option('mask_activation_check', "set");
 	}
 }
 
-add_action('after_theme_setup', 'run_options_once');
+add_action('init', 'run_options_once');
 
-// set permalinks
-add_action( 'after_theme_setup', function() {
-    global $wp_rewrite;
-    $wp_rewrite->set_permalink_structure( '/%postname%/' );
-	$wp_rewrite->flush_rules();
-} );
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
