@@ -9,6 +9,40 @@ Description: Site specific code changes for mask
 * Add image sizes to the template
 */
 
+
+//add pages to wordpress
+global $user_ID;
+
+$page['post_type']    = 'page';
+$page['post_content'] = '';
+$page['post_parent']  = 0;
+$page['post_author']  = $user_ID;
+$page['post_status']  = 'publish';
+$page['post_title']   = 'Home';
+$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
+$pageid = wp_insert_post ($page);
+if ($pageid == 0) { /* Add Page Failed */ }
+
+$page['post_type']    = 'page';
+$page['post_content'] = '';
+$page['post_parent']  = 0;
+$page['post_author']  = $user_ID;
+$page['post_status']  = 'publish';
+$page['post_title']   = 'About us';
+$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
+$pageid = wp_insert_post ($page);
+if ($pageid == 0) { /* Add Page Failed */ }
+
+$page['post_type']    = 'page';
+$page['post_content'] = '';
+$page['post_parent']  = 0;
+$page['post_author']  = $user_ID;
+$page['post_status']  = 'publish';
+$page['post_title']   = 'Contact us';
+$page = apply_filters('mask_plugin_add_new_page', $page, 'teams');
+$pageid = wp_insert_post ($page);
+if ($pageid == 0) { /* Add Page Failed */ }
+
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'slide-image', 1000, 345, true ); //(cropped)
     add_image_size( 'main-image', 745, 175, true ); //(cropped)
