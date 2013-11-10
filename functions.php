@@ -227,6 +227,31 @@ add_action('init', 'run_options_once');
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
+function poststuff_height_fix() {
+  echo '<style>
+		#poststuff {
+			min-height: 1200px;
+		}
+	</style>';
+}
+
+add_action('admin_head', 'poststuff_height_fix');
+
 require_once( 'includes/created-custom-fields.php' );
+
+function temp_acf_fix() {
+  echo '<style>
+	.acf-fc-layout-controlls li {
+		min-width: 18px;
+		min-height: 18px;
+	}
+	.repeater a.acf-button-add, .repeater a.acf-button-remove {
+		visibility: visible;
+		opacity: 1;
+	}
+	</style>';
+}
+
+add_action('admin_head', 'temp_acf_fix');
 
 ?>
