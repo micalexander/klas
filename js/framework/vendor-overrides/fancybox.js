@@ -29,8 +29,8 @@
 			padding: 0,
 			openEffect  : 'none',
 			closeEffect : 'none',
-			'width'			: 960,
-			'height'		: 660,
+			'width'			: 1000,
+			// 'height'		: 687,
 			helpers : {
 				media : {}
 			}
