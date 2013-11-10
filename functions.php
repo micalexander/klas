@@ -227,4 +227,6 @@ add_action('init', 'run_options_once');
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
+require_once( 'includes/created-custom-fields.php' );
+
 ?>
