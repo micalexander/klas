@@ -2,14 +2,16 @@
 	  font-size: 0px;
 	  line-height: 0;
 	.image-gallery-anchor {
-			display: block;
-		@include breakpoint(desktop) {
 			display: inline-block;
+			// margin: 0 auto;
+			// width: 200px;
+			// height: 260px;
+		@include breakpoint(desktop) {
 		}
 		.image {
 			padding-bottom: 2%;
-			@include breakpoint(desktop) {
 				width: 98%;
+			@include breakpoint(desktop) {
 				display: inline-block;
 			}
 		}

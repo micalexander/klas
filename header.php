@@ -21,7 +21,7 @@
 	<![endif]-->
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
-
+	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr.custom.85380.js"></script>
 	<script type="text/javascript">
 		var site_url = '<?php bloginfo('url'); ?>';
 	</script>
@@ -30,16 +30,20 @@
 
 <body <?php body_class(); ?>>
 
-	<div class="wrapper">
+		<div class="header-wrapper">
+			<header class="container" role="banner">
 
-		<header role="banner">
+		        <div class="grid">
+		        	<div class="nav-wrapper unit one-of-one">
+		        	    <nav class="nav-collapse">
+		        			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
+		        	    </nav>
+		        	</div>
+		        </div>
 
-	        <div class="nav-wrapper">
-	            <nav class="nav-collapse">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
-	            </nav>
-	        </div>
+			</header>
+		</div>
+	<!-- <div class="wrapper"> -->
 
-		</header>
 
 		<div class="content-wrapper clearfix" role="main"> <!-- End Header -->

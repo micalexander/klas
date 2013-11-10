@@ -1,6 +1,11 @@
-footer {
+footer.container {
 	padding: 0 3%;
 	@include breakpoint(desktop) {
 		padding: 0;
+	}
+	.grid {
+		.nav-wrapper.unit {
+			margin-bottom: 0;
+		}
 	}
 }

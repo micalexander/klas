@@ -7,6 +7,7 @@
 // the hash/pound to the left of the keyword "require" needs to be removed.
 
 //= require "responsive-nav/responsive-nav"
+//= require "isotope/jquery.isotope.min"
 //= require "media-match/media.match"
 //= require "matchmedia/matchMedia.addListener"
 //= require "enquire/dist/enquire"
@@ -19,3 +20,5 @@
 //= require "modules/flexslider"
 //= require "modules/fancybox"
 //= require "modules/enquire"
+//= require "modules/isotope"
+

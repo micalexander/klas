@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="grid">
+	<div class="grid isotope-grid">
 <?php
 	// set counters to 0
 	$count = 0;
@@ -7,7 +7,7 @@
 
 	if (get_field('containers')) : while(has_sub_field('containers')):
 	?>
-		<div class="unit <?php echo get_sub_field('layout'); ?>">
+		<div class="unit item <?php echo get_sub_field('layout'); ?>">
 		<?php
 
 			while(has_sub_field('content')):
@@ -452,8 +452,8 @@
 				?>
 					<div class="image-gallery">
 						<?php foreach ($images as $image): ?>
-							<a class="image-gallery-anchor" rel="image-gallery" >
-								<img class="image" src="<?php echo $image['sizes']['gallery-thumbnail']; ?>"  >
+							<a class="image-gallery-anchor" rel="image-gallery" href="<?php echo $image['url']; ?>">
+								<img class="image" src="<?php echo $image['sizes']['gallery-thumbnail']; ?>" data-target="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['description']; ?>" >
 							</a>
 						<?php endforeach ?>
 					</div>

@@ -1,14 +1,18 @@
 		</div> <!-- End .content-wrapper -->
 
-		<footer>
-			<p>&copy; <?php echo date("Y"); ?> Company Name.</p>
-		</footer>
+		<div class="footer-wrapper">
+			<footer class="container">
+		        <div class="grid">
+		        	<div class="nav-wrapper unit one-of-one">
+						<p>&copy; <?php echo date("Y"); ?> Company Name.</p>
+					</div>
+				</div>
+			</footer>
+		</div>
 
-	</div> <!-- Close .wrapper !-->
+	<?php wp_enqueue_script( 'js-combo', get_bloginfo( 'template_directory' ) . '/js/public/script.js', array('jquery')); ?>
 
-<?php wp_enqueue_script( 'js-combo', get_bloginfo( 'template_directory' ) . '/js/public/script.js', array('jquery')); ?>
+	<?php wp_footer(); ?><!-- required don't remove -->
 
-<?php wp_footer(); ?><!-- required don't remove -->
-
-</body>
+	</body>
 </html>

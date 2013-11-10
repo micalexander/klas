@@ -4,6 +4,7 @@
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
 @import "../../../../bower_components/responsive-nav/responsive-nav";
+@import "modules/isotope";
 @import "modules/flexslider";
 @import "modules/fancybox";
 @import "modules/responsive-nav";
@@ -58,23 +59,32 @@ body:after { content: 'mobile'; display: none; }
 ** ---------------------------------------------- */
 body {
 	@include breakpoint(desktop) {
-		width: $page-width;
-		margin: 0 auto;
 		padding: 0;
 	}
- 	// Wrapper
-	.wrapper {
+	.header-wrapper {
+		margin: 0 auto;
+		@include breakpoint(desktop) {
+			width: $page-width;
+		}
 		// Header
 		@import "partials/header";
-		.content-wrapper {
-			padding: 0 3%;
-			@include breakpoint(desktop) {
-				padding: 0;
-			}
-			// Section
-			@import "partials/section";
-			// Sidebar
-			@import "partials/sidebar";
+	}
+	.content-wrapper {
+		margin: 0 auto;
+		padding: 0 3%;
+		@include breakpoint(desktop) {
+			width: $page-width;
+			padding: 0;
+		}
+		// Section
+		@import "partials/section";
+		// Sidebar
+		@import "partials/sidebar";
+	}
+	.footer-wrapper {
+		margin: 0 auto;
+		@include breakpoint(desktop) {
+			width: $page-width;
 		}
 		// Footer
 		@import "partials/footer";
