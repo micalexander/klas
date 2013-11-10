@@ -52,16 +52,9 @@ div.nav-wrapper {
 						}
 					}
 				}
-				a {
-					@include breakpoint(desktop) {
-					}
-				}
 			}
 			& > li.menu-item:first-child {
 				border-top: none;
-				@include breakpoint(desktop) {
-					padding-left: 0;
-				}
 			}
 		}
 	}
