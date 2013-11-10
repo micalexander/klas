@@ -49,11 +49,11 @@
 					$images = get_sub_field('images');
 				 	if( $images ):
 				 ?>
-				    <div id="slider" class="flexslider <?php echo str_replace('_', '-', get_row_layout()); ?>">
+				    <div id="slider" class="flexslider carousel <?php echo str_replace('_', '-', get_row_layout()); ?>">
 				        <ul class="slides">
 				            <?php foreach( $images as $image ): ?>
 				                <li>
-				                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                    <img src="<?php echo $image['sizes']['carousel-image']; ?>" alt="<?php echo $image['alt']; ?>" />
 				                    <?php
 										$image_text = get_post_meta($image['id'], 'text', true);
 										$image_url = get_post_meta($image['id'], 'url', true);
@@ -71,11 +71,11 @@
 				// start map
 				elseif (get_row_layout() == 'map'):
 					$map = get_sub_field('map') ? get_sub_field('map') : '';
-				echo "<pre>" ; var_dump(get_sub_field('map')) ; echo "</pre>";
 					$height = get_sub_field('map_height') ? get_sub_field('map_height') . 'px' : '';
 					$style_id = get_sub_field('style_id') ? get_sub_field('style_id') : '';
 					$zoom = get_sub_field('zoom_level') ? get_sub_field('zoom_level') : '';
 					$markers = get_sub_field('markers');
+				// echo "<pre>" ; var_dump($markers) ; echo "</pre>";
 					$last_item = end($markers);
 
 					if ($markers):
@@ -94,7 +94,7 @@
 						<script>
 						// $.getScript( "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js", function(  ) {
 							$(document).ready( function() {
-								var <?php echo "map_" . $count; ?> = L.map('<?php echo "map-" . $count; ?>').setView([<?php echo $map; ?>], <?php echo $zoom; ?>);
+								var <?php echo "map_" . $count; ?> = L.map('<?php echo "map-" . $count; ?>').setView([<?php echo $map['lat']; ?>, <?php echo $map['lng']; ?>], <?php echo $zoom; ?>);
 
 								var cloudemade = L.tileLayer('http://{s}.tile.cloudmade.com/fcb864d780d741d28002f1e0ab52116f/{styleId}/256/{z}/{x}/{y}.png', {
 								    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
@@ -104,11 +104,11 @@
 
 									var info = L.control();
 										var greenIcon = L.icon({
-										    iconUrl: '<?php echo bloginfo('template_directory'); ?>/img/map-marker.png',
+										    iconUrl: '<?php echo bloginfo('template_directory'); ?>/img/map/map-marker.png',
 										    // shadowUrl: 'marker-shadow.png',
-										    iconSize:     [17, 27], // size of the icon
+										    iconSize:     [25, 41], // size of the icon
 										    // shadowSize:   [50, 64], // size of the shadow
-										    iconAnchor:   [5, 5], // point of the icon which will correspond to marker's location
+										    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
 										    // shadowAnchor: [4, 62],  // the same for the shadow
 										    popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
 										});
@@ -118,9 +118,8 @@
 											foreach ($markers as $marker):
 												$mcount++;
 												$comma = $last_item == $marker ? '': ',';
-												$coordinates = $marker['location']['coordinates'] ? $marker['location']['coordinates'] : '';
-												$address = $marker['location']['address'] ? $marker['location']['address'] : '';
-												$name = $marker['location']['name'] ? $marker['location']['name'] : '';
+												$coordinates = $marker['location'] ? $marker['location']['lat'] . ', ' . $marker['location']['lng'] : '';
+												$address = $marker['address'] ? $marker['address'] : '';
 												$image = $marker['image'] ? $marker['image']['sizes']['map-image'] : '';
 												$image_id = $marker['image']['id'] ? $marker['image']['id'] : '';
 												$title = $marker['image']['title'] ? $marker['image']['title'] : '';
@@ -130,7 +129,7 @@
 												$description = $marker['image']['description'] ? $marker['image']['description'] : '';
 												$text = get_post_meta($image_id, 'text', true) ? get_post_meta($image_id, 'text', true) : '';
 												$url = get_post_meta($image_id, 'url', true) ? get_post_meta($image_id, 'url', true) : '';
-												// echo "<pre>" ; var_dump($marker['image']['sizes']['map-image-width']) ; echo "</pre>";
+
 										?>
 
 									var <?php echo "marker_" . $mcount; ?> = L.marker([<?php echo $coordinates; ?>], options={title : '<?php echo $class; ?>', icon: greenIcon, maxWidth: 600}).addTo(<?php echo "map_" . $count; ?>);
