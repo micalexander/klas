@@ -1,17 +1,15 @@
 <?php
+
+require_once "ambrosite-body-class.php";
 /*
-Plugin Name:  mask Site Specific Plugin
-Description: Site specific code changes for mask
+Plugin Name:  Mask Site Specific Plugin
+Description: Site specific code changes for Mask
 */
 /* Start Adding Functions Below this Line */
 
 /**
 * Add image sizes to the template
 */
-
-
-//add pages to wordpress
-
 
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'rotator-image', 1000, 345, true ); //(cropped)

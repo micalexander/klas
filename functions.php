@@ -49,6 +49,9 @@ function mask_menus_init() {
 			  'post_category' => array(8,39)
 			));
 
+		update_option( 'page_on_front', $home );
+		update_option( 'show_on_front', 'page' );
+
 	    // Insert new nav_menu_item (order matters for display purposes)
 	    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
 	                                     'post_content' => '',
@@ -204,7 +207,7 @@ function run_activate_plugin( $plugin ) {
 }
 
 function run_options_once() {
-  $check = get_option('newmask_activation_check');
+  $check = get_option('mask_activation_check');
 
 	if ( $check != "set" ) {
 
@@ -214,7 +217,7 @@ function run_options_once() {
 		$wp_rewrite->flush_rules();
 
 	    // Add marker so it doesn't run in future
-	    add_option('newmask_activation_check', "set");
+	    add_option('mask_activation_check', "set");
 	}
 }
 
