@@ -7,8 +7,11 @@
 			display: inline-block;
 		}
 		.image {
-			width: 98%;
 			padding-bottom: 2%;
+			@include breakpoint(desktop) {
+				width: 98%;
+				display: inline-block;
+			}
 		}
 	}
 }
