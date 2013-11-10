@@ -37,14 +37,16 @@
 		    // OPTIONAL
 		    // If supplied, triggered when a media query matches.
 		    match : function() {
-		    	enableNav
+		    	enableNav();
+		    	replaceImage();
 		    },
 
 		    // OPTIONAL
 		    // If supplied, triggered when the media query transitions
 		    // *from a matched state to an unmatched state*.
 		    unmatch : function() {
-				disableNav
+				disableNav();
+				putBackImage();
 		    },
 
 		    // OPTIONAL

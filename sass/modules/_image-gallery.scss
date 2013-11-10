@@ -1,0 +1,14 @@
+.image-gallery {
+	  font-size: 0px;
+	  line-height: 0;
+	.image-gallery-anchor {
+			display: block;
+		@include breakpoint(desktop) {
+			display: inline-block;
+		}
+		.image {
+			width: 98%;
+			padding-bottom: 2%;
+		}
+	}
+}

@@ -4,9 +4,10 @@
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
 @import "../../../../bower_components/responsive-nav/responsive-nav";
-@import "framework/vendor-overrides/flexslider";
-@import "framework/vendor-overrides/fancybox";
-@import "framework/vendor-overrides/responsive-nav";
+@import "modules/flexslider";
+@import "modules/fancybox";
+@import "modules/responsive-nav";
+@import "modules/image-gallery";
 
 // Uncomment @import, to import Bower assets
 // Example: bower install [vendor] (in the root of your project)

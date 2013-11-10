@@ -452,8 +452,8 @@
 				?>
 					<div class="image-gallery">
 						<?php foreach ($images as $image): ?>
-							<a class="image-gallery-anchor" rel="image-gallery" href="<?php echo $image['url']; ?>">
-								<img src="<?php echo $image['sizes']['gallery-thumbnail']; ?>" alt="<?php echo $image['alt']; ?> title="<?php echo $image['description']; ?>" >
+							<a class="image-gallery-anchor" rel="image-gallery" >
+								<img class="image" src="<?php echo $image['sizes']['gallery-thumbnail']; ?>"  >
 							</a>
 						<?php endforeach ?>
 					</div>

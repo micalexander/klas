@@ -2,8 +2,8 @@
 
 require_once "ambrosite-body-class.php";
 /*
-Plugin Name:  Mask Site Specific Plugin
-Description: Site specific code changes for Mask
+Plugin Name:  mask Site Specific Plugin
+Description: Site specific code changes for mask
 */
 /* Start Adding Functions Below this Line */
 
@@ -12,8 +12,8 @@ Description: Site specific code changes for Mask
 */
 
 if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'rotator-image', 1000, 345, true ); //(cropped)
-    add_image_size( 'main-image', 745, 175, true ); //(cropped)
+    add_image_size( 'rotator-image', 1000, 400, true ); //(cropped)
+    add_image_size( 'main-image', 1000, 400, true ); //(cropped)
     add_image_size( 'gallery-thumbnail', 200, 260, true ); //(cropped)
     add_image_size( 'carousel-image', 80, 80, false ); //(cropped)
     add_image_size( 'headshot-image', 100, 100, true ); //(cropped)
