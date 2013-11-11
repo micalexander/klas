@@ -226,6 +226,11 @@ add_action('init', 'run_options_once');
 
 
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
+run_activate_plugin( 'advanced-custom-fields/acf.php' );
+run_activate_plugin( 'acf-flexible-content/acf-flexible-content.php' );
+run_activate_plugin( 'acf-gallery/acf-gallery.php' );
+run_activate_plugin( 'acf-options-page/acf-options-page.php' );
+run_activate_plugin( 'acf-repeater/acf-repeater.php' );
 
 function poststuff_height_fix() {
   echo '<style>
