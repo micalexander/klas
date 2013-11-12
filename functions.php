@@ -231,6 +231,7 @@ run_activate_plugin( 'acf-flexible-content/acf-flexible-content.php' );
 run_activate_plugin( 'acf-gallery/acf-gallery.php' );
 run_activate_plugin( 'acf-options-page/acf-options-page.php' );
 run_activate_plugin( 'acf-repeater/acf-repeater.php' );
+run_activate_plugin( 'ambrosite-body-class-enhanced/ambrosite-body-class.php' );
 
 function poststuff_height_fix() {
   echo '<style>

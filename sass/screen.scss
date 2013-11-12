@@ -1,5 +1,7 @@
 @import "framework/reset";
 @import "framework/mask-framework";
+@import "framework/accordion-links";
+@import "framework/image-gallery";
 @import "../../../../bower_components/flexslider/flexslider";
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
@@ -8,7 +10,6 @@
 @import "modules/flexslider";
 @import "modules/fancybox";
 @import "modules/responsive-nav";
-@import "modules/image-gallery";
 
 // Uncomment @import, to import Bower assets
 // Example: bower install [vendor] (in the root of your project)

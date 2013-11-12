@@ -78,7 +78,7 @@ body,select,input,textarea{color:#333;}
 	*overflow: visible;
 }
 
-.one-of-one { width: 97.5%; }
+.one-of-one { width: 97.6%; }
 .one-of-two { width: 47.5%; }
 
 .one-of-three { width: 30.8333333%; }
@@ -92,7 +92,7 @@ body,select,input,textarea{color:#333;}
 .three-of-five { width: 57.44%; }
 .four-of-five { width: 77.44%; }
 
-@media screen and (max-width: $mq-desktop) {
+@media screen and (max-width: $mq-tablet) {
 	.grid {
 		margin-left: 0;
 		max-width: none;

@@ -4,6 +4,7 @@
 			<footer class="container">
 		        <div class="grid">
 		        	<div class="nav-wrapper unit one-of-one">
+		        		<?php wp_nav_menu( array( 'theme_location' => 'primary-footer-menu', 'container' => false) ); ?>
 						<p>&copy; <?php echo date("Y"); ?> Company Name.</p>
 					</div>
 				</div>

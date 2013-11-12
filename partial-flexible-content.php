@@ -2,12 +2,14 @@
 	<div class="grid isotope-grid">
 <?php
 	// set counters to 0
-	$count = 0;
-	// start container
+	$map_count = 0;
+	$unit_count = 0;
 
 	if (get_field('containers')) : while(has_sub_field('containers')):
+
+		$unit_count++;
 	?>
-		<div class="unit item <?php echo get_sub_field('layout'); ?>">
+		<div class="unit <?php echo 'unit-'  . (string)$unit_count . ' ' . get_sub_field('layout'); ?> ">
 		<?php
 
 			while(has_sub_field('content')):
@@ -79,7 +81,7 @@
 					$last_item = end($markers);
 
 					if ($markers):
-						if($count < 1 ):
+						if($map_count < 1 ):
 						?>
 
 						<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
@@ -88,74 +90,88 @@
 						<![endif]-->
 						<?php
 							endif;
-							$count++;
+							$map_count++;
 						?>
 
 						<script>
 						// $.getScript( "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js", function(  ) {
 							$(document).ready( function() {
-								var <?php echo "map_" . $count; ?> = L.map('<?php echo "map-" . $count; ?>').setView([<?php echo $map['lat']; ?>, <?php echo $map['lng']; ?>], <?php echo $zoom; ?>);
+								var <?php echo "map_" . $map_count; ?> = L.map('<?php echo "map-" . $map_count; ?>').setView([<?php echo $map['lat']; ?>, <?php echo $map['lng']; ?>], <?php echo $zoom; ?>);
 
 								var cloudemade = L.tileLayer('http://{s}.tile.cloudmade.com/fcb864d780d741d28002f1e0ab52116f/{styleId}/256/{z}/{x}/{y}.png', {
 								    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
 								    maxZoom: 18,
 								    styleId: <?php echo $style_id; ?>
-								}).addTo(<?php echo "map_" . $count; ?>);
+								}).addTo(<?php echo "map_" . $map_count; ?>);
 
-									var info = L.control();
-										var greenIcon = L.icon({
-										    iconUrl: '<?php echo bloginfo('template_directory'); ?>/img/map/map-marker.png',
-										    // shadowUrl: 'marker-shadow.png',
-										    iconSize:     [25, 41], // size of the icon
-										    // shadowSize:   [50, 64], // size of the shadow
-										    iconAnchor:   [12, 41], // point of the icon which will correspond to marker's location
-										    // shadowAnchor: [4, 62],  // the same for the shadow
-										    popupAnchor:  [5, -5] // point from which the popup should open relative to the iconAnchor
-										});
 
-										<?php
-											$mcount = 0;
-											foreach ($markers as $marker):
-												$mcount++;
-												$comma = $last_item == $marker ? '': ',';
-												$coordinates = $marker['location'] ? $marker['location']['lat'] . ', ' . $marker['location']['lng'] : '';
-												$address = $marker['address'] ? $marker['address'] : '';
-												$image = $marker['image'] ? $marker['image']['sizes']['map-image'] : '';
-												$image_id = $marker['image']['id'] ? $marker['image']['id'] : '';
-												$title = $marker['image']['title'] ? $marker['image']['title'] : '';
-												$class = "marker-" . strtolower( str_replace(' ', '-', $title) );
-												$caption = $marker['image']['caption'] ? $marker['image']['caption'] : '';
-												$alt = $marker['image']['alt'] ? $marker['image']['alt'] : '';
-												$description = $marker['image']['description'] ? $marker['image']['description'] : '';
-												$text = get_post_meta($image_id, 'text', true) ? get_post_meta($image_id, 'text', true) : '';
-												$url = get_post_meta($image_id, 'url', true) ? get_post_meta($image_id, 'url', true) : '';
+								var greenIcon = L.icon({
+								    iconUrl: '<?php echo bloginfo('template_directory'); ?>/img/map/map-marker.png',
+								    // shadowUrl: 'marker-shadow.png',
+								    iconSize:     [17, 27], // size of the icon
+								    // shadowSize:   [50, 64], // size of the shadow
+								    iconAnchor:   [7, 12], // point of the icon which will correspond to marker's location
+								    // shadowAnchor: [4, 62],  // the same for the shadow
+								    popupAnchor:  [2, -6] // point from which the popup should open relative to the iconAnchor
+								});
 
-										?>
-
-									var <?php echo "marker_" . $mcount; ?> = L.marker([<?php echo $coordinates; ?>], options={title : '<?php echo $class; ?>', icon: greenIcon, maxWidth: 600}).addTo(<?php echo "map_" . $count; ?>);
-									var divNode = document.createElement('DIV');
-										divNode.innerHTML = ("<div class='<?php echo $class; ?>'>" +
-															"<p><?php echo $title; ?></p>" +
-															"<img src='<?php echo $image; ?>' alt='<?php echo $alt ?>'>" +
-															"<p><?php echo $address; ?></p>" +
-															"<p><?php echo $description; ?></p>" +
-															"</div>");
-										$('.<?php echo $class; ?>').click(function(){ $('img[title=<?php echo $class; ?>]').trigger('click');});
-
-									<?php echo "marker_" . $mcount; ?>.bindPopup(divNode,{ maxWidth: <?php echo $marker['image']['sizes']['map-image-width'] ?> });
 									<?php
-										endforeach;
+										$mcount = 0;
+										foreach ($markers as $marker):
+											$mcount++;
+											$comma = $last_item == $marker ? '': ',';
+											$coordinates = $marker['location'] ? $marker['location']['lat'] . ', ' . $marker['location']['lng'] : '';
+											$address = $marker['location'] ? $marker['location']['address'] : '';
+											$image = $marker['image'] ? $marker['image']['sizes']['map-image'] : '';
+											$image_id = $marker['image']['id'] ? $marker['image']['id'] : '';
+											$title = $marker['image']['title'] ? $marker['image']['title'] : '';
+											$class = "map-marker-" . strtolower( str_replace(' ', '-', $title) );
+											$alt = $marker['image']['alt'] ? $marker['image']['alt'] : '';
+											$description = $marker['image']['description'] ? $marker['image']['description'] : '';
+											$text_1 = get_post_meta($image_id, 'map-text-1', true) ? get_post_meta($image_id, 'map-text-1', true) : '';
+											$text_2 = get_post_meta($image_id, 'map-text-2', true) ? get_post_meta($image_id, 'map-text-2', true) : '';
+											$text_3 = get_post_meta($image_id, 'map-text-3', true) ? get_post_meta($image_id, 'map-text-3', true) : '';
+											$text_4 = get_post_meta($image_id, 'map-text-4', true) ? get_post_meta($image_id, 'map-text-4', true) : '';
+											$url_text = get_post_meta($image_id, 'map-url-text', true) ? get_post_meta($image_id, 'map-url-text', true) : '';
+											$url = get_post_meta($image_id, 'map-url', true) ? get_post_meta($image_id, 'map-url', true) : '';
+
 									?>
+
+								var <?php echo "marker_" . $mcount; ?> = L.marker([<?php echo $coordinates; ?>], options={title :<?php echo json_encode($class); ?>, icon: greenIcon, maxWidth: 600}).addTo(<?php echo "map_" . $map_count; ?>);
+								var divNode = document.createElement('DIV');
+									divNode.innerHTML = ("<div class='" + <?php echo json_encode($class); ?> + "'>" +
+														"<p class='title'>" + <?php echo json_encode($title); ?> + "</p>" +
+														"<img src='" + <?php echo json_encode($image); ?> + "' alt='" + <?php echo json_encode($alt); ?> + "'>" +
+														"<p class='address'>" + <?php echo json_encode($address); ?> + "</p>" +
+														"<p class='line-1'>" + <?php echo json_encode($text_1); ?> + "</p>" +
+														"<p class='line-2'>" + <?php echo json_encode($text_2); ?> + "</p>" +
+														"<p class='line-3'>" + <?php echo json_encode($text_3); ?> + "</p>" +
+														"<p class='line-4'>" + <?php echo json_encode($text_4); ?> + "</p>" +
+														"<a class='url' href='" + <?php echo json_encode($url); ?> + "' target='_blank' >" +
+														"<span class='url-text'>" + <?php echo json_encode($url_text); ?> +
+														"</span></a>" +
+														"</div>");
+									$('.' + <?php echo json_encode($class); ?>).click(function(){ $('img[title=<?php echo $class; ?>]').trigger('click');});
+
+								<?php echo "marker_" . $mcount; ?>.bindPopup(divNode,{ maxWidth: <?php echo $marker['image']['sizes']['map-image-width'] ?> });
+								<?php
+									endforeach;
+								?>
 
 							});
 						</script>
 
 						<div class="map-wrapper">
-							<div id="<?php echo "map-" . $count; ?>" style="height:<?php echo $height; ?>;"></div>
+							<div id="<?php echo "map-" . $map_count; ?>" style="height:<?php echo $height; ?>;"></div>
 						</div>
 						<?php
 					endif;
 				// end map
+				// start sub-nav
+				elseif (get_row_layout() == 'sub_nav'):
+					$theme_location = get_sub_field('theme_location');
+						wp_nav_menu( array('theme_location' => strtolower(str_replace(' ', '-', $theme_location) ), 'sub_menu' => true ) );
+				// end sub-nav
 				// start heading one
 				elseif (get_row_layout() == "heading_1"):
 					$heading = get_sub_field('heading');
@@ -420,7 +436,7 @@
 
 					if ($image):
 				?>
-				<a class="img-link" <?php echo $target; ?> style="width:<?php echo $image['width'] . "px"; ?>; height:<?php echo $image['height'] . "px"; ?>;" href="<?php echo $image_link; ?>" target="_blank" href="<?php echo $image_link; ?>" target="_blank" >
+				<a class="img-link" <?php echo $target; ?> style="width:<?php echo $image['width'] . "px"; ?>; height:<?php echo $image['height'] . "px"; ?>;" href="<?php echo $image_link; ?>" target="_blank" href="<?php echo $image_link; ?>" <?php echo $target; ?> >
 					<div class="image-frame">
 						<img src="<?php echo $image['url']; ?>" alt="">
 					</div>
