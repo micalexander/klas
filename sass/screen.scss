@@ -1,11 +1,14 @@
 @import "framework/reset";
 @import "framework/mask-framework";
-@import "framework/accordion-links";
 @import "framework/image-gallery";
+@import "framework/accordion-links";
+@import "framework/map";
 @import "../../../../bower_components/flexslider/flexslider";
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
 @import "../../../../bower_components/responsive-nav/responsive-nav";
+@import "modules/accordion-links";
+@import "modules/map";
 @import "modules/isotope";
 @import "modules/flexslider";
 @import "modules/fancybox";
@@ -64,8 +67,10 @@ body {
 	}
 	.header-wrapper {
 		margin: 0 auto;
+		padding: 0 3%;
 		@include breakpoint(desktop) {
 			width: $page-width;
+			padding: 0;
 		}
 		// Header
 		@import "partials/header";
@@ -84,8 +89,10 @@ body {
 	}
 	.footer-wrapper {
 		margin: 0 auto;
+		padding: 0 3%;
 		@include breakpoint(desktop) {
 			width: $page-width;
+			padding: 0;
 		}
 		// Footer
 		@import "partials/footer";
@@ -95,6 +102,6 @@ body {
 /* -------------------------------------------------
 ** Pages and additional Partials
 ** ---------------------------------------------- */
-// @import "pages/home";
-// @import "pages/about-us";
-// @import "pages/contact-us";
+@import "pages/home";
+@import "pages/about-us";
+@import "pages/contact-us";

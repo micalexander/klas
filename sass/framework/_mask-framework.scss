@@ -35,7 +35,23 @@ $mq-tablet: 620px;
 $mq-tab-desk: 820px;
 $mq-desktop: 60em;
 
+// -------------------------------------------------
+// Grid Variables
+// ---------------------------------------------- */
 
+$one-of-one: 97.6%;
+$one-of-two: 47.5%;
+
+$one-of-three: 30.8333333%;
+$two-of-three: 64.1666666%;
+
+$one-of-four: 22.5%;
+$three-of-four: 72.5%;
+
+$one-of-five: 17.44%;
+$two-of-five: 37.44%;
+$three-of-five: 57.44%;
+$four-of-five: 77.44%;
 // -------------------------------------------------
 // Basic Styles
 // ---------------------------------------------- */
@@ -59,11 +75,15 @@ body,select,input,textarea{color:#333;}
 	margin: 0 auto;
 	padding: 0 30px;
 	padding: 0 1.5rem;
+	@include transition(.5s);
+	@include transition-delay(.7s);
 }
 
 .grid {
 	margin-left: -2.5%;
 	max-width: 105%;
+	@include transition(.5s);
+	@include transition-delay(.7s);
 }
 
 .unit {
@@ -76,21 +96,42 @@ body,select,input,textarea{color:#333;}
 	/* Clearfix */
 	overflow: hidden;
 	*overflow: visible;
+	@include transition(.5s);
+	@include transition-delay(.7s);
+}
+.no-margin-unit {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	/* Clearfix */
+	overflow: hidden;
+	*overflow: visible;
+	@include transition(.5s);
+	@include transition-delay(.7s);
 }
 
 .one-of-one { width: 97.6%; }
 .one-of-two { width: 47.5%; }
-
 .one-of-three { width: 30.8333333%; }
 .two-of-three { width: 64.1666666%; }
-
 .one-of-four { width: 22.5%; }
 .three-of-four { width: 72.5%; }
-
 .one-of-five { width: 17.44%; }
 .two-of-five { width: 37.44%; }
 .three-of-five { width: 57.44%; }
 .four-of-five { width: 77.44%; }
+
+.no-margin-one-of-one { width: 100%; }
+.no-margin-one-of-two { width: 30%; }
+.no-margin-one-of-three { width: 33.333333333%; }
+.no-margin-two-of-three { width: 66.666666666%; }
+.no-margin-one-of-four { width: 25%; }
+.no-margin-three-of-four { width: 75%; }
+.no-margin-one-of-five { width: 20%; }
+.no-margin-two-of-five { width: 40%; }
+.no-margin-three-of-five { width: 60%; }
+.no-margin-four-of-five { width: 80%; }
 
 @media screen and (max-width: $mq-tablet) {
 	.grid {
@@ -98,8 +139,8 @@ body,select,input,textarea{color:#333;}
 		max-width: none;
 	}
 
-	.unit {
-		width: auto;
+	.unit, .no-margin-unit {
+		width: 100%;
 		margin-left: 0;
 		display: block;
 	}
@@ -109,7 +150,10 @@ body,select,input,textarea{color:#333;}
 	padding: 0;
 	.grid {
 		.unit {
-			margin-bottom: 30px;
+			margin-bottom: 20px;
+			.unit {
+				margin-bottom: 10px;
+			}
 			// background: #ccc;
 		}
 	}
@@ -159,16 +203,6 @@ body,select,input,textarea{color:#333;}
 	padding-bottom: 0;
 }
 
-// Rem Font Sizing
-@mixin font-size-rem($size: 1.6){
-  font-size: ($size * 10 + 5) + px;
-  font-size: $size + rem;
-}
-
-@mixin line-height-rem($size: 1.6){
-  line-height: ($size * 10 + 5) + px;
-  line-height: $size + rem;
-}
 
 @mixin areas-text-style-nav {
 	font-size: .875em;

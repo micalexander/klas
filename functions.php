@@ -260,4 +260,17 @@ function temp_acf_fix() {
 
 add_action('admin_head', 'temp_acf_fix');
 
+function unit_size_override() {
+	echo '<style>
+	.field.sub_field.field_type-select.field_key-field_527a6820291f2 {
+		// display: none;
+	}
+	</style>';
+}
+
+
+add_action('admin_head', 'unit_size_override');
+
+
+
 ?>

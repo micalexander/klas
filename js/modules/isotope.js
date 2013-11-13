@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.isotope-grid').isotope({
+	$('.auto-fit').isotope({
 		masonry: {
 		columnWidth: 1
 		}

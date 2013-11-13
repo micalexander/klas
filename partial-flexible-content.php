@@ -4,33 +4,39 @@
 	// set counters to 0
 	$map_count = 0;
 	$unit_count = 0;
+	$item_count = 0;
 
 	if (get_field('containers')) : while(has_sub_field('containers')):
 
 		$unit_count++;
+		$unit_size = get_sub_field('layout');
+		$fit = get_sub_field('auto_fit') ? ' auto-fit' : '';
 	?>
-		<div class="unit <?php echo 'unit-'  . (string)$unit_count . ' ' . get_sub_field('layout'); ?> ">
+		<div class="unit <?php echo 'unit-'  . $unit_count . ' ' . $unit_size . ' ' . $fit; ?> ">
 		<?php
 
 			while(has_sub_field('content')):
+				$item_count++;
 				// start main image
 				if (get_row_layout() == 'main_image'):
+					$item_size = get_sub_field('layout');
 					$image = get_sub_field('image');
 				?>
-					<div class="main-image">
+					<div class="no-margin-unit main-image <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 						<img src="<?php echo $image['sizes']['main-image']; ?>" alt="<?php echo $image['alt']; ?>">
 					</div>
 				<?php
 				// end main image
 				// start slides
 				elseif (get_row_layout() == 'image_rotator'):
+					$item_size = get_sub_field('layout');
 					$images = get_sub_field('images');
 				 	if( $images ):
 				 ?>
-				    <div id="slider" class="flexslider <?php echo str_replace('_', '-', get_row_layout()); ?>">
+				    <div id="slider" class="no-margin-unit flexslider <?php echo 'item-'  . $item_count . ' ' . $item_size; ?> <?php echo str_replace('_', '-', get_row_layout()); ?> <?php echo $item_size; ?>">
 				        <ul class="slides">
 				            <?php foreach( $images as $image ): ?>
-				                <li>
+				                <li class="<?php echo $item_count; ?>">
 				                    <img src="<?php echo $image['sizes']['rotator-image']; ?>" alt="<?php echo $image['alt']; ?>" />
 				                    <?php
 										$image_text = get_post_meta($image['id'], 'text', true);
@@ -40,7 +46,12 @@
 					                    <p class="flex-caption"><span class="icon-caption-arrow"></span><?php echo $image['caption']; ?> <a href="<?php echo $image_url; ?>"><?php echo $image_text; ?><span class="icon-caption-link-arrow"></span></a></p>
 				                	<?php endif; ?>
 				                </li>
-				            <?php endforeach; ?>
+					        <?php
+								if($image != end($images)) {
+									$item_count++;
+								}
+					        	endforeach;
+					        ?>
 				        </ul>
 				    </div>
 				<?php
@@ -48,13 +59,14 @@
 				// end slides
 				// start slides
 				elseif (get_row_layout() == 'image_carousel'):
+					$item_size = get_sub_field('layout');
 					$images = get_sub_field('images');
 				 	if( $images ):
 				 ?>
-				    <div id="slider" class="flexslider carousel <?php echo str_replace('_', '-', get_row_layout()); ?>">
+				    <div id="slider" class="no-margin-unit flexslider carousel <?php echo 'item-'  . $item_count . ' ' . $item_size; ?> <?php echo str_replace('_', '-', get_row_layout()); ?> <?php echo $item_size; ?>">
 				        <ul class="slides">
 				            <?php foreach( $images as $image ): ?>
-				                <li>
+				                <li class="<?php echo $item_count; ?>">
 				                    <img src="<?php echo $image['sizes']['carousel-image']; ?>" alt="<?php echo $image['alt']; ?>" />
 				                    <?php
 										$image_text = get_post_meta($image['id'], 'text', true);
@@ -64,7 +76,12 @@
 					                    <p class="flex-caption"><span class="icon-caption-arrow"></span><?php echo $image['caption']; ?> <a href="<?php echo $image_url; ?>"><?php echo $image_text; ?><span class="icon-caption-link-arrow"></span></a></p>
 				                	<?php endif; ?>
 				                </li>
-				            <?php endforeach; ?>
+					        <?php
+								if($image != end($images)) {
+									$item_count++;
+								}
+					        	endforeach;
+					        ?>
 				        </ul>
 				    </div>
 				<?php
@@ -72,12 +89,12 @@
 				// end slides
 				// start map
 				elseif (get_row_layout() == 'map'):
+					$item_size = get_sub_field('layout');
 					$map = get_sub_field('map') ? get_sub_field('map') : '';
 					$height = get_sub_field('map_height') ? get_sub_field('map_height') . 'px' : '';
 					$style_id = get_sub_field('style_id') ? get_sub_field('style_id') : '';
 					$zoom = get_sub_field('zoom_level') ? get_sub_field('zoom_level') : '';
 					$markers = get_sub_field('markers');
-				// echo "<pre>" ; var_dump($markers) ; echo "</pre>";
 					$last_item = end($markers);
 
 					if ($markers):
@@ -125,7 +142,7 @@
 											$image = $marker['image'] ? $marker['image']['sizes']['map-image'] : '';
 											$image_id = $marker['image']['id'] ? $marker['image']['id'] : '';
 											$title = $marker['image']['title'] ? $marker['image']['title'] : '';
-											$class = "map-marker-" . strtolower( str_replace(' ', '-', $title) );
+											$class = "map-marker-" . str_replace(' ', '-', strtolower(rtrim($title)));
 											$alt = $marker['image']['alt'] ? $marker['image']['alt'] : '';
 											$description = $marker['image']['description'] ? $marker['image']['description'] : '';
 											$text_1 = get_post_meta($image_id, 'map-text-1', true) ? get_post_meta($image_id, 'map-text-1', true) : '';
@@ -161,7 +178,7 @@
 							});
 						</script>
 
-						<div class="map-wrapper">
+						<div class="no-margin-unit map-wrapper <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 							<div id="<?php echo "map-" . $map_count; ?>" style="height:<?php echo $height; ?>;"></div>
 						</div>
 						<?php
@@ -169,110 +186,130 @@
 				// end map
 				// start sub-nav
 				elseif (get_row_layout() == 'sub_nav'):
+					$item_size = get_sub_field('layout');
 					$theme_location = get_sub_field('theme_location');
-						wp_nav_menu( array('theme_location' => strtolower(str_replace(' ', '-', $theme_location) ), 'sub_menu' => true ) );
+				?>
+						<div class="no-margin-unit nav-wrapper <?php echo 'item-'  . $item_count . ' ' . $item_size; ?> sub-nav">
+							<nav>
+								<?php wp_nav_menu( array('theme_location' => str_replace(' ', '-', strtolower(rtrim($theme_location))), 'sub_menu' => true ) ); ?>
+							</nav>
+						</div>
+				<?php
 				// end sub-nav
 				// start heading one
 				elseif (get_row_layout() == "heading_1"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 						if ($heading):
 				?>
-				<h1><?php echo $heading; ?></h1>
+				<h1 class="no-margin-unit <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>"><?php echo $heading; ?></h1>
 				<?php
 						endif;
 					// end heading
 					// start heading two
 				elseif (get_row_layout() == "heading_2"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					if ($heading):
 				?>
-				<h2><?php echo $heading; ?></h2>
+				<h2 class="no-margin-unit <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>"><?php echo $heading; ?></h2>
 				<?php
 						endif;
 					// end heading two
 					// start heading three
 				elseif (get_row_layout() == "heading_3"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					if ($heading):
 				?>
-				<h3><?php echo $heading; ?></h3>
+				<h3 class="no-margin-unit <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>"><?php echo $heading; ?></h3>
 				<?php
 						endif;
 					// end heading three
 					// start heading four
 				elseif (get_row_layout() == "heading_4"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					if ($heading):
 				?>
-				<h4><?php echo $heading; ?></h4>
+				<h4 class="no-margin-unit <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>"><?php echo $heading; ?></h4>
 				<?php
 					endif;
 					// end heading four
 					// start heading link one
 				elseif (get_row_layout() == "heading_1_link"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					$link = get_sub_field('link');
 					$target =  get_sub_field('new_window') ? 'target="_blank"' : '' ;
 						if ($heading):
 				?>
-				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
-				<h1><?php echo $heading;  ?></h1>
+				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . ' class="item-'  . $item_count . ' ' . $item_size . '"' . $target .' >' : ''; ?>
+				<h1 class="no-margin-unit"><?php echo $heading;  ?></h1>
 				<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
 				<?php
 						endif;
 					// end heading link one
 					// start heading link two
 				elseif (get_row_layout() == "heading_2_link"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					$link = get_sub_field('link');
 					$target =  get_sub_field('new_window') ? 'target="_blank"' : '' ;
 						if ($heading):
 				?>
-				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
-				<h2><?php echo $heading; ?></h2>
+				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . ' class="item-'  . $item_count . ' ' . $item_size . '"' . $target .' >' : ''; ?>
+				<h2 class="<?php echo $item_size; ?>"><?php echo $heading; ?></h2>
 				<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
 				<?php
 						endif;
 					// end heading link two
 					// start heading link three
 				elseif (get_row_layout() == "heading_3_link"):
+					$item_size = get_sub_field('layout');
 					$link = get_sub_field('link');
 					$target =  get_sub_field('new_window') ? 'target="_blank"' : '' ;
 						if ($heading):
 				?>
-				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
-				<h3><?php echo $heading; ?></h3>
+				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . ' class="item-'  . $item_count . ' ' . $item_size . '"' . $target .' >' : ''; ?>
+				<h3 class="<?php echo $item_size; ?>"><?php echo $heading; ?></h3>
 				<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
 				<?php
 						endif;
 					// end heading link three
 					// start heading link four
 				elseif (get_row_layout() == "heading_4_link"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					$link = get_sub_field('link');
 					$target =  get_sub_field('new_window') ? 'target="_blank"' : '' ;
 						if ($heading):
 				?>
-				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
-				<h4><?php echo $heading; ?></h4>
+				<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . ' class="item-'  . $item_count . ' ' . $item_size . '"' . $target .' >' : ''; ?>
+				<h4 class="<?php echo $item_size; ?>"><?php echo $heading; ?></h4>
 				<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
 				<?php
 						endif;
 					// end heading link four
 					// start editor
 				elseif (get_row_layout() == "editor"):
+					$item_size = get_sub_field('layout');
 					$editors = get_sub_field("editor");
 					if ($editors):
 
 						foreach ($editors as $editor):
 					?>
-							<div class="editor"><?php echo $editor['editor']; ?></div>
+							<div class="no-margin-unit editor <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>"><?php echo $editor['editor']; ?></div>
 					<?php
+								$item_count++;
+							if($editor = end($editors)) {
+							}
 						endforeach;
 					endif;
 					// end editor
 					// start text_link
 				elseif (get_row_layout() == "text_link"):
+					$item_size = get_sub_field('layout');
 					$text_links = get_sub_field("text_link");
 					if ($text_links):
 
@@ -280,16 +317,20 @@
 						$target = $text_link['new_window'] ? 'target="_blank"' : '' ;
 					?>
 
-						<?php echo $open_anchor = $text_link['link'] ? '<a href="' . $text_link['link'] . '" ' . $target .' >' : ''; ?>
+						<?php echo $open_anchor = $text_link['link'] ? '<a href="' . $text_link['link'] . '" class="no-margin-unit item-'  . $item_count . ' ' . $item_size . '"' . $target  : '<p' . '" class="' . $item_size . '>'; ?>
 							<?php echo $text_link['text']; ?>
-						<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
+						<?php echo $close_anchor = $open_anchor ? '</a>' : '</p>'; ?>
 					<?php
+							if($text_link != end($text_links)) {
+								$item_count++;
+							}
 						endforeach;
 
 					endif;
 					// end text_link
 					// start text to image link (lightbox)
 				elseif (get_row_layout() == "text_to_image_link"):
+					$item_size = get_sub_field('layout');
 					$image = get_sub_field('image');
 					$text = get_sub_field("text");
 					$type = get_sub_field("text_type");
@@ -311,7 +352,7 @@
 							break;
 					}
 				?>
-				<div class="text-lightbox">
+				<div class="no-margin-unit text-lightbox <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 					<div class="icon-text-lightbox">
 					</div>
 					<<?php echo $tag; ?>>
@@ -324,6 +365,7 @@
 					// end text to image link
 					// start text_rotator
 				elseif (get_row_layout() == "text_rotator"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field("heading");
 					$type = get_sub_field("heading_type");
 					switch ($type) {
@@ -345,7 +387,7 @@
 					}
 					if ($heading):
 				?>
-					<<?php echo $tag; ?> class="rotator"><?php echo $heading; ?></<?php echo $tag; ?>>
+					<<?php echo $tag . ' class="no-margin-unit rotator item-'  . $item_count . ' ' . $item_size; ?>><?php echo $heading; ?></<?php echo $tag; ?>>
 				<?php
 					endif;
 					$items = get_sub_field('text');
@@ -354,8 +396,13 @@
 					<div id="slider" class="text-rotator">
 					    <ul class="slides">
 					        <?php foreach ($items as $item): ?>
-								<li><p><?php echo $item['text']; ?></p></li>
-					        <?php endforeach; ?>
+								<li class="<?php echo $item_count; ?>" ><p><?php echo $item['text']; ?></p></li>
+					        <?php
+								if($item != end($items)) {
+									$item_count++;
+								}
+					        	endforeach;
+					        ?>
 					    </ul>
 					</div>
 				<?php
@@ -363,12 +410,13 @@
 					// end text_rotator
 					// start button_link
 				elseif (get_row_layout() == "button_link"):
+					$item_size = get_sub_field('layout');
 					$text = get_sub_field('text');
 					$link = get_sub_field('link');
 					$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
 					if ($text):
 				?>
-					<div class="button-wrapper">
+					<div class="no-margin-unit button-wrapper <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 						<div class="button">
 				    		<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
 						    	<?php echo $text; ?>
@@ -380,6 +428,7 @@
 					// end button_link
 					// start blockquote
 				elseif (get_row_layout() == "blockquote"):
+					$item_size = get_sub_field('layout');
 					$quote = get_sub_field('quote');
 					$credit_line_1 = get_sub_field('credit_line_1');
 					$credit_line_2 = get_sub_field('credit_line_2');
@@ -388,10 +437,10 @@
 
 					if ($quote):
 				?>
-					<div class="blockquote">
+					<div class="no-margin-unit blockquote <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 						<blockquote>
 							<?php echo $quote; ?>
-							<<?php echo $credit_line_2_type == 'url' ? 'a href="' . $credit_line_2 . '"' : 'div' ; ?><?php echo $credit_line_2_type == 'class' ? ' class="' . str_replace(' ', '-', strtolower($credit_line_2)) . '"' : '' ; ?> <?php echo $target; ?>>
+							<<?php echo $credit_line_2_type == 'url' ? 'a href="' . $credit_line_2 . '"' : 'div' ; ?><?php echo $credit_line_2_type == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($credit_line_2))) . '"' : '' ; ?> <?php echo $target; ?>>
 								<?php echo $credit_line_1; ?>
 							</<?php echo $credit_line_2_type == 'url' ? 'a' : 'div' ; ?>>
 							<?php echo $credit_line_2_type == 'text' ? '<div>' . $credit_line_2 . '</div>' : '' ; ?>
@@ -402,10 +451,11 @@
 					// end blockquote
 					// start blockquote rotator
 				elseif (get_row_layout() == "blockquote_rotator"):
+					$item_size = get_sub_field('layout');
 					$quotes = get_sub_field('quotes');
 					if ($quotes):
 					?>
-					<div id="slider" class="blockquote-rotator flexslider flexslider-quote ">
+					<div id="slider" class="no-margin-unit blockquote-rotator flexslider flexslider-quote <?php echo 'item-'  . $item_count . ' ' . $item_size; ?>">
 					    <ul class="slides">
 							<?php
 								foreach ($quotes as $quote):
@@ -414,15 +464,20 @@
 							?>
 
 							<li>
-								<blockquote>
+								<blockquote class="<?php echo $item_count; ?>">
 								<?php echo $quote['quote']; ?>
-								<<?php echo $quote['credit_line_2_type'] == 'url' ? 'a href="' . $quote['credit_line_2'] . '"' : 'div' ; ?><?php echo $quote['credit_line_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower($quote['credit_line_2'])) . '"' : '' ; ?> <?php echo $target; ?>>
+								<<?php echo $quote['credit_line_2_type'] == 'url' ? 'a href="' . $quote['credit_line_2'] . '"' : 'div' ; ?><?php echo $quote['credit_line_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($quote['credit_line_2']))) . '"' : '' ; ?> <?php echo $target; ?>>
 									<?php echo $quote['credit_line_1']; ?>
 								</<?php echo $quote['credit_line_2_type'] == 'url' ? 'a' : 'div' ; ?>>
 								<?php echo $quote['credit_line_2_type'] == 'text' ? '<div>' . $quote['credit_line_2'] . '</div>' : '' ; ?>
 								</blockquote>
 							</li>
-						<?php endforeach; ?>
+					        <?php
+								if($quote != end($quotes)) {
+									$item_count++;
+								}
+					        	endforeach;
+					        ?>
 					    </ul>
 					</div>
 				    <?php
@@ -430,13 +485,14 @@
 					// end blockquote rotator
 					// start image
 				elseif (get_row_layout() == "image"):
+					$item_size = get_sub_field('layout');
 						$image = get_sub_field('image');
 						$image_link = get_sub_field("image_link");
 						$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
 
 					if ($image):
 				?>
-				<a class="img-link" <?php echo $target; ?> style="width:<?php echo $image['width'] . "px"; ?>; height:<?php echo $image['height'] . "px"; ?>;" href="<?php echo $image_link; ?>" target="_blank" href="<?php echo $image_link; ?>" <?php echo $target; ?> >
+				<a class="no-margin-unit img-link <?php echo 'item-' . $item_count . ' ' . $item_size ?>" <?php echo $target; ?> href="<?php echo $image_link; ?>" >
 					<div class="image-frame">
 						<img src="<?php echo $image['url']; ?>" alt="">
 					</div>
@@ -446,6 +502,7 @@
 					// end image
 					// start image with hover
 				elseif (get_row_layout() == "image_with_hover"):
+					$item_size = get_sub_field('layout');
 						$image = get_sub_field('image');
 						$image_link = get_sub_field('image_link');
 						$image_hover = get_sub_field("image_hover");
@@ -453,7 +510,7 @@
 
 					if ($image):
 				?>
-				<a class="img-link" <?php echo $target; ?> style="width:<?php echo $image['width'] . "px"; ?>; height:<?php echo $image['height'] . "px"; ?>;" href="<?php echo $image_link; ?>" target="_blank" >
+				<a class="no-margin-unit img-link <?php echo 'item-' . $item_count . ' ' . $item_size ?>" <?php echo $target; ?>  href="<?php echo $image_link; ?>" >
 					<div class="image-frame-hover">
 						<img src="<?php echo $image['url']; ?>" alt="">
 						<img src="<?php echo $image_hover['url']; ?>" alt="">
@@ -464,19 +521,26 @@
 					// end image with hover
 					// start image gallery
 				elseif (get_row_layout() == "image_gallery"):
+					$item_size = get_sub_field('layout');
 					$images = get_sub_field('images');
 				?>
-					<div class="image-gallery">
+					<div class="no-margin-unit image-gallery <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 						<?php foreach ($images as $image): ?>
-							<a class="image-gallery-anchor" rel="image-gallery" href="<?php echo $image['url']; ?>">
+							<a class="image-gallery-anchor <?php echo $item_count; ?>" rel="image-gallery" href="<?php echo $image['url']; ?>">
 								<img class="image" src="<?php echo $image['sizes']['gallery-thumbnail']; ?>" data-target="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['description']; ?>" >
 							</a>
-						<?php endforeach ?>
+					        <?php
+								if($image != end($images)) {
+									$item_count++;
+								}
+					        	endforeach;
+					        ?>
 					</div>
 				<?php
 					// end image gallery
 					// start pdf link
 				elseif (get_row_layout() == "pdf_link"):
+					$item_size = get_sub_field('layout');
 					$text = get_sub_field("text");
 					$pdf = get_sub_field('pdf');
 					$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
@@ -500,7 +564,7 @@
 					}
 					if ($pdf):
 				?>
-				<div class="pdf">
+				<div class="no-margin-unit pdf <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 					<a class="text" href="<?php echo $pdf['url']; ?>" <?php echo $target; ?> >
 					<div class="icon-pdf">PDF</div>
 					<<?php echo $tag; ?>>
@@ -513,6 +577,7 @@
 					// end pdf link
 					// start accordion_editor
 				elseif (get_row_layout() == "accordion_editor"):
+					$item_size = get_sub_field('layout');
 					$accordions = get_sub_field("accordion");
 					$type = get_sub_field("heading_type");
 					switch ($type) {
@@ -533,10 +598,10 @@
 							break;
 					}
 				?>
-				<ul class="accordion-editor">
+				<ul class="no-margin-unit accordion-editor <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 					<?php foreach ($accordions as $accordion): ?>
 					<li>
-						<<?php echo $tag; ?> class="accordion-heading icon-accordion-heading">
+						<<?php echo $tag; ?> class="accordion-heading icon-accordion-heading <?php echo $item_count; ?>">
 							<?php echo $accordion['heading'] ? $accordion['heading'] : ''; ?>
 						</<?php echo $tag; ?>>
 						<div class="accordion-section">
@@ -545,12 +610,18 @@
 							</div>
 						</div>
 					</li>
-					<?php endforeach ?>
+			        <?php
+						if($accordion != end($accordions)) {
+							$item_count++;
+						}
+			        	endforeach;
+			        ?>
 				</ul>
 				<?php
 					// end accordion_editor
 					// start accordion_links
 				elseif (get_row_layout() == "accordion_links"):
+					$item_size = get_sub_field('layout');
 					$accordions = get_sub_field("accordion");
 					$type = get_sub_field("heading_type");
 					switch ($type) {
@@ -576,7 +647,7 @@
 							break;
 					}
 				?>
-				<ul class="accordion-links">
+				<ul class="no-margin-unit accordion-links <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 					<?php
 						foreach ($accordions as $accordion):
 							$links = $accordion['links'];
@@ -589,26 +660,36 @@
 						<div class="accordion-section">
 							<div class="accordion-margin">
 								<?php foreach ($links as $link): ?>
-								<<?php echo $link['text_2_type'] == 'url' ? 'a href="' . $link['text_2'] . '"' : $next_tag ; ?><?php echo $link['text_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower($link['text_2'])) . '"' : '' ; ?>>
-								<?php echo $link['text'] ? $link['text'] : '' ; ?>
-								</<?php echo $link['text_2_type'] == 'url' ? 'a' : $next_tag ; ?>>
-								<?php echo $link['text_2_type'] == 'text' ? '<' . $next_tag . '>' . $link['text_2'] . '</' . $next_tag . '>' : '' ; ?>
-
-								<?php endforeach ?>
+									<<?php echo $link['text_2_type'] == 'url' ? 'a href="' . $link['text_2'] . '"' : $next_tag ; ?><?php echo $link['text_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($link['text_2']))) . ' ' .$item_count . '"' : '' ; ?>>
+									<?php echo $link['text'] ? $link['text'] : '' ; ?>
+									</<?php echo $link['text_2_type'] == 'url' ? 'a' : $next_tag ; ?>>
+									<?php echo $link['text_2_type'] == 'text' ? '<' . $next_tag . ' class="' . $item_count . '">' . $link['text_2'] . '</' . $next_tag . '>' : '' ; ?>
+							        <?php
+										if($link != end($links)) {
+											$item_count++;
+										}
+							        	endforeach;
+							        ?>
 							</div>
 						</div>
 					</li>
-					<?php endforeach ?>
+			        <?php
+						if($accordion != end($accordions)) {
+							$item_count++;
+						}
+			        	endforeach;
+			        ?>
 				</ul>
 				<?php
 					// end accordion_links
 					// start accordion_link button
 				elseif (get_row_layout() == "accordion_button"):
+					$item_size = get_sub_field('layout');
 					$button_text = get_sub_field('button_text');
 					$editor = get_sub_field('editor');
 					if ($button_text):
 				?>
-				<div class="accordion-button-wrapper">
+				<div class="no-margin-unit accordion-button-wrapper <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 					<div class="accordion-button">
 						<?php echo $button_text; ?>
 					</div>
@@ -623,8 +704,8 @@
 					endif;
 					// end accordion_link button
 					// start youtube video
-				elseif (get_row_layout() == "youtube"): ?>
-				<?php
+				elseif (get_row_layout() == "youtube"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					$video_link = get_sub_field('video_link');
 					$video_image = get_sub_field('video_image');
@@ -648,7 +729,7 @@
 					}
 					if ($heading):
 				?>
-					<<?php echo $tag; ?> class="accordion_link">
+					<<?php echo $tag; ?> <?php echo 'class="no-margin-unit video item-' . $item_count . ' ' . $item_size . '"'; ?>>
 						<?php
 							echo $heading ? $heading : '';
 						?>
@@ -657,7 +738,7 @@
 					endif;
 					if ($video_link):
 				?>
-					<div class="video-wrapper">
+					<div class="no-margin-unit video-wrapper <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 				   		<a class="y-video" href="<?php echo $video_link; ?>">
 				   			<img src="<?php echo $video_image['url'] ? $video_image['url'] : ""; ?>">
 				   		</a>
@@ -666,9 +747,8 @@
 					endif;
 					// end youtube video
 					// start vimeo video
-				elseif (get_row_layout() == "vimeo"): ?>
-
-				<?php
+				elseif (get_row_layout() == "vimeo"):
+					$item_size = get_sub_field('layout');
 					$heading = get_sub_field('heading');
 					$video_link = get_sub_field('video_link');
 					$video_image = get_sub_field('video_image');
@@ -692,7 +772,7 @@
 					}
 					if ($heading):
 				?>
-					<<?php echo $tag; ?> class="accordion_link">
+					<<?php echo $tag; ?> <?php echo 'class="no-margin-unit video item-' . $item_count . ' ' . $item_size . '"'; ?>>
 						<?php
 							echo $heading ? $heading : '';
 						?>
@@ -701,7 +781,7 @@
 					endif;
 					if ($video_link):
 				?>
-					<div class="video-wrapper">
+					<div class="no-margin-unit video-wrapper <?php echo 'item-' . $item_count . ' ' . $item_size; ?>">
 				   		<a class="v-video" href="<?php echo $video_link; ?>">
 				   			<img src="<?php echo $video_image['url'] ? $video_image['url'] : ""; ?>">
 				   		</a>
