@@ -7,12 +7,10 @@
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
 @import "../../../../bower_components/responsive-nav/responsive-nav";
-@import "modules/accordion-links";
-@import "modules/map";
-@import "modules/isotope";
-@import "modules/flexslider";
-@import "modules/fancybox";
-@import "modules/responsive-nav";
+@import "framework/isotope";
+@import "framework/flexslider";
+@import "framework/fancybox";
+@import "framework/responsive-nav";
 
 // Uncomment @import, to import Bower assets
 // Example: bower install [vendor] (in the root of your project)

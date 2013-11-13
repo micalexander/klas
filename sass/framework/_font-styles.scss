@@ -1,9 +1,22 @@
-$heading-font: sans-serif;
+$heading-font:sans-serif;
 $body-font: sans-serif;
 $body-color: #333;
 $heading-color: #333;
 $link-color: #000;
 $link-hover: #333;
+$p: .7em;
+
+
+// Rem Font Sizing
+@mixin font-size-rem($size: 1.6){
+  font-size: ($size * 10 + 5) + px;
+  font-size: $size + rem;
+}
+
+@mixin line-height-rem($size: 1.6){
+  line-height: ($size * 10 + 5) + px;
+  line-height: $size + rem;
+}
 
 body {
 	color: $body-color;
