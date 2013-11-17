@@ -8,9 +8,9 @@ $(document).ready(function(){
 			if (!clicks) {
 				$(this).addClass('selected');
 			    $(this).next('.accordion-section').addClass('selected').slideDown();
-			    $(this).siblings('.accordion-heading').removeClass('selected');
-			    $(this).siblings('.accordion-heading').removeData('clicks');
-			    $(this).siblings('.accordion-heading').next('.accordion-section').removeClass('selected').slideUp();
+			    $(this).parent().siblings().children('.accordion-heading').removeClass('selected');
+			    $(this).parent().siblings().children('.accordion-heading').removeData('clicks');
+			    $(this).parent().siblings().children('.accordion-heading').next('.accordion-section').removeClass('selected').slideUp();
 			    $(this).siblings().children().children().click(function() {
 			    	var childClicks = $(this).data('clicks');
 			    	if (!childClicks) {
@@ -24,9 +24,9 @@ $(document).ready(function(){
 			} else {
 				$(this).removeClass('selected');
 			    $(this).next('.accordion-section').removeClass('selected').slideUp();
-			    $(this).siblings('.accordion-heading').removeClass('selected');
-			    $(this).siblings('.accordion-heading').removeData('clicks');
-			    $(this).siblings('.accordion-heading').next('.accordion-section').removeClass('selected').slideUp();
+			    $(this).parent().siblings().children('.accordion-heading').removeClass('selected');
+			    $(this).parent().siblings().children('.accordion-heading').removeData('clicks');
+			    $(this).parent().siblings().children('.accordion-section').removeClass('selected').slideUp();
 			}
 			$(this).data("clicks", !clicks);
         });

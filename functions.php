@@ -224,15 +224,6 @@ function run_options_once() {
 
 add_action('init', 'run_options_once');
 
-
-run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
-run_activate_plugin( 'advanced-custom-fields/acf.php' );
-run_activate_plugin( 'acf-flexible-content/acf-flexible-content.php' );
-run_activate_plugin( 'acf-gallery/acf-gallery.php' );
-run_activate_plugin( 'acf-options-page/acf-options-page.php' );
-run_activate_plugin( 'acf-repeater/acf-repeater.php' );
-run_activate_plugin( 'ambrosite-body-class-enhanced/ambrosite-body-class.php' );
-
 function poststuff_height_fix() {
   echo '<style>
 		#poststuff {
@@ -265,12 +256,21 @@ function unit_size_override() {
 	.field.sub_field.field_type-select.field_key-field_527a6820291f2 {
 		// display: none;
 	}
+	table.acf_input tbody tr td.label {
+		width: 5%;
+	}
+	table.acf_input tbody tr td.label label{
+		// font-size: 10px;
+	}
+	table.acf_input tbody tr td {
+		padding: 12px 6px;
+	}
 	</style>';
 }
 
-
 add_action('admin_head', 'unit_size_override');
 
-
+// auto activate plugins
+run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
 ?>

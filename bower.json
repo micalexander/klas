@@ -20,13 +20,11 @@
     ],
         "dependencies": {
         "enquire": "~2.1.0",
-        "foundation": "~4.3.2",
         "fancybox": "~2.1.5",
         "flexslider": "*",
         "responsive-nav": "~1.0.23",
         "matchmedia": "~0.1.0",
         "leaflet": "~0.6.4",
         "media-match": "~2.0.2",
-        "isotope": "~1.5.25"
     }
 }

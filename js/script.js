@@ -7,7 +7,6 @@
 // the hash/pound to the left of the keyword "require" needs to be removed.
 
 //= require "responsive-nav/responsive-nav"
-//= require "isotope/jquery.isotope.min"
 //= require "media-match/media.match"
 //= require "matchmedia/matchMedia.addListener"
 //= require "enquire/dist/enquire"
@@ -16,9 +15,9 @@
 //= require "fancybox/source/helpers/jquery.fancybox-media"
 //= require "framework/mask-framework"
 //= require "framework/image-gallery"
-//= require "modules/responsive-nav"
-//= require "modules/flexslider"
-//= require "modules/fancybox"
-//= require "modules/enquire"
-//= require "modules/isotope"
+//= require "framework/responsive-nav"
+//= require "framework/flexslider"
+//= require "framework/fancybox"
+//= require "framework/enquire"
+
 

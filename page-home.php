@@ -2,9 +2,11 @@
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?><!-- start loop -->
 
 		<section>
-
-			<?php get_template_part( 'partial-flexible-content' ); ?>
-
+			<div class="container">
+				<div class="grid">
+					<?php get_template_part( 'inc/gridpress/_views' ); ?>
+				</div>
+			</div>
 		</section>
 
 		<?php get_sidebar(); ?>
