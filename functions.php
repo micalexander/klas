@@ -234,7 +234,7 @@ function poststuff_height_fix() {
 
 add_action('admin_head', 'poststuff_height_fix');
 
-require_once( 'includes/created-custom-fields.php' );
+require_once( 'inc/gridpress/_array.php' );
 
 function temp_acf_fix() {
   echo '<style>
