@@ -25,6 +25,6 @@
         "responsive-nav": "~1.0.23",
         "matchmedia": "~0.1.0",
         "leaflet": "~0.6.4",
-        "media-match": "~2.0.2",
+        "media-match": "~2.0.2"
     }
 }
