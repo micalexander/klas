@@ -1,11 +1,22 @@
 <?php
+
+	$slug_to_get = get_post_type_object( get_post_type() )->rewrite['slug'];
+	$args = array(
+				'name' => $slug_to_get,
+				'post_type' => 'page',
+				'post_status' => 'publish',
+				'showposts' => 1,
+				'caller_get_posts'=> 1
+			);
+	$archive_page = get_posts($args);
+
 	// set counters to 0
 	$map_count = 0;
 	$unit_count = 0;
 	$sub_unit_count = 0;
 	$item_count = 0;
 
-	if (get_field('grid')) : while(has_sub_field('grid')):
+	if (get_field('archive_grid', $archive_page[0]->ID)) : while(has_sub_field('archive_grid', $archive_page[0]->ID)):
 
 		$unit_count++;
 		$unit_size = get_sub_field('unit_span');
@@ -71,8 +82,8 @@
 							// start pdf link
 						elseif (get_row_layout() == "pdf_link"):
 							require( 'pdf-link.php');
-						elseif (get_row_layout() == "accordion_editor"):
 							// start accordion_editor
+						elseif (get_row_layout() == "accordion_editor"):
 							require( 'accordion-editor.php');
 							// start accordion_links
 						elseif (get_row_layout() == "accordion_links"):
@@ -80,6 +91,9 @@
 							// start accordion_link button
 						elseif (get_row_layout() == "accordion_button"):
 							require( 'accordion-button.php');
+							// start archive
+						elseif (get_row_layout() == "archive"):
+							require( 'archive.php');
 							// start youtube video
 						elseif (get_row_layout() == "youtube"):
 							require( 'youtube.php');

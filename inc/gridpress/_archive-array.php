@@ -3,17 +3,17 @@
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_flexible-content',
-		'title' => 'Flexible Content',
+		'id' => 'acf_archive-content',
+		'title' => 'Archive Content',
 		'fields' => array (
 			array (
-				'key' => 'field_527a680f291f1',
-				'label' => __('Grid'),
-				'name' => 'grid',
+				'key' => 'field_qxr6jseoardss6',
+				'label' => __('Archive Grid'),
+				'name' => 'archive_grid',
 				'type' => 'repeater',
 				'sub_fields' => array (
 					array (
-						'key' => 'field_527a6820291f2',
+						'key' => 'field_35x3wyn7wrdnw1',
 						'label' => __('Unit Span'),
 						'name' => 'unit_span',
 						'type' => 'select',
@@ -35,13 +35,13 @@ if(function_exists("register_field_group"))
 						'multiple' => 0,
 					),
 					array (
-						'key' => 'field_527a680f291f1',
+						'key' => 'field_ezmltlwwjnukmy',
 						'label' => __('Unit'),
 						'name' => 'unit',
 						'type' => 'repeater',
 						'sub_fields' => array (
 							array (
-								'key' => 'field_527a6820291f2',
+								'key' => 'field_bd7ekjqlmlrlq2',
 								'label' => __('Nested Unit Span'),
 								'name' => 'nested_unit_span',
 								'type' => 'select',
@@ -63,7 +63,7 @@ if(function_exists("register_field_group"))
 								'multiple' => 0,
 							),
 							array (
-								'key' => 'field_527a6c8b291f5',
+								'key' => 'field_3yjai0r3rnmjfs',
 								'label' => __('Nested Unit'),
 								'name' => 'nested_unit',
 								'type' => 'flexible_content',
@@ -77,7 +77,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7c426fb39',
+												'key' => 'field_nvtq4qbkxsqs9k',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -94,14 +94,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527b0068a418f',
+												'key' => 'field_jeyq1ysqb84829',
 												'label' => __('Accordions'),
 												'name' => 'accordion',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527b008da4190',
+														'key' => 'field_14tflcxwtv7wni',
 														'label' => __('Heading'),
 														'name' => 'heading',
 														'type' => 'text',
@@ -114,7 +114,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527b00aaa4191',
+														'key' => 'field_3q83i68ju7jfif',
 														'label' => __('Editor'),
 														'name' => 'editor',
 														'type' => 'wysiwyg',
@@ -139,7 +139,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7c756fb3b',
+												'key' => 'field_ovpsm4gt4wya4o',
 												'label' => __('Button text'),
 												'name' => 'button_text',
 												'type' => 'text',
@@ -152,7 +152,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7c866fb3c',
+												'key' => 'field_vl5k7lys4wpefl',
 												'label' => __('Editor'),
 												'name' => 'editor',
 												'type' => 'text',
@@ -174,7 +174,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527c5669815f4',
+												'key' => 'field_t80stcpiwfaesh',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -191,14 +191,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527c5669815f5',
+												'key' => 'field_3yruqg5ghciww1',
 												'label' => __('Accordions'),
 												'name' => 'accordion',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527c5669815f6',
+														'key' => 'field_e1pxsgc79pg0ry',
 														'label' => __('Heading'),
 														'name' => 'heading',
 														'type' => 'text',
@@ -211,14 +211,14 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527c5669815f7',
+														'key' => 'field_lnb3yza4cruzi9',
 														'label' => __('Links'),
 														'name' => 'links',
 														'type' => 'repeater',
 														'column_width' => '',
 														'sub_fields' => array (
 															array (
-																'key' => 'field_527c56b5815f8',
+																'key' => 'field_xndr1qepc7j97l',
 																'label' => __('Text'),
 																'name' => 'text',
 																'type' => 'text',
@@ -231,7 +231,7 @@ if(function_exists("register_field_group"))
 																'maxlength' => '',
 															),
 															array (
-																'key' => 'field_527c56c7815f9',
+																'key' => 'field_4w50s9zvwg0usj',
 																'label' => __('Text 2'),
 																'name' => 'text_2',
 																'type' => 'text',
@@ -244,7 +244,7 @@ if(function_exists("register_field_group"))
 																'maxlength' => '',
 															),
 															array (
-																'key' => 'field_527c5b1f3db92',
+																'key' => 'field_4aiwod1qdszdja',
 																'label' => __('Text 2 type'),
 																'name' => 'text_2_type',
 																'type' => 'select',
@@ -274,6 +274,136 @@ if(function_exists("register_field_group"))
 										),
 									),
 									array (
+										'label' => __('Archive'),
+										'name' => 'archive',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_adfas456b3b',
+												'label' => __('Post Type'),
+												'name' => 'post_type',
+												'type' => 'text',
+												'column_width' => '',
+												'choices' => 'conservation-news',
+												'default_value' => '',
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+												'formatting' => 'html',
+												'maxlength' => '',
+											),
+											array (
+												'key' => 'field_psidud546c',
+												'label' => __('Post Per Page'),
+												'name' => 'post_per_page',
+												'type' => 'number',
+												'instructions' => __(''),
+												'column_width' => 15,
+												'default_value' => 10,
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+												'min' => -1,
+												'max' => '',
+												'step' => '',
+											),
+											array (
+												'key' => 'field_bd7ekjqdsfdmlrlq2',
+												'label' => __('Archive Unit Span'),
+												'name' => 'archive_unit_span',
+												'type' => 'select',
+												'column_width' => '',
+												'choices' => array (
+													'one-of-one' => 'One of one',
+													'one-of-two' => 'One of two',
+													'one-of-three' => 'One of three',
+													'one-of-four' => 'One of four',
+													'one-of-five' => 'One of five',
+													'two-of-three' => 'Two of three',
+													'two-of-five' => 'Two of five',
+													'three-of-four' => 'Three of four',
+													'three-of-five' => 'Three of five',
+													'four-of-five' => 'Four of five',
+												),
+												'default_value' => 'one-of-one',
+												'allow_null' => 0,
+												'multiple' => 0,
+											),
+											array (
+												'key' => 'field_5qpwsdonsds10',
+												'label' => __('Filter by'),
+												'name' => 'filter_by',
+												'type' => 'select',
+												'column_width' => '',
+												'choices' => array (
+													'category' => 'Category',
+													'month' => 'Month',
+													'last_name' => 'Last Name',
+													'title' => 'Title',
+												),
+												'default_value' => 'title',
+												'allow_null' => 0,
+												'multiple' => 0,
+											),
+											array (
+												'key' => 'field_5qpwsdons10',
+												'label' => __('Elements to Display'),
+												'name' => 'elements',
+												'type' => 'repeater',
+												'column_width' => '',
+												'sub_fields' => array (
+													array (
+														'key' => 'field_df09ushkwse3',
+														'label' => __('Element'),
+														'name' => 'element',
+														'type' => 'select',
+														'column_width' => '',
+														'choices' => array (
+															'byline' => 'Byline',
+															'dates' => 'Dates',
+															'days' => 'Days',
+															'email' => 'Email',
+															'excerpt' => 'Excerpt',
+															'full_name' => 'Full name',
+															// 'relationship' => 'Relationship',
+															'main_image' => 'Main image',
+															'vimeo' => 'Vimeo',
+															'youtube' => 'Youtube',
+														),
+														'default_value' => 'main_image',
+														'allow_null' => 0,
+														'multiple' => 0,
+													),
+													array (
+														'key' => 'field_df0sdfaswse3',
+														'label' => __('Unit span'),
+														'name' => 'unit-span',
+														'type' => 'select',
+														'column_width' => '',
+														'choices' => array (
+															'one-of-one' => 'One of one',
+															'one-of-two' => 'One of two',
+															'one-of-three' => 'One of three',
+															'one-of-four' => 'One of four',
+															'one-of-five' => 'One of five',
+															'two-of-three' => 'Two of three',
+															'two-of-five' => 'Two of five',
+															'three-of-four' => 'Three of four',
+															'three-of-five' => 'Three of five',
+															'four-of-five' => 'Four of five',
+														),
+														'default_value' => 'one-of-one',
+														'allow_null' => 0,
+														'multiple' => 0,
+													),
+												),
+											'button_label' => 'Add another Element',
+											),
+										),
+									),
+									array (
 										'label' => __('Blockquote'),
 										'name' => 'blockquote',
 										'display' => 'row',
@@ -281,7 +411,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7aed4882d',
+												'key' => 'field_o3mtp9f43yw71p',
 												'label' => __('Quote'),
 												'name' => 'quote',
 												'type' => 'text',
@@ -294,7 +424,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7afb4882e',
+												'key' => 'field_ik8p26ory1ljxk',
 												'label' => __('Credit line 1'),
 												'name' => 'credit_line_1',
 												'type' => 'text',
@@ -307,7 +437,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7b064882f',
+												'key' => 'field_scmdlm9iythdgk',
 												'label' => __('Credit line 2'),
 												'name' => 'credit_line_2',
 												'type' => 'text',
@@ -320,7 +450,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d31c986310',
+												'key' => 'field_t0dsr6etzt33dt',
 												'label' => __('Credit line 2 type'),
 												'name' => 'credit_line_2_type',
 												'type' => 'select',
@@ -335,7 +465,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527d31f486311',
+												'key' => 'field_7t5738fbapea8u',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -353,14 +483,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7b1e48831',
+												'key' => 'field_3mzeg7smctqo40',
 												'label' => __('Quotes'),
 												'name' => 'quotes',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527a7b2a48832',
+														'key' => 'field_7eixev1s837zcv',
 														'label' => __('Quote'),
 														'name' => 'quote',
 														'type' => 'text',
@@ -373,7 +503,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527a7b3f48833',
+														'key' => 'field_wvldxugrmtpui1',
 														'label' => __('Credit line 1'),
 														'name' => 'credit_line_1',
 														'type' => 'text',
@@ -386,7 +516,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527a7b4d48834',
+														'key' => 'field_wq6uq7op6x49of',
 														'label' => __('Credit line 2'),
 														'name' => 'credit_line_2',
 														'type' => 'text',
@@ -399,7 +529,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527d29f6148da',
+														'key' => 'field_rya0wh6tqvto1r',
 														'label' => __('Credit line 2 type'),
 														'name' => 'credit_line_2_type',
 														'type' => 'select',
@@ -414,7 +544,7 @@ if(function_exists("register_field_group"))
 														'multiple' => 0,
 													),
 													array (
-														'key' => 'field_527d2f192499e',
+														'key' => 'field_26m66ti9vlu925',
 														'label' => __('New window'),
 														'name' => 'new_window',
 														'type' => 'true_false',
@@ -438,7 +568,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7ab948829',
+												'key' => 'field_gsfzluwubr32j8',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -451,7 +581,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7acd4882a',
+												'key' => 'field_oi9q8wl0wrf4bk',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -464,7 +594,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7ad84882b',
+												'key' => 'field_rxe3i4w6o5keks',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -482,14 +612,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a79dd748cc',
+												'key' => 'field_vcadob0nlad8uo',
 												'label' => __('Editors'),
 												'name' => 'editor',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527a99ffe011d',
+														'key' => 'field_ef4aa2h38f6e4k',
 														'label' => __('Editor'),
 														'name' => 'editor',
 														'type' => 'wysiwyg',
@@ -514,7 +644,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_52ds2968ded6',
+												'key' => 'field_50cbbn2qi7itum',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -527,7 +657,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d3de684654',
+												'key' => 'field_zhm78sawnc4dad',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -543,7 +673,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_4sdf9ded60a',
+												'key' => 'field_48p9bjuuawk0cl',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -556,7 +686,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7sfd80b',
+												'key' => 'field_qu25lrf1hior48',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -574,7 +704,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7b6748836',
+												'key' => 'field_r9vjevhi6j4iia',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -587,7 +717,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7b7f48837',
+												'key' => 'field_elxlzj24ktlv9s',
 												'label' => __('Image link'),
 												'name' => 'image_link',
 												'type' => 'text',
@@ -600,7 +730,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7b8748838',
+												'key' => 'field_bzp4sup7wihhe9',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -618,7 +748,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527ad4eadc276',
+												'key' => 'field_b3i767b3yfa3y5',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -636,7 +766,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527d482fb389c',
+												'key' => 'field_54v8nksze0ec8j',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -654,7 +784,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527aca0569bb5',
+												'key' => 'field_v5zbkj5mbdq3ad',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -672,7 +802,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7bb96fb2e',
+												'key' => 'field_ipsbpprbwxfx95',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -682,7 +812,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_527a7bc86fb2f',
+												'key' => 'field_iiyas0k1jtcdhw',
 												'label' => __('Hover image'),
 												'name' => 'hover_image',
 												'type' => 'image',
@@ -692,7 +822,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_527a7bda6fb30',
+												'key' => 'field_zb3jrfwwu3p8gt',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -705,7 +835,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7be26fb31',
+												'key' => 'field_jvsy0suq2uh4zw',
 												'label' => __('New Window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -723,7 +853,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527b2632285be',
+												'key' => 'field_b6li42nze9fgcm',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -742,7 +872,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527d774989f16',
+												'key' => 'field_cbms80doj6c93h',
 												'label' => __('Map'),
 												'name' => 'map',
 												'type' => 'google_map',
@@ -752,7 +882,7 @@ if(function_exists("register_field_group"))
 												'height' => '',
 											),
 											array (
-												'key' => 'field_527d774989f17',
+												'key' => 'field_v3ws12hsdx6iwh',
 												'label' => __('Map height'),
 												'name' => 'map_height',
 												'type' => 'number',
@@ -767,7 +897,7 @@ if(function_exists("register_field_group"))
 												'step' => '',
 											),
 											array (
-												'key' => 'field_527d774989f18',
+												'key' => 'field_42prohsdli77n8',
 												'label' => __('Style ID'),
 												'name' => 'style_id',
 												'type' => 'text',
@@ -781,7 +911,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d774989f19',
+												'key' => 'field_si3hjfizlaz3fd',
 												'label' => __('Zoom level'),
 												'name' => 'zoom_level',
 												'type' => 'number',
@@ -795,14 +925,14 @@ if(function_exists("register_field_group"))
 												'step' => '',
 											),
 											array (
-												'key' => 'field_527d774989f1a',
+												'key' => 'field_s24pasdf4fqjhk',
 												'label' => __('Markers'),
 												'name' => 'markers',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527d774989f1b',
+														'key' => 'field_t8yt5qzz1bui78',
 														'label' => __('Location'),
 														'name' => 'location',
 														'type' => 'google_map',
@@ -812,7 +942,7 @@ if(function_exists("register_field_group"))
 														'height' => '',
 													),
 													array (
-														'key' => 'field_527d774989f1c',
+														'key' => 'field_nxsv9asardhdy2',
 														'label' => __('Image'),
 														'name' => 'image',
 														'type' => 'image',
@@ -838,7 +968,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7bfd6fb33',
+												'key' => 'field_8uj1aounza5lbz',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -851,7 +981,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d20db9fdb0',
+												'key' => 'field_v0a54vja006ip6',
 												'label' => __('Text type'),
 												'name' => 'text_type',
 												'type' => 'select',
@@ -868,7 +998,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527a7c0c6fb34',
+												'key' => 'field_byfxk0m2nnyg4o',
 												'label' => __('PDF'),
 												'name' => 'pdf',
 												'type' => 'file',
@@ -877,7 +1007,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_527a7c166fb35',
+												'key' => 'field_r4txc9e0u4t3ko',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -895,7 +1025,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527d3de684654',
+												'key' => 'field_2xndakush8k1kq',
 												'label' => __('Primary header menu'),
 												'name' => 'primary_header_menu',
 												'type' => 'true_false',
@@ -904,7 +1034,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 1,
 											),
 											array (
-												'key' => 'field_527anmdisn276',
+												'key' => 'field_nkehcamubdanlq',
 												'label' => __('Custom theme menu location'),
 												'name' => 'custom_theme_menu_location',
 												'type' => 'text',
@@ -920,14 +1050,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a79f1748ce',
+												'key' => 'field_bsx6pq9va5zmoe',
 												'label' => __('Text links'),
 												'name' => 'text_link',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527a79fe748cf',
+														'key' => 'field_cfm0w5sowdkuar',
 														'label' => __('Text'),
 														'name' => 'text',
 														'type' => 'text',
@@ -940,7 +1070,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527a7a15748d0',
+														'key' => 'field_m2zhtzusfs7ixs',
 														'label' => __('Link'),
 														'name' => 'link',
 														'type' => 'text',
@@ -953,7 +1083,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_527a7a1b748d1',
+														'key' => 'field_a0bm5466yd74zh',
 														'label' => __('New window'),
 														'name' => 'new_window',
 														'type' => 'true_false',
@@ -977,7 +1107,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7a5c48824',
+												'key' => 'field_66m2arw0adipyw',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -990,7 +1120,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d41afb3ba7',
+												'key' => 'field_l85kyqisslsd2f',
 												'label' => __('Text type'),
 												'name' => 'text_type',
 												'type' => 'select',
@@ -1007,7 +1137,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527a7a6c48825',
+												'key' => 'field_g2z0kct6igw179',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -1026,7 +1156,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527d3dda02ed7',
+												'key' => 'field_m4gmm2851imcx3',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1039,7 +1169,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527d3de602ed8',
+												'key' => 'field_vo4gapzv90ad0q',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1056,14 +1186,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_527a7a7c48826',
+												'key' => 'field_hqk0lt6h7a1rxr',
 												'label' => __('Texts'),
 												'name' => 'text',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_527a7a9348827',
+														'key' => 'field_rvws7ttejwe9xk',
 														'label' => __('Text'),
 														'name' => 'text',
 														'type' => 'text',
@@ -1091,7 +1221,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7d156fb43',
+												'key' => 'field_tcbmubm6gdwhvj',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1104,7 +1234,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7d156fb44',
+												'key' => 'field_gi616zgmfyho2a',
 												'label' => __('Video link'),
 												'name' => 'video_link',
 												'type' => 'text',
@@ -1117,7 +1247,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7d156fb45',
+												'key' => 'field_3vb4fn3ybfrn1n',
 												'label' => __('Video image'),
 												'name' => 'video_image',
 												'type' => 'image',
@@ -1127,7 +1257,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_527a7d156fb46',
+												'key' => 'field_h8kzr8rwan1saa',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1148,7 +1278,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_527a7c976fb3e',
+												'key' => 'field_392u28xj9ylukq',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1161,7 +1291,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7cb46fb3f',
+												'key' => 'field_gtwz0ktb7dyigw',
 												'label' => __('Video link'),
 												'name' => 'video_link',
 												'type' => 'text',
@@ -1174,7 +1304,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_527a7cd26fb40',
+												'key' => 'field_8vu24fw25iotjj',
 												'label' => __('Video image'),
 												'name' => 'video_image',
 												'type' => 'image',
@@ -1184,7 +1314,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_527a7ce06fb41',
+												'key' => 'field_07a7c9nh9om95d',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1203,7 +1333,6 @@ if(function_exists("register_field_group"))
 										),
 									),
 								),
-
 								'button_label' => 'Add an Item',
 								'min' => '',
 								'max' => '',
@@ -1226,18 +1355,9 @@ if(function_exists("register_field_group"))
 					array (
 						'param' => 'page_template',
 						'operator' => '==',
-						'value' => 'default',
+						'value' => 'archive.php',
 						'order_no' => 0,
 						'group_no' => 0,
-					),
-				),
-				array (
-					array (
-						'param' => 'post_type',
-						'operator' => '==',
-						'value' => 'conservation-news',
-						'order_no' => 0,
-						'group_no' => 1,
 					),
 				),
 			),

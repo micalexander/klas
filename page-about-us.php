@@ -4,7 +4,7 @@
 		<section>
 			<div class="container">
 				<div class="grid">
-					<?php get_template_part( 'inc/gridpress/_views' ); ?>
+					<?php get_template_part( 'inc/gridpress/_page-views' ); ?>
 				</div>
 			</div>
 		</section>
