@@ -1364,9 +1364,9 @@ if(function_exists("register_field_group"))
 						'group_no' => 0,
 					),
 					array (
-						'param' => 'post_type',
+						'param' => 'page_template',
 						'operator' => '!=',
-						'value' => 'post',
+						'value' => 'archive.php',
 						'order_no' => 0,
 						'group_no' => 1,
 					),
