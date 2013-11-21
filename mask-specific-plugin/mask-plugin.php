@@ -14,7 +14,6 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'rotator-image', 1000, 400, true ); //(cropped)
     add_image_size( 'main-image', 1000, 400, true ); //(cropped)
     add_image_size( 'gallery-thumbnail', 200, 260, true ); //(cropped)
-    add_image_size( 'carousel-image', 80, 80, false ); //(cropped)
     add_image_size( 'headshot-image', 100, 100, true ); //(cropped)
     add_image_size( 'map-image', 370, 118, true ); //(cropped)
     add_image_size( 'one-of-one-image', 1000, 600, true ); //(cropped)
