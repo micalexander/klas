@@ -190,6 +190,12 @@ if ( ! function_exists( '_s_comment' ) ) :
 	}
 endif; // ends check for _s_comment()
 
+
+// require acf
+require_once( 'inc/gridpress/_page-array.php' );
+require_once( 'inc/gridpress/_archive-array.php' );
+require_once( 'inc/gridpress/_single-array.php' );
+
 function run_activate_plugin( $plugin ) {
     $current = get_option( 'active_plugins' );
     $plugin = plugin_basename( trim( $plugin ) );
@@ -233,8 +239,6 @@ function poststuff_height_fix() {
 }
 
 add_action('admin_head', 'poststuff_height_fix');
-
-require_once( 'inc/gridpress/_array.php' );
 
 function temp_acf_fix() {
   echo '<style>
