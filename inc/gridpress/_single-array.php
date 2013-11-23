@@ -1370,6 +1370,20 @@ if(function_exists("register_field_group"))
 						'order_no' => 0,
 						'group_no' => 1,
 					),
+					array (
+						'param' => 'post_type',
+						'operator' => '!=',
+						'value' => 'attachment',
+						'order_no' => 0,
+						'group_no' => 1,
+					),
+					array (
+						'param' => 'post_type',
+						'operator' => '!=',
+						'value' => 'post',
+						'order_no' => 0,
+						'group_no' => 1,
+					),
 				),
 			),
 			'options' => array (

@@ -38,11 +38,24 @@ if ( function_exists( 'add_image_size' ) ) {
 
 function mask_attachment_field_credit( $form_fields, $post ) {
 
-	$form_fields['mask-text'] = array(
-		'label' => 'Text',
+	$form_fields['mask-text-1'] = array(
+		'label' => 'Text Line 1',
 		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'text', true ),
+		'value' => get_post_meta( $post->ID, 'text-1', true ),
 	);
+
+	$form_fields['mask-text-2'] = array(
+		'label' => 'Text Line 2',
+		'input' => 'text',
+		'value' => get_post_meta( $post->ID, 'text-2', true ),
+	);
+
+	$form_fields['mask-text-3'] = array(
+		'label' => 'Text Line 3',
+		'input' => 'text',
+		'value' => get_post_meta( $post->ID, 'text-3', true ),
+	);
+
 
 	$form_fields['mask-url-text'] = array(
 		'label' => 'URL Text',
@@ -54,6 +67,12 @@ function mask_attachment_field_credit( $form_fields, $post ) {
 		'label' => 'URL',
 		'input' => 'text',
 		'value' => get_post_meta( $post->ID, 'url', true ),
+	);
+
+	$form_fields['mask-image-url'] = array(
+		'label' => 'Image Url',
+		'input' => 'text',
+		'value' => get_post_meta( $post->ID, 'image-url', true ),
 	);
 
 	$form_fields['mask-map-text-1'] = array(
@@ -107,14 +126,23 @@ add_filter( 'attachment_fields_to_edit', 'mask_attachment_field_credit', 10, 2 )
 
 function mask_attachment_field_credit_save( $post, $attachment ) {
 
-	if( isset( $attachment['mask-text'] ) )
-		update_post_meta( $post['ID'], 'text', $attachment['mask-text'] );
+	if( isset( $attachment['mask-text-1'] ) )
+		update_post_meta( $post['ID'], 'text-1', $attachment['mask-text-1'] );
+
+	if( isset( $attachment['mask-text-2'] ) )
+		update_post_meta( $post['ID'], 'text-2', $attachment['mask-text-2'] );
+
+	if( isset( $attachment['mask-text-3'] ) )
+		update_post_meta( $post['ID'], 'text-3', $attachment['mask-text-3'] );
 
 	if( isset( $attachment['mask-url-text'] ) )
 		update_post_meta( $post['ID'], 'url-text', $attachment['mask-url-text'] );
 
 	if( isset( $attachment['mask-url'] ) )
 		update_post_meta( $post['ID'], 'url', $attachment['mask-url'] );
+
+	if( isset( $attachment['mask-image-url'] ) )
+		update_post_meta( $post['ID'], 'image-url', $attachment['mask-image-url'] );
 
 	if( isset( $attachment['mask-map-text-1'] ) )
 		update_post_meta( $post['ID'], 'map-text-1', $attachment['mask-map-text-1'] );

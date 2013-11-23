@@ -20,8 +20,8 @@ guard 'sass',
 	:color_output => false,
 }
 
-guard 'sprockets', :destination => "#{theme_folder}/js/public", :asset_paths => ["#{theme_folder}/js/", 'bower_components/'], :minify => true do
-  watch "#{theme_folder}/js/script.js"
+guard 'sprockets', :destination => "#{theme_folder}/js/public", :asset_paths => ["#{theme_folder}/js/", 'bower_components/'], :minify => true, :root_file => '#{theme_folder}/js/public/script.js' do
+  watch(%r{#{theme_folder}/.+\.(js)$})
 end
 
 guard 'livereload' do

@@ -274,7 +274,17 @@ function unit_size_override() {
 
 add_action('admin_head', 'unit_size_override');
 
+function filter_meta_query( $pieces ) {
+
+	if ( !empty( $pieces['where'] ) ) {
+		$pieces['where'] = preg_replace( '/(key.*?)=/', "\$1LIKE", $pieces['where'] );
+	}
+
+	return $pieces;
+}
+
 // auto activate plugins
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
+
 
 ?>

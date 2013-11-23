@@ -43,7 +43,6 @@
 
 			</header>
 		</div>
-	<!-- <div class="wrapper"> -->
 
 
 		<div class="content-wrapper clearfix" role="main"> <!-- End Header -->
