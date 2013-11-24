@@ -11,15 +11,24 @@ div.nav-wrapper {
 			overflow: visible;
 			border-bottom: none;
 		}
-		ul {
+		ul.menu {
 			@include breakpoint(desktop){
 				height: 100%;
 				padding: 0 10px;
-				overflow: hidden;
 			}
-			li {
+			li.menu-item {
 				padding: 10px 3%;
 				border-top: 1px solid;
+				&.menu-item-has-children {
+					padding-left: 0;
+					padding-right: 0;
+					a {
+						margin-left: 3%;
+					}
+				}
+				ul.sub-menu {
+					margin-top: 10px;
+				}
 				@include breakpoint(desktop) {
 					position: relative;
 					float: left;
@@ -30,23 +39,19 @@ div.nav-wrapper {
 					&:hover a {
 						color: #777;
 					}
-
-					.sub-menu {
-						display: block;
+					ul.sub-menu {
 						display: none;
 						position: absolute;
 						top: 20px;
 						width: 200px;
 						height: 200px;
-						border-top: 20px solid black;
-						background: #5e5e5f;
 						z-index: 99999;
-						@include transition-property(background);
-						@include transition-duration(5s);
+						.cloned {
+							display: none;
+						}
 					}
 					&:hover .sub-menu {
 						display: block;
-						background: blue;
 						.menu-item {
 							float: none;
 						}
