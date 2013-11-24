@@ -115,9 +115,8 @@
 	$post_item_sorted 	= array();
 	$element_count 		= 0;
 
-	echo "<pre>" ; var_dump($query) ; echo "</pre><br>";
 	if ($query->have_posts()) : while ($query->have_posts()): $query->the_post();
-	the_title();
+
 		if (get_field('single_grid', $post->ID))
 		{
 
