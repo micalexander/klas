@@ -80,6 +80,14 @@ body,select,input,textarea{color:#333;}
 	padding: 0 1.5rem;
 	@include transition(.5s);
 	@include transition-delay(.7s);
+	.grid {
+		.unit + .unit {
+			margin-top: 20px;
+		}
+		.no-margin-unit + .no-margin-unit {
+			margin-top: 20px;
+		}
+	}
 }
 
 .grid {
@@ -160,14 +168,7 @@ body,select,input,textarea{color:#333;}
 .container {
 	max-width: 100%;
 	padding: 0;
-	.grid {
-		.unit + .unit {
-			margin-top: 20px;
-			.no-margin-unit + .no-margin-unit{
-				margin-top: 20px;
-			}
-		}
-	}
+
 }
 // -------------------------------------------------
 // MASK Mixins

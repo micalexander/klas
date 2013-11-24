@@ -3,16 +3,13 @@
 	  line-height: 0;
 	.image-gallery-anchor {
 			display: inline-block;
-			// margin: 0 auto;
-			// width: 200px;
-			// height: 260px;
-		@include breakpoint(desktop) {
+			@include breakpoint(desktop) {
 		}
 		.image {
 			padding-bottom: 2%;
-				width: 98%;
 			@include breakpoint(desktop) {
 				display: inline-block;
+				width: 98%;
 			}
 		}
 	}
