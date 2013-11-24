@@ -16,7 +16,9 @@
 @import "compass/utilities/general/clearfix";
 @import "framework/font-styles";
 
-
+// To NOT use Compass Sprites comment next two lines out
+@import "../img/icon/*.png";
+@include all-icon-sprites;
 
 // -------------------------------------------------
 // MASK Variables
@@ -164,7 +166,6 @@ body,select,input,textarea{color:#333;}
 			.no-margin-unit {
 				margin-bottom: 20px;
 			}
-			background: #ccc;
 		}
 	}
 }

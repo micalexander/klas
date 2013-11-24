@@ -16,10 +16,6 @@
 // Example: bower install [vendor] (in the root of your project)
 // @import "../../../../bower_components/";
 
-// To use NOT Compass Sprites comment next two lines out
-@import "../img/icon/*.png";
-@include all-icon-sprites;
-
 // COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
 // .icon-logo {
 // 	@include sprite-dimensions($icon-sprites, logo );
