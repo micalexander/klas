@@ -340,6 +340,8 @@ if(function_exists("register_field_group"))
 												'choices' => array (
 													'category' => 'Category',
 													'month' => 'Month',
+													'start_date' => 'Start date',
+													'published_date' => 'Published date',
 													'last_name' => 'Last Name',
 													'title' => 'Title',
 												),
