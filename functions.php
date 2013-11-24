@@ -98,10 +98,6 @@ function mask_menus_init() {
 	    wp_set_object_terms($home_nav_item, 'Primary Header Menu', 'nav_menu');
 	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
 	    wp_set_object_terms($contact_nav_item, 'Primary Header Menu', 'nav_menu');
-
-	    wp_set_object_terms($home_nav_item, 'Primary Footer Menu', 'nav_menu');
-	    wp_set_object_terms($about_nav_item, 'Primary Footer Menu', 'nav_menu');
-	    wp_set_object_terms($contact_nav_item, 'Primary Footer Menu', 'nav_menu');
 	}
 }
 
