@@ -20,11 +20,11 @@ function mask_menus_init() {
 	// Add custom navigation to theme and adds Primary Navigation menu
 	if (!term_exists('Primary Header Menu', 'nav_menu')) {
 
-	    $menu = wp_insert_term('Primary Header Menu', 'nav_menu', array('slug' => 'primary-header-menu'));
-	    $menu2 = wp_insert_term('Primary Footer Menu', 'nav_menu', array('slug' => 'primary-footer-menu'));
-
 	    // Select this menu in the current theme
+	    $menu = wp_insert_term('Primary Header Menu', 'nav_menu', array('slug' => 'primary-header-menu'));
 	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-header-menu" => $menu['term_id'])));
+
+	    $menu2 = wp_insert_term('Primary Footer Menu', 'nav_menu', array('slug' => 'primary-footer-menu'));
 	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-footer-menu" => $menu2['term_id'])));
 
 	    // Insert new page
@@ -56,48 +56,48 @@ function mask_menus_init() {
 		update_option( 'show_on_front', 'page' );
 
 	    // Insert new nav_menu_item (order matters for display purposes)
-	    $contact_nav_item = wp_insert_post(array('post_title' => 'Contact us',
+	    $contact_nav_item_header = wp_insert_post(array('post_title' => 'Contact us',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
 
-	    $about_nav_item = wp_insert_post(array('post_title' => 'About us',
+	    $about_nav_item_header = wp_insert_post(array('post_title' => 'About us',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
 
-	    $home_nav_item = wp_insert_post(array('post_title' => 'Home',
+	    $home_nav_item_header = wp_insert_post(array('post_title' => 'Home',
 	                                     'post_content' => '',
 	                                     'post_status' => 'publish',
 	                                     'post_type' => 'nav_menu_item'));
 
-	    add_post_meta($home_nav_item, '_menu_item_type', 'post_type');
-	    add_post_meta($home_nav_item, '_menu_item_menu_item_parent', '0');
-	    add_post_meta($home_nav_item, '_menu_item_object_id', $home);
-	    add_post_meta($home_nav_item, '_menu_item_object', 'page');
-	    add_post_meta($home_nav_item, '_menu_item_target', '');
-	    add_post_meta($home_nav_item, '_menu_item_xfn', '');
-	    add_post_meta($home_nav_item, '_menu_item_url', '');
+	    add_post_meta($home_nav_item_header, '_menu_item_type', 'post_type');
+	    add_post_meta($home_nav_item_header, '_menu_item_menu_item_parent', '0');
+	    add_post_meta($home_nav_item_header, '_menu_item_object_id', $home);
+	    add_post_meta($home_nav_item_header, '_menu_item_object', 'page');
+	    add_post_meta($home_nav_item_header, '_menu_item_target', '');
+	    add_post_meta($home_nav_item_header, '_menu_item_xfn', '');
+	    add_post_meta($home_nav_item_header, '_menu_item_url', '');
 
-	    add_post_meta($about_nav_item, '_menu_item_type', 'post_type');
-	    add_post_meta($about_nav_item, '_menu_item_menu_item_parent', '0');
-	    add_post_meta($about_nav_item, '_menu_item_object_id', $about);
-	    add_post_meta($about_nav_item, '_menu_item_object', 'page');
-	    add_post_meta($about_nav_item, '_menu_item_target', '');
-	    add_post_meta($about_nav_item, '_menu_item_xfn', '');
-	    add_post_meta($about_nav_item, '_menu_item_url', '');
+	    add_post_meta($about_nav_item_header, '_menu_item_type', 'post_type');
+	    add_post_meta($about_nav_item_header, '_menu_item_menu_item_parent', '0');
+	    add_post_meta($about_nav_item_header, '_menu_item_object_id', $about);
+	    add_post_meta($about_nav_item_header, '_menu_item_object', 'page');
+	    add_post_meta($about_nav_item_header, '_menu_item_target', '');
+	    add_post_meta($about_nav_item_header, '_menu_item_xfn', '');
+	    add_post_meta($about_nav_item_header, '_menu_item_url', '');
 
-	    add_post_meta($contact_nav_item, '_menu_item_type', 'post_type');
-	    add_post_meta($contact_nav_item, '_menu_item_menu_item_parent', '0');
-	    add_post_meta($contact_nav_item, '_menu_item_object_id', $contact);
-	    add_post_meta($contact_nav_item, '_menu_item_object', 'page');
-	    add_post_meta($contact_nav_item, '_menu_item_target', '');
-	    add_post_meta($contact_nav_item, '_menu_item_xfn', '');
-	    add_post_meta($contact_nav_item, '_menu_item_url', '');
+	    add_post_meta($contact_nav_item_header, '_menu_item_type', 'post_type');
+	    add_post_meta($contact_nav_item_header, '_menu_item_menu_item_parent', '0');
+	    add_post_meta($contact_nav_item_header, '_menu_item_object_id', $contact);
+	    add_post_meta($contact_nav_item_header, '_menu_item_object', 'page');
+	    add_post_meta($contact_nav_item_header, '_menu_item_target', '');
+	    add_post_meta($contact_nav_item_header, '_menu_item_xfn', '');
+	    add_post_meta($contact_nav_item_header, '_menu_item_url', '');
 
-	    wp_set_object_terms($home_nav_item, 'Primary Header Menu', 'nav_menu');
-	    wp_set_object_terms($about_nav_item, 'Primary Header Menu', 'nav_menu');
-	    wp_set_object_terms($contact_nav_item, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($home_nav_item_header, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($about_nav_item_header, 'Primary Header Menu', 'nav_menu');
+	    wp_set_object_terms($contact_nav_item_header, 'Primary Header Menu', 'nav_menu');
 
 	    // Insert new nav_menu_item (order matters for display purposes)
 	    $contact_nav_item_footer = wp_insert_post(array('post_title' => 'Contact us',
