@@ -143,7 +143,7 @@ function mask_menus_init() {
 	    wp_set_object_terms($about_nav_item_header, 'Primary Header Menu', 'nav_menu');
 	    wp_set_object_terms($contact_nav_item_header, 'Primary Header Menu', 'nav_menu');
 	}
-	if (!term_exists('Primary Header Menu', 'nav_menu')) {
+	if (!term_exists('Primary Footer Menu', 'nav_menu')) {
 	    $menu2 = wp_insert_term('Primary Footer Menu', 'nav_menu', array('slug' => 'primary-footer-menu'));
 	    update_option('theme_mods_mask', array("nav_menu_locations" => array("primary-footer-menu" => $menu2['term_id'])));
 	}
