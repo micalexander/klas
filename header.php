@@ -28,6 +28,7 @@
 
 </head>
 
+
 <body <?php body_class(); ?>>
 
 		<div class="header-wrapper">
@@ -38,6 +39,9 @@
 		        	    <nav class="nav-collapse">
 		        			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
 		        	    </nav>
+		        	    <div id="toggle">
+		        	    	<div class="icon-menu"></div>
+		        	    </div>
 		        	</div>
 		        </div>
 
