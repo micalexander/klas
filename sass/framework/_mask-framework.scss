@@ -161,10 +161,10 @@ body,select,input,textarea{color:#333;}
 	max-width: 100%;
 	padding: 0;
 	.grid {
-		.unit {
-			margin-bottom: 20px;
-			.no-margin-unit {
-				margin-bottom: 20px;
+		.unit + .unit {
+			margin-top: 20px;
+			.no-margin-unit + .no-margin-unit{
+				margin-top: 20px;
 			}
 		}
 	}

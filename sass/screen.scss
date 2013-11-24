@@ -62,6 +62,9 @@ body {
 	.header-wrapper {
 		margin: 0 auto;
 		padding: 0 3%;
+		& + .content-wrapper {
+			margin-top: 20px;
+		}
 		@include breakpoint(desktop) {
 			width: $page-width;
 			padding: 0;
@@ -72,6 +75,9 @@ body {
 	.content-wrapper {
 		margin: 0 auto;
 		padding: 0 3%;
+		& + .footer-wrapper {
+			margin-top: 20px;
+		}
 		@include breakpoint(desktop) {
 			width: $page-width;
 			padding: 0;

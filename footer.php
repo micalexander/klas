@@ -8,7 +8,7 @@
 		        			<?php wp_nav_menu( array( 'theme_location' => 'primary-footer-menu', 'container' => false) ); ?>
 		        		</nav>
 					</div>
-						<p class="copy">&copy; copyright <?php echo date("Y"); ?> Company</p>
+					<p class="copy unit one-of-one">&copy; copyright <?php echo date("Y"); ?> Company</p>
 				</div>
 			</footer>
 		</div>

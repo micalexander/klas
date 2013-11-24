@@ -16,12 +16,12 @@
 	-moz-box-shadow: none;
 	-o-box-shadow: none;
 	z-index: 0;
-	padding-bottom: 9%;
+	padding-bottom: 6%;
 	@include breakpoint(tablet){
-	padding-bottom: 5%;
+	padding-bottom: 3%;
 	}
 	@include breakpoint(desktop){
-	padding-bottom: 3%;
+	padding-bottom: 2%;
 	}
 }
 /* Direction Nav */
@@ -87,6 +87,7 @@
 .flexslider.carousel li img { width: auto; }
 ol.flex-control-paging {
 	bottom: -2px;
+	height: 13px;
 	text-align: right;
 	li {
 		margin: 0 0 0 1%;

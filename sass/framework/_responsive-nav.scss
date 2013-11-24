@@ -1,13 +1,11 @@
 div.nav-wrapper.unit {
 	overflow: visible;
 	min-height: 40px;
-	margin-bottom: 15px;
 	background: #ccc;
 	@include breakpoint(desktop) {
-		margin-bottom: 20px;
 	}
-	nav.nav-collapse {
-		border-bottom: 1px solid;
+	nav.nav-collapse, nav.footer {
+		border-bottom: 1px solid #fff;
 		@include breakpoint(desktop) {
 			overflow: visible;
 			border-bottom: none;
@@ -19,7 +17,7 @@ div.nav-wrapper.unit {
 			}
 			li.menu-item {
 				padding: 10px 3%;
-				border-top: 1px solid;
+				border-top: 1px solid #fff;
 				&.menu-item-has-children {
 					padding-left: 0;
 					padding-right: 0;
