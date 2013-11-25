@@ -118,7 +118,7 @@
 
 		$items_sorted = array();
 
-		// set to false if set
+		// set to false if previously set
 		if ($items['main_image'])
 		{
 			$items['main_image'] = false;
@@ -196,13 +196,13 @@
 								elseif (get_row_layout() == 'full_name' && in_array('full_name', $element_array)) {
 									$items['full_name'] = get_sub_field('full_name');
 								}
-								if (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
+								elseif (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
 									$items['main_image'] = get_sub_field('image');
 								}
-								if (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
+								elseif (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
 									$items['vimeo'] = get_sub_field('vimeo');
 								}
-								if (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
+								elseif (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
 									$items['youtube'] = get_sub_field('youtube');
 								}
 							// }
