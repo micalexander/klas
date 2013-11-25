@@ -109,13 +109,44 @@
 
 	$i 					= 0;
 	$items 				= array();
-	$items_sorted 		= array();
 	$element_array 		= array();
 	$post_by_months 	= array();
 	$post_item_sorted 	= array();
 	$element_count 		= 0;
 
 	if ($query->have_posts()) : while ($query->have_posts()): $query->the_post();
+
+		$items_sorted = array();
+
+		// set to false if set
+		if ($items['main_image'])
+		{
+			$items['main_image'] = false;
+		}
+		if ($items['dates'])
+		{
+			$items['dates'] = false;
+		}
+		if ($items['days'])
+		{
+			$items['days'] = false;
+		}
+		if ($items['email'])
+		{
+			$items['email'] = false;
+		}
+		if ($items['excerpt'])
+		{
+			$items['excerpt'] = false;
+		}
+		if ($items['youtube'])
+		{
+			$items['youtube'] = false;
+		}
+		if ($items['vimeo'])
+		{
+			$items['vimeo'] = false;
+		}
 
 		if (get_field('single_grid', $post->ID))
 		{
@@ -138,11 +169,13 @@
 
 								$unit_span 	= $element['unit-span'];
 								$date_check = $element['element'];
+
+								// add elements to element_array if they are not already added
 								if (!in_array($element['element'], $element_array))
 								{
-
-								$element_array[] = $element['element'];
+									$element_array[] = $element['element'];
 								}
+							}
 
 								if (get_row_layout() == 'dates') {
 
@@ -163,16 +196,16 @@
 								elseif (get_row_layout() == 'full_name' && in_array('full_name', $element_array)) {
 									$items['full_name'] = get_sub_field('full_name');
 								}
-								elseif (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
+								if (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
 									$items['main_image'] = get_sub_field('image');
 								}
-								elseif (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
-									$items['vimeo'] == get_sub_field('vimeo');
+								if (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
+									$items['vimeo'] = get_sub_field('vimeo');
 								}
-								elseif (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
+								if (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
 									$items['youtube'] = get_sub_field('youtube');
 								}
-							}
+							// }
 						}
 					}
 				}
@@ -180,8 +213,6 @@
 		}
 
 		$month_index = date("F", mktime(0, 0, 0, $date_start_parsed['month'], 10));
-
-
 
 
 		while( count( $items_sorted) != count($items) )
@@ -214,11 +245,7 @@
 		?>
 		<div class="no-margin-unit media-box <?php echo ' no-margin-' . $archive_unit_span; ?>">
 		<?php
-
-
-		echo get_permalink($post[0]->ID);
-
-
+			require('archive-elements.php');
 		?>
 
 		</div>
