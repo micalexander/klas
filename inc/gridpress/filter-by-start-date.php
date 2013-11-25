@@ -131,6 +131,10 @@
 		{
 			$items['days'] = false;
 		}
+		if ($items['full_name'])
+		{
+			$items['full_name'] = false;
+		}
 		if ($items['email'])
 		{
 			$items['email'] = false;
@@ -146,6 +150,10 @@
 		if ($items['vimeo'])
 		{
 			$items['vimeo'] = false;
+		}
+		if ($items['byline'])
+		{
+			$items['byline'] = false;
 		}
 
 		if (get_field('single_grid', $post->ID))
@@ -177,35 +185,39 @@
 								}
 							}
 
-								if (get_row_layout() == 'dates') {
+							if (get_row_layout() == 'dates') {
 
-									$items['dates']['date_start'] 	= get_sub_field('date_start');
-									$items['dates']['date_end'] 	= get_sub_field('date_end');
-									$date_start_parsed 				= date_parse(get_sub_field('date_end'));
-								}
-								elseif (get_row_layout() == 'days' && in_array('days', $element_array))
-								{
-									$items['days'] = get_sub_field('days');
-								}
-								elseif (get_row_layout() == 'email' && in_array('email', $element_array)) {
-									$items['email'] = get_sub_field('email');
-								}
-								elseif (get_row_layout() == 'excerpt' && in_array('excerpt', $element_array)) {
-									$items['excerpt'] = get_sub_field('excerpt');
-								}
-								elseif (get_row_layout() == 'full_name' && in_array('full_name', $element_array)) {
-									$items['full_name'] = get_sub_field('full_name');
-								}
-								elseif (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
-									$items['main_image'] = get_sub_field('image');
-								}
-								elseif (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
-									$items['vimeo'] = get_sub_field('vimeo');
-								}
-								elseif (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
-									$items['youtube'] = get_sub_field('youtube');
-								}
-							// }
+								$items['dates']['date_start'] 	= get_sub_field('date_start');
+								$items['dates']['date_end'] 	= get_sub_field('date_end');
+								$date_start_parsed 				= date_parse(get_sub_field('date_end'));
+							}
+							elseif (get_row_layout() == 'days' && in_array('days', $element_array))
+							{
+								$items['days'] = get_sub_field('days');
+							}
+							elseif (get_row_layout() == 'email' && in_array('email', $element_array)) {
+								$items['email'] = get_sub_field('email');
+							}
+							elseif (get_row_layout() == 'excerpt' && in_array('excerpt', $element_array)) {
+								$items['excerpt'] = get_sub_field('excerpt');
+							}
+							elseif (get_row_layout() == 'full_name' && in_array('full_name', $element_array)) {
+								$items['full_name']['first_name'] = get_sub_field('first_name');
+								$items['full_name']['last_name'] = get_sub_field('last_name');
+							}
+							elseif (get_row_layout() == 'main_image' && in_array('main_image', $element_array)) {
+								$items['main_image'] = get_sub_field('image');
+							}
+							elseif (get_row_layout() == 'vimeo' && in_array('vimeo', $element_array)) {
+								$items['vimeo'] = get_sub_field('vimeo');
+							}
+							elseif (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
+								$items['youtube'] = get_sub_field('youtube');
+							}
+							elseif (in_array('byline', $element_array)) {
+								$items['byline'] = get_sub_field('byline');
+							}
+
 						}
 					}
 				}
@@ -230,8 +242,7 @@
 
 		$element_count = 0;
 		$post_by_months[$month_index][]		= array($post, $items_sorted);
-
-
+		// echo "<pre>" ; var_dump($items) ; echo "</pre><br>";
 
 	endwhile;
 
