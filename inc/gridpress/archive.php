@@ -5,6 +5,23 @@
 	$archive_post_per_page = get_sub_field('post_per_page');
 	$filter_by =  get_sub_field('filter_by');
 	$elements = get_sub_field('elements');
+	switch ($archive_unit_span) {
+		case 'one-of-one':
+			$archive_unit_span_count_start = 1;
+			break;
+		case 'one-of-two':
+			$archive_unit_span_count_start = 2;
+			break;
+		case 'one-of-three':
+			$archive_unit_span_count_start = 3;
+			break;
+		case 'one-of-four':
+			$archive_unit_span_count_start = 4;
+			break;
+		case 'one-of-five':
+			$archive_unit_span_count_start = 5;
+			break;
+	}
 
 	if ($post_type)
 	{

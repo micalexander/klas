@@ -1,6 +1,6 @@
 <?php
-	$first_name = $value['first_name'];
-	$last_name = $value['last_name'];
+	$first_name = get_sub_field('first_name');
+	$last_name = get_sub_field('last_name');
 ?>
 <div class="full-name <?php echo 'item-'  . $item_count . ' ' . $unit_span[$content]; ?>">
 	<span class="full-name__first"><?php echo $first_name; ?></span>

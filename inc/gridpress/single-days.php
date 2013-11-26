@@ -1,5 +1,5 @@
 <?php
-	$days = $value;
+	$days = get_sub_field('days');
 ?>
 	<ul class="days <?php echo 'item-'  . $item_count . ' ' . $unit_span[$content]; ?>">
 	<?php foreach ($days as $day): ?>

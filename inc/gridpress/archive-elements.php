@@ -1,4 +1,5 @@
 <?php
+
 foreach ($post[1] as $content => $value) {
 
 	if ($content == 'byline')
