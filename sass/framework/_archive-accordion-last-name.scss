@@ -1,0 +1,30 @@
+.archive-filter.accordion-last-name{
+	.filter {
+		margin: 20px 0 0 0;
+		list-style-type: none;
+		@include clearfix;
+		li {
+			float: left;
+			width: 21%;
+			margin: 2% 4% 2% 0;
+			text-align: center;
+			a {
+				display: block;
+				text-decoration: none;
+				color: #000;
+				// background: #eee;
+				border-bottom: 1px solid #ccc;
+				@include font-size-rem(.7);
+				&:hover {
+					background: #eee;
+				}
+			}
+			&.show-all {
+				width: 46%;
+			}
+		}
+		& > :first-child a {
+			// background: #000;
+		}
+	}
+}

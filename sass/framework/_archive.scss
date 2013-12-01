@@ -1,0 +1,16 @@
+.archive {
+	.media-box {
+		&.clearleft {
+			clear: left;
+		}
+		.month-heading-wrapper {
+			// background: #eee;
+			&.even {
+				// background: #ccc;
+			}
+			.subsequent.month-heading {
+				visibility: hidden;
+			}
+		}
+	}
+}

@@ -1,11 +1,11 @@
 <?php
 
 	$archive_unit_span = get_sub_field('archive_unit_span');
-	$archive_post_type = get_sub_field('post_type');
 	$archive_post_per_page = get_sub_field('post_per_page');
 	$filter_by =  get_sub_field('filter_by');
 	$elements = get_sub_field('elements');
-	switch ($archive_unit_span) {
+	switch ($archive_unit_span)
+	{
 		case 'one-of-one':
 			$archive_unit_span_count_start = 1;
 			break;
@@ -33,6 +33,22 @@
 		{
 			require('filter-by-start-date.php');
 		}
+		elseif ($filter_by == 'published_date')
+		{
+			require('filter-by-publish-date.php');
+		}
 	}
+echo "string";
+	if (!$archive_page)
+	{
+    	$archive_page = $paged;
+    	if ( $archive_page != 0 )
+    	{
+    		$archive_page--;
+    	}
+
+    	$archive_offset = $archive_post_per_page * $archive_page;
+	}
+
 ?>
 

@@ -24,7 +24,7 @@
 			break;
 	}
 ?>
-	<ul class=" accordion-links <?php echo 'item-' . $item_count; ?>">
+	<ul class="accordion accordion-links <?php echo 'item-' . $item_count; ?>">
 		<?php
 			foreach ($accordions as $accordion):
 				$links = $accordion['links'];

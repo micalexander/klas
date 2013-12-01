@@ -1,60 +1,30 @@
 <?php
-	if (!empty($query_vars_month))
+	if (!empty($query_vars_int_month))
 	{
 		$args = array(
 			'posts_per_page' 	=> -1,
 			'post_type' 		=> $post_type,
-			'meta_key' 			=> 'single%date_start',
-			'orderby' 			=> 'meta_value',
-			'order' 			=> 'ASC',
-			'meta_query' 		=> array(
+			'order' 			=> 'DSC',
+			'date_query' => array(
 				array(
-					'key' 		=> 'single%date_start',
-					'value' 	=> array( $query_sched_string, $query_sched_string+30 ),
-					'compare' 	=> 'BETWEEN',
-					'type' 		=> 'DATE',
+					'after' 	=> date('Y-m-d H:i:s', strtotime(str_replace('-', '/', $query_pub_string-1))),
+					'before' 	=> date('Y-m-d H:i:s', strtotime(str_replace('-', '/', $query_pub_string+30))),
 				),
-				array(
-					'key' 		=> 'single%date_start',
-					'value' 	=> date('Ymd'),
-					'compare' 	=> '>='
-				)
 			),
     	);
     }
     else
     {
-    	if (!$archive_page)
-    	{
-	    	$archive_page = $paged;
-	    	if ( $archive_page != 0 )
-	    	{
-	    		$archive_page--;
-	    	}
-
-	    	$archive_offset = $archive_post_per_page * $archive_page;
-    	}
-
 		$args = array(
-			'posts_per_page' 	=> $archive_post_per_page,
-			'post_type' 		=> $post_type,
-			'offset' 			=> $archive_offset,
-			'orderby' 			=> 'meta_value',
-			'meta_key' 			=> 'single%date_start',
-			'meta_query' 		=> array(
-				array(
-					'key' 		=> 'single%date_start',
-					'value' 	=> date('Ymd'),
-					'compare' 	=> '>=',
-					'type'		=> 'Date',
-				)
-			)
+					'posts_per_page' => $archive_post_per_page,
+					'post_type' => $post_type,
+					'offset' => $archive_offset,
+					'orderby' => 'date',
+					'order' => 'DSC'
 		);
 	}
 
-	add_filter( 'get_meta_sql', 'filter_meta_query' );
 	$query = new WP_Query($args);
-	remove_filter( 'get_meta_sql', 'filter_meta_query' );
 
 	$archive_unit_count	= $archive_unit_span_count_start;
 	$items 				= array();
@@ -62,7 +32,6 @@
 	$post_by_months 	= array();
 
 	if ($query->have_posts()) : while ($query->have_posts()): $query->the_post();
-
 
 		foreach ($elements as $element)
 		{
@@ -99,12 +68,11 @@
 							$item_count++;
 
 
-							if (get_row_layout() == 'dates')
+							if (get_row_layout() == 'dates' && in_array('days', $element_array))
 							{
 
 								$items['dates']['date_start'] 	= get_sub_field('date_start');
 								$items['dates']['date_end'] 	= get_sub_field('date_end');
-								$date_start_parsed 				= date_parse(get_sub_field('date_end'));
 							}
 							elseif (get_row_layout() == 'days' && in_array('days', $element_array))
 							{
@@ -145,7 +113,8 @@
 			}
 		}
 
-		$month_index = date("F", mktime(0, 0, 0, $date_start_parsed['month'], 10));
+		$month_index = date("F", mktime(0, 0, 0, mysql2date('m', $post->post_date), 10));
+
 
 		$ordered = array();
 		foreach($element_array as $key) {

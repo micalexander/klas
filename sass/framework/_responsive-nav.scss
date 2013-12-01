@@ -1,11 +1,13 @@
-div.nav-wrapper.unit {
+div.nav-wrapper {
 	overflow: visible;
 	min-height: 40px;
+	margin-bottom: 15px;
 	background: #ccc;
 	@include breakpoint(desktop) {
+		margin-bottom: 20px;
 	}
-	nav.nav-collapse, nav.footer {
-		border-bottom: 1px solid #fff;
+	nav.nav-collapse {
+		border-bottom: 1px solid;
 		@include breakpoint(desktop) {
 			overflow: visible;
 			border-bottom: none;
@@ -17,33 +19,58 @@ div.nav-wrapper.unit {
 			}
 			li.menu-item {
 				padding: 10px 3%;
-				border-top: 1px solid #fff;
+				border-top: 1px solid;
 				&.menu-item-has-children {
+					position: relative;
 					padding-left: 0;
 					padding-right: 0;
+					> a:after {
+						position: absolute;
+						content: url('../img/menu-item-closed.png');
+						margin: 3px 0 0 5px;
+						@include breakpoint(desktop) {
+							display: none;
+						}
+					}
+					> a.selected:after {
+						position: absolute;
+						content: url('../img/menu-item-opened.png');
+						margin: 3px 0 0 5px;
+						@include breakpoint(desktop) {
+							display: none;
+						}
+					}
+					@include breakpoint(tablet) {
+						padding: 10px 3%;
+					}
 					a {
 						margin-left: 3%;
 					}
 				}
+				&:hover > a{
+					color: #777;
+				}
 				ul.sub-menu {
 					margin-top: 10px;
+					@include breakpoint(desktop) {
+						margin-top: 0;
+					}
+					li.menu-item {
+						width: 100%;
+					}
 				}
 				@include breakpoint(desktop) {
 					position: relative;
 					float: left;
 					width: auto;
-					padding: 10px 3%;
+					padding: 10 3%;
 					line-height: 2em;
 					border-top: none;
-					&:hover a {
-						color: #777;
-					}
 					ul.sub-menu {
 						display: none;
 						position: absolute;
-						top: 20px;
+						top: 100%;
 						width: 200px;
-						height: 200px;
 						z-index: 99999;
 						.cloned {
 							display: none;
@@ -62,19 +89,11 @@ div.nav-wrapper.unit {
 			}
 		}
 	}
-	#toggle {
-		position: relative;
-		height: 44px;
-		padding-top: 10px;
-		cursor: pointer;
-		text-align: right;
-		.icon-menu {
-			display: inline-block;
-			@include sprite-dimensions($icon-sprites, menu);
-		}
-	}
-	@include breakpoint(desktop) {
-		#toggle {
+	.nav-toggle {
+		display: block;
+		padding: 10px 3%;
+		text-decoration: none;
+		@include breakpoint(desktop) {
 			display: none;
 		}
 	}

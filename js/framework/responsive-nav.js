@@ -39,9 +39,14 @@ function enableNav() {
 		var clicks = $(this).data('clicks');
 		// if clicks is not set to true
 		if (!clicks) {
+			$(this).addClass('selected');
+			$(this).parent().siblings().children('a').removeClass('selected').removeData('clicks');
+			$(this).parent().siblings().children('ul.sub-menu').slideUp(150);
 			$(this).parent().children('ul.sub-menu').first().slideDown(150);
 		} else {
+			$(this).removeClass('selected');
 			$(this).parent().children('ul.sub-menu').first().slideUp(150);
+			$(this).parent().siblings().children('ul.sub-menu').removeClass('selected').removeData('clicks');
 		}
 		// set data['clicks'] to the opposite of its current value
 		$(this).data('clicks', !clicks);
