@@ -1,3 +1,55 @@
+/*! responsive-nav.js 1.0.23 by @viljamis */
+
+.js {
+	.nav-collapse {
+		display: block;
+		position: absolute;
+		max-height: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		zoom: 1;
+		ul {
+			display: block;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				display: block;
+				width: 100%;
+			}
+		}
+		&.opened {
+			max-height: 9999px;
+		}
+	}
+}
+
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 60em) {
+	.js {
+		.nav-collapse {
+			position: relative;
+			&.closed {
+				max-height: none;
+			}
+		}
+	}
+	.nav-toggle {
+		display: none;
+	}
+}
+
 div.nav-wrapper {
 	overflow: visible;
 	min-height: 40px;
@@ -18,10 +70,13 @@ div.nav-wrapper {
 				padding: 0 10px;
 			}
 			li.menu-item {
+				background: #ccc;
 				padding: 10px 3%;
 				border-top: 1px solid;
-				@include breakpoint(tablet) {
-					margin-left: 0;
+				white-space: nowrap;
+				@include breakpoint(desktop) {
+					height: 100%;
+					border-top: 0;
 				}
 				&.menu-item-has-children {
 					position: relative;
@@ -43,14 +98,13 @@ div.nav-wrapper {
 							display: none;
 						}
 					}
-					a {
-						display: block;
-						margin-left: 3%;
-						width: 100%;
-
-					}
 					@include breakpoint(desktop) {
 						padding: 10px 3%;
+					}
+					a {
+						display: block;
+						margin: 0 3%;
+						width: 94%;
 					}
 				}
 				&:hover > a{
@@ -60,16 +114,25 @@ div.nav-wrapper {
 					margin-top: 10px;
 					@include breakpoint(desktop) {
 						margin-top: 0;
-					}
-					li.menu-item {
-						width: 100%;
+						border-top: 0;
+						background: #fff;
+						li.menu-item {
+							white-space: normal;
+							width: 100%;
+							min-height: 44px;
+							border-top: 1px solid #000;
+							line-height: normal;
+						}
+						&:first-child {
+							border-top: 0;
+						}
 					}
 				}
 				@include breakpoint(desktop) {
 					position: relative;
 					float: left;
 					width: auto;
-					padding: 10px 3%;
+					padding: 10 3%;
 					line-height: 2em;
 					border-top: none;
 					ul.sub-menu {
@@ -93,6 +156,17 @@ div.nav-wrapper {
 			& > li.menu-item:first-child {
 				border-top: none;
 			}
+		}
+	}
+	.toggle-wrapper {
+		position: relative;
+		min-height: 44px;
+		padding-top: 10px;
+		text-align: right;
+		.icon-menu {
+			display: inline-block;
+			cursor: pointer;
+			@include sprite-dimensions($icon-sprites, menu);
 		}
 	}
 	@include breakpoint(desktop) {

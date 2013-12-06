@@ -1,10 +1,27 @@
 <?php
-	$archive = get_sub_field('archive');
+
 	$archive_unit_span = get_sub_field('archive_unit_span');
-	$post_type = get_sub_field('post_type');
-	$post_per_page = get_sub_field('post_per_page');
+	$archive_post_per_page = get_sub_field('post_per_page');
 	$filter_by =  get_sub_field('filter_by');
 	$elements = get_sub_field('elements');
+	switch ($archive_unit_span)
+	{
+		case 'one-of-one':
+			$archive_unit_span_count_start = 1;
+			break;
+		case 'one-of-two':
+			$archive_unit_span_count_start = 2;
+			break;
+		case 'one-of-three':
+			$archive_unit_span_count_start = 3;
+			break;
+		case 'one-of-four':
+			$archive_unit_span_count_start = 4;
+			break;
+		case 'one-of-five':
+			$archive_unit_span_count_start = 5;
+			break;
+	}
 
 	if ($post_type)
 	{
@@ -12,10 +29,26 @@
 		{
 			require('filter-by-last-name.php');
 		}
-		elseif ($filter_by == 'month')
+		elseif ($filter_by == 'start_date')
 		{
-			require('filter-by-month.php');
+			require('filter-by-start-date.php');
+		}
+		elseif ($filter_by == 'published_date')
+		{
+			require('filter-by-publish-date.php');
 		}
 	}
+echo "string";
+	if (!$archive_page)
+	{
+    	$archive_page = $paged;
+    	if ( $archive_page != 0 )
+    	{
+    		$archive_page--;
+    	}
+
+    	$archive_offset = $archive_post_per_page * $archive_page;
+	}
+
 ?>
 
