@@ -1,14 +1,11 @@
-.image-gallery {
+.image-link-gallery {
 	@include clearfix;
-	.image-gallery-anchor {
+	.image-link-gallery-wrapper {
 		float: left;
 		opacity: .8;
 		@include transition(.5s);
 		&:hover {
 			opacity: 1;
-		}
-		.inscription {
-			display: none;
 		}
 		.image {
 			padding-bottom: 2%;

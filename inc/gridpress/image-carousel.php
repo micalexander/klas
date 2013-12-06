@@ -1,8 +1,9 @@
 <?php
     $images = get_sub_field('images');
+    $class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
     if( $images ):
  ?>
-    <div id="slider" class=" flexslider carousel <?php echo 'item-'  . $item_count; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
+    <div id="slider" class=" flexslider carousel <?php echo $class; ?><?php echo 'item-'  . $item_count; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
         <ul class="slides">
             <?php foreach( $images as $image ): ?>
                 <li class="<?php echo $item_count; ?>">

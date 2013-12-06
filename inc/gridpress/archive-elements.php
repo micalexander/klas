@@ -1,59 +1,60 @@
 <?php
 
-foreach ($post[1] as $content => $value) {
+foreach ($items_sorted as $item => $item_value)
+{
 
-	if ($content == 'byline')
+	if ($item_value && $item == 'byline')
 	{
 		require('archive-byline.php');
 
 	}
-	if($content == 'dates')
+	if($item_value && $item == 'dates')
 	{
 		require('archive-dates.php');
 
 	}
-	if($content == 'days')
+	if($item_value && $item == 'days')
 	{
 		require('archive-days.php');
 
 	}
-	if($content == 'email')
+	if($item_value && $item == 'email')
 	{
 		require('archive-email.php');
 
 	}
-	if($content == 'excerpt')
+	if($item_value && $item == 'excerpt')
 	{
 		require('archive-excerpt.php');
 
 	}
-	if($content == 'full_name')
+	if($item_value && $item == 'full_name')
 	{
 		require('archive-full-name.php');
 
 	}
-	if($content == 'relationship')
+	if($item_value && $item == 'relationship')
 	{
 		// require('archive-relationship.php');
 
 	}
-	if($content == 'main_image')
+	if($item_value && $item == 'main_image')
 	{
 		require('archive-main-image.php');
 
 	}
-	if($content == 'vimeo')
+	if($item_value && $item == 'vimeo')
 	{
 		// require('archive-vimeo.php');
 
 	}
-	if($content == 'youtube')
+	if($item_value && $item == 'youtube')
 	{
 		// require('archive-youtube.php');
 
 	}
-}
 
+}
 
 
 ?>

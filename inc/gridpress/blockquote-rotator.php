@@ -7,11 +7,12 @@
 			<?php
 				foreach ($quotes as $quote):
 				$target = $quote['new_window'] ? 'target="_blank"' : '' ;
+				$class = $quote['class'] ? str_replace(' ', '-', strtolower(rtrim($quote['class']))) . ' ' : '' ;
 
 			?>
 
 			<li>
-				<blockquote class="<?php echo $item_count; ?>">
+				<blockquote class="<?php echo $class; ?><?php echo $item_count; ?>">
 				<?php echo $quote['quote']; ?>
 				<<?php echo $quote['credit_line_2_type'] == 'url' ? 'a href="' . $quote['credit_line_2'] . '"' : 'div' ; ?><?php echo $quote['credit_line_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($quote['credit_line_2']))) . '"' : '' ; ?> <?php echo $target; ?>>
 					<?php echo $quote['credit_line_1']; ?>

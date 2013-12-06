@@ -3,6 +3,7 @@
 	$video_link = get_sub_field('video_link');
 	$video_image = get_sub_field('video_image');
 	$type = get_sub_field("heading_type");
+	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
 	switch ($type) {
 		case 'paragraph_text':
 			$tag = 'p';
@@ -31,7 +32,7 @@
 	endif;
 	if ($video_link):
 ?>
-	<div class=" video-wrapper <?php echo 'item-' . $item_count; ?>">
+	<div class=" video-wrapper <?php echo $class; ?><?php echo 'item-' . $item_count; ?>">
    		<a class="v-video" href="<?php echo $video_link; ?>">
    			<img src="<?php echo $video_image['url'] ? $video_image['url'] : ""; ?>">
    		</a>

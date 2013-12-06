@@ -10,7 +10,7 @@
 			speedOut	  : 4000,
 			helpers		  : {
 				title         : {
-					type: 'inside'
+					type: 'outside'
 				}
 			}
 

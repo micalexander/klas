@@ -1,6 +1,7 @@
 <?php
 	$heading = get_sub_field("heading");
 	$type = get_sub_field("heading_type");
+	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
 	switch ($type) {
 		case 'paragraph_text':
 			$tag = 'p';
@@ -26,7 +27,7 @@
 	$items = get_sub_field('text');
 	if($items):
 ?>
-	<div id="slider" class="text-rotator">
+	<div id="slider" class="text-rotator <?php echo $class; ?>">
 	    <ul class="slides">
 	        <?php foreach ($items as $item): ?>
 				<li class="<?php echo $item_count; ?>" ><p><?php echo $item['text']; ?></p></li>

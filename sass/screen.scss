@@ -12,7 +12,6 @@
 @import "../../../../bower_components/flexslider/flexslider";
 @import "../../../../bower_components/fancybox/source/jquery.fancybox";
 @import "../../../../bower_components/leaflet/dist/leaflet";
-@import "../../../../bower_components/responsive-nav/responsive-nav";
 @import "framework/isotope";
 @import "framework/flexslider";
 @import "framework/fancybox";
@@ -62,6 +61,15 @@ body:after { content: 'mobile'; display: none; }
 ** Body structure
 ** ---------------------------------------------- */
 body {
+	overflow: hidden;
+	.container {
+		.grid {
+			.unit {
+				// uncomment to remove grey bg
+				// background: transparent;
+			}
+		}
+	}
 	@include breakpoint(desktop) {
 		padding: 0;
 	}

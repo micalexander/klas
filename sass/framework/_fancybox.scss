@@ -5,6 +5,7 @@
 .fancybox-overlay, .fancybox-overlay  * {
 	@include box-sizing('content-box');
 }
+
 .fancybox-wrap, .fancybox-wrap *  {
 	@include box-sizing('content-box');
 }
@@ -63,6 +64,15 @@
 .fancybox-next span .fancybox-prev span  {
 	opacity: .8;
 	&:hover  { opacity: 1; }
+}
+.fancybox-title.fancybox-title-outside-wrap {
+	position: absolute;
+	bottom: 0;
+	width: 98%;
+	min-height: 30px;
+	padding: 1%;
+	color: #efefef;
+	background: rgba(0, 0, 0, 0.6);
 }
 /*Retina graphics!*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

@@ -9,14 +9,16 @@
 
 		$unit_count++;
 		$unit_size = get_sub_field('unit_span');
+		$grid_class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
 		?>
-		<div class="unit <?php echo 'unit-'  . $unit_count . ' ' . $unit_size; ?> ">
+		<div class="unit <?php echo $grid_class; ?><?php echo 'unit-'  . $unit_count . ' ' . $unit_size; ?> ">
 		<?php
 			if (get_sub_field('unit')) : while(has_sub_field('unit')):
 				$sub_unit_count++;
 				$sub_unit_size = get_sub_field('nested_unit_span');
+				$sub_class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
 	?>
-			<div class="no-margin-unit <?php echo 'unit-'  . $sub_unit_count . ' no-margin-' . $sub_unit_size; ?> ">
+			<div class="no-margin-unit <?php echo $sub_class; ?><?php echo 'unit-'  . $sub_unit_count . ' no-margin-' . $sub_unit_size; ?> ">
 				<?php
 					while(has_sub_field('nested_unit')):
 						$item_count++;
@@ -32,6 +34,9 @@
 							// start map
 						elseif (get_row_layout() == 'map'):
 							require( 'map.php');
+							// start title
+						elseif (get_row_layout() == 'title'):
+							require( 'title.php');
 							// start sub-nav
 						elseif (get_row_layout() == 'sub_menu'):
 							require( 'sub-menu.php');
@@ -68,6 +73,9 @@
 							// start image gallery
 						elseif (get_row_layout() == "image_gallery"):
 							require( 'image-gallery.php');
+							// start image link gallery
+						elseif (get_row_layout() == "image_link_gallery"):
+							require( 'image-link-gallery.php');
 							// start pdf link
 						elseif (get_row_layout() == "pdf_link"):
 							require( 'pdf-link.php');

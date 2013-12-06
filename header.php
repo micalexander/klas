@@ -28,25 +28,23 @@
 
 </head>
 
-
 <body <?php body_class(); ?>>
 
 		<div class="header-wrapper">
 			<header class="container" role="banner">
-
 		        <div class="grid">
 		        	<div class="nav-wrapper unit one-of-one">
 		        	    <nav class="nav-collapse">
 		        			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
 		        	    </nav>
-		        	    <div id="toggle">
-		        	    	<div class="icon-menu"></div>
+		        	    <div class="toggle-wrapper">
+		        	    	<div id="toggle" class="icon-menu"></div>
+							<a href="<?php echo home_url(); ?>"><div class="mobile-logo"></div></a>
 		        	    </div>
 		        	</div>
+					<a href="<?php echo home_url(); ?>"><div class="desktop-logo"></div></a>
 		        </div>
-
 			</header>
 		</div>
-
 
 		<div class="content-wrapper clearfix" role="main"> <!-- End Header -->

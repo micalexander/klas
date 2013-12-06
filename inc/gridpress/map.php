@@ -1,5 +1,6 @@
 <?php
 	$map = get_sub_field('map') ? get_sub_field('map') : '';
+	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
 	if($map['address']):
 		$height = get_sub_field('map_height') ? get_sub_field('map_height') . 'px' : '';
 		$style_id = get_sub_field('style_id') ? get_sub_field('style_id') : '';
@@ -88,7 +89,7 @@
 			});
 		</script>
 
-		<div class=" map-wrapper <?php echo 'item-'  . $item_count; ?>">
+		<div class=" map-wrapper <?php echo $class; ?><?php echo 'item-'  . $item_count; ?>">
 			<div id="<?php echo "map-" . $map_count; ?>" style="height:<?php echo $height; ?>;">
 			</div>
 		</div>

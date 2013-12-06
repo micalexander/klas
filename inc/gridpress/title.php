@@ -1,10 +1,10 @@
 <?php
-	$heading = get_sub_field('heading');
-	$type = get_sub_field('heading_type');
+	$title = get_sub_field('title');
+	$type = get_sub_field('title_type');
 	$link = get_sub_field('link');
 	$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
 	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
-	if ($heading):
+	if ($title):
 	switch ($type) {
 		case 'heading_2':
 			$tag = 'h2';
@@ -22,10 +22,10 @@
 ?>
 	<?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
 		<<?php echo $tag; ?> <?php echo 'class="' . $class . 'item-'  . $item_count . '"'; ?>>
-			<?php echo $heading; ?>
+			<?php echo get_the_title(); ?>
 		</<?php echo $tag; ?>>
 	<?php echo $close_anchor = $open_anchor ? '</a>' : ''; ?>
 	<?php
 	endif;
-	// end heading
+	// end title
 ?>

@@ -26,19 +26,19 @@
 							require( 'accordion-links.php');
 							// start archive byline
 						elseif (get_row_layout() == "byline"):
-							require( 'single-byline.php');
+							require( 'archive-byline.php');
 							// start archive dates
 						elseif (get_row_layout() == "dates"):
-							require( 'single-dates.php');
+							require( 'archive-dates.php');
 							// start archive days
 						elseif (get_row_layout() == "days"):
-							require( 'single-days.php');
+							require( 'archive-days.php');
 							// start archive email
 						elseif (get_row_layout() == "email"):
-							require( 'single-email.php');
+							require( 'archive-email.php');
 							// start archive full name
 						elseif (get_row_layout() == "full_name"):
-							require( 'single-full-name.php');
+							require( 'archive-full-name.php');
 							// start blockquote
 						elseif (get_row_layout() == "blockquote"):
 							require( 'blockquote.php');
