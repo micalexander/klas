@@ -85,7 +85,7 @@ div.nav-wrapper {
 					> a:after {
 						position: absolute;
 						content: url('../img/menu-item-closed.png');
-						margin: 3px 0 0 5px;
+						right: 20px;
 						@include breakpoint(desktop) {
 							display: none;
 						}
@@ -93,7 +93,7 @@ div.nav-wrapper {
 					> a.selected:after {
 						position: absolute;
 						content: url('../img/menu-item-opened.png');
-						margin: 3px 0 0 5px;
+						right: 20px;
 						@include breakpoint(desktop) {
 							display: none;
 						}
