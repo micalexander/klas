@@ -1,9 +1,9 @@
-$heading-font: 'Open sans', sans-serif;
-$body-font: 'Open sans', sans-serif;
+$heading-font:sans-serif;
+$body-font: sans-serif;
 $body-color: #333;
-$heading-color: #A0865B;
-$link-color: #A0865B;
-$link-hover: #999999;
+$heading-color: #333;
+$link-color: #000;
+$link-hover: #333;
 $p: .7em;
 
 
@@ -28,83 +28,86 @@ body {
 a {
 	color: $link-color;
 	font-size: 1em;		/* 16x1=16 */
-	font-weight: 600;
-	font-style: italic;
 	text-decoration: none;
 	&:hover{
 		color: $link-hover;
 	}
 }
 h1 {
-	margin-bottom: 5px;
-	color: #274836;
+	margin-bottom: 8px;
+	color: $heading-color;
 	text-transform: uppercase;
-	@include font-size-rem(.8);
-	@include line-height-rem(1.1);
+	@include font-size-rem(1.4);
+	@include line-height-rem(1.6);
 	@include breakpoint(tablet) {
 		margin-bottom: 18px;
-		@include font-size-rem(1.3);
-		@include line-height-rem(1.3);
+		@include font-size-rem(1.6);
+		@include line-height-rem(1.8);
 	}
 	@include breakpoint(desktop) {
-		@include font-size-rem(1.5);
-		@include line-height-rem(1.5);
+		@include font-size-rem(1.8);
+		@include line-height-rem(2);
 	}
 }
 h2 {
-	margin-bottom: 10px;
-	padding-top: 20px;
+	margin-bottom: 6px;
 	color: $heading-color; /* 24px */
-	font-weight: 300;
 	text-transform: capitalize;
-	border-top: 1px solid $heading-color;
-	@include line-height-rem(1.1);
-	@include font-size-rem(1);
+	@include font-size-rem(1.3);
+	@include line-height-rem(1.5);
 	@include breakpoint(tablet) {
-		margin-bottom: 20px;
-		padding-top: 30px;
-		@include line-height-rem(1.3);
-		@include font-size-rem(1.3);
+		margin-bottom: 16px;
+		@include font-size-rem(1.5);
+		@include line-height-rem(1.7);
 	}
 	@include breakpoint(desktop) {
-		@include line-height-rem(2.1);
-		@include font-size-rem(2);
+		@include font-size-rem(1.7);
+		@include line-height-rem(1.8);
 	}
 }
 h3 {
+	margin-bottom: 6px;
 	color: $heading-color;
-	font-weight: 400;
-	@include font-size-rem(.8);
-	@include line-height-rem(1);
+	@include font-size-rem(1);
+	@include line-height-rem(1.2);
 	@include breakpoint(tablet) {
-		@include font-size-rem(1);
-		@include line-height-rem(1.2);
+		margin-bottom: 14px;
+		@include font-size-rem(1.2);
+		@include line-height-rem(1.5);
 	}
 	@include breakpoint(desktop) {
-		@include font-size-rem(1.1);
-		@include line-height-rem(1.3);
+		@include font-size-rem(1.4);
+		@include line-height-rem(1.6);
 	}
 }
 h4 {
-	margin-bottom: 12px;
-	font-size: 1.2em; /* 16x0.875=19.2 */
-	line-height: 1em; /* 24px */
+	margin-bottom: 5px;
 	color: $heading-color;
-}
-p {
-	font-weight: 300;
-	padding-bottom: 1em;
-	@include line-height-rem(.9);
-	@include font-size-rem(.7);
-	@include breakpoint( tablet ) {
+	@include font-size-rem(.8);
+	@include line-height-rem(1);
+	@include breakpoint(tablet) {
+		margin-bottom: 12px;
+		@include font-size-rem(1);
 		@include line-height-rem(1.2);
-		@include font-size-rem(.9);
-		padding-bottom: 2em;
 	}
 	@include breakpoint(desktop) {
-		padding-bottom: 2em;
-		@include line-height-rem(1.3);
+		@include font-size-rem(1.2);
+		@include line-height-rem(1.4);
+	}
+}
+
+p {
+	padding-bottom: .8em;
+	@include line-height-rem(.6);
+	@include font-size-rem(.6);
+	@include breakpoint( tablet ) {
+		@include line-height-rem(.8);
+		@include font-size-rem(.8);
+		padding-bottom: 1em;
+	}
+	@include breakpoint(desktop) {
 		@include font-size-rem(1);
+		@include line-height-rem(1);
 	}
 }
 ul {
@@ -123,40 +126,4 @@ ol {
 	margin: 0 0 1em 2em;
 	li { margin: .5em 0; }
 	ol { list-style: lower-alpha; }
-}
-blockquote {
-	position: relative;
-	margin-left: 15px;
-	margin-top: 15px;
-	color: #274836;
-	font-style: italic;
-	font-weight: 700;
-	@include line-height-rem(1.5);
-	@include font-size-rem(1);
-	&:before {
-		position: absolute;
-		top: -5px;
-		left: -28px;
-		content: url(../img/icon/left-quote-mobile.png);
-		@include breakpoint(tablet) {
-			top: -15px;
-			left: -48px;
-			content: url(../img/icon/left-quote.png);
-		}
-	}
-	@include breakpoint(tablet) {
-		margin-left: 0;
-		@include line-height-rem(2);
-		@include font-size-rem(1.5);
-	}
-	@include breakpoint(desktop){
-		@include line-height-rem(2.3);
-		@include font-size-rem(1.7);
-	}
-	& + h1 {
-		margin-top: 40px;
-		@include breakpoint(tablet) {
-			margin-top: 60px;
-		}
-	}
 }
