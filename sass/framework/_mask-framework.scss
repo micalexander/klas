@@ -194,13 +194,13 @@ body,select,input,textarea{color:#333;}
 .container {
 	margin: 0 auto;
 	max-width: 100%;
-	padding: 0;
+	padding: 0 30px;
+	padding: 0 1.5rem;
 	@include transition(.5s);
 	@include transition-delay(.7s);
 	@include breakpoint(tablet) {
+		padding: 0;
 		max-width: $page_width;
-		padding: 0 30px;
-		padding: 0 1.5rem;
 
 	}
 	.grid {
