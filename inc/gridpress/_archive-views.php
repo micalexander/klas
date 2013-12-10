@@ -37,7 +37,7 @@
 				'caller_get_posts'=> 1
 	);
 	$archive_post = get_posts($args);
-echo "<pre>" ; var_dump($archive_post[0]->ID) ; echo "</pre><br>";
+// echo "<pre>" ; var_dump($archive_post[0]->ID) ; echo "</pre><br>";
 	if (get_field('archive_grid', $archive_post[0]->ID)) : while(has_sub_field('archive_grid', $archive_post[0]->ID)):
 
 		$unit_count++;
