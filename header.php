@@ -23,7 +23,7 @@
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
 	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr.custom.85380.js"></script>
 	<script type="text/javascript">
-		var site_url = '<?php bloginfo('url'); ?>';
+		var site_url = location.host;
 	</script>
 
 </head>
