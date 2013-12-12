@@ -159,7 +159,7 @@
 	<?php $month_heading_count++; $month_count++; $archive_unit_count++; endforeach; ?>
 	<?php endforeach; ?>
 	<?php else: ?>
-		<p class="archive--empty">No <?php echo $post_type_slug; ?> entries in the month of <?php echo ucfirst(date('F', strtotime($query_vars_month))); ?></p>
+		<p class="archive--empty">No <?php echo $post_type_slug; ?> entries for <?php echo ucfirst(date('F Y', strtotime($query_pub_string))); ?></p>
 	<?php endif; ?>
 	<?php
 		wp_reset_postdata();

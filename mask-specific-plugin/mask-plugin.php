@@ -225,7 +225,7 @@ add_filter('query_vars', 'add_query_vars');
 function add_query_vars($aVars) {
 	$aVars[] = "month"; // represents the name of the product category as shown in the URL
 	$aVars[] = "int-month"; // represents the name of the product category as shown in the URL
-	$aVars[] = "year"; // represents the name of the product category as shown in the URL
+	$aVars[] = "int-year"; // represents the name of the product category as shown in the URL
 	$aVars[] = "letter"; // represents the name of the product category as shown in the URL
 	return $aVars;
 }
