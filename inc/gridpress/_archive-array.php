@@ -419,6 +419,7 @@ if(function_exists("register_field_group"))
 															'full_name' => 'Full name',
 															// 'relationship' => 'Relationship',
 															'main_image' => 'Main image',
+															'title' => 'Title',
 															'vimeo' => 'Vimeo',
 															'youtube' => 'Youtube',
 														),
