@@ -36,6 +36,9 @@
 							// start archive email
 						elseif (get_row_layout() == "email"):
 							require( 'single-email.php');
+							// start archive excerpt
+						elseif (get_row_layout() == "excerpt"):
+							require( 'single-excerpt.php');
 							// start archive full name
 						elseif (get_row_layout() == "full_name"):
 							require( 'single-full-name.php');
