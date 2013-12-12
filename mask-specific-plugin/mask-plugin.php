@@ -219,4 +219,45 @@ function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 // add hook
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
+add_filter('query_vars', 'add_query_vars');
+
+// hook add_query_vars function into query_vars
+function add_query_vars($aVars) {
+	$aVars[] = "month"; // represents the name of the product category as shown in the URL
+	$aVars[] = "int-month"; // represents the name of the product category as shown in the URL
+	$aVars[] = "year"; // represents the name of the product category as shown in the URL
+	$aVars[] = "letter"; // represents the name of the product category as shown in the URL
+	return $aVars;
+}
+
+/**
+ * Get the scheduled year for filter by month
+ *
+ * @param $int_month, the month to check
+ * @return $year variable, the desired year
+ * @author Mic Alexander
+ **/
+
+function get_sched_year($int_month)
+{
+	if ($int_month < date('m'))
+	{
+		$year = strval(date('Y') +1);
+	}
+	else
+	{
+		$year = date('Y');
+	}
+		return $year;
+}
+
+add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
+
+
+foreach (glob(plugin_dir_path( __FILE__ ) . 'custom-post-types/*.php') as $filename)
+{
+	include( $filename );
+}
+
+
 ?>

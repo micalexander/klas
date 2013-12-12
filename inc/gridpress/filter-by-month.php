@@ -171,6 +171,14 @@
 								elseif (get_row_layout() == 'youtube' && in_array('youtube', $element_array)) {
 									$items['youtube'] = get_sub_field('youtube');
 								}
+								if ( in_array('byline', $element_array) )
+								{
+									$items['byline'] = true;
+								}
+								if ( in_array('title', $element_array) )
+								{
+									$items['title'] = true;
+								}
 							}
 						}
 					}

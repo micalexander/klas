@@ -103,9 +103,13 @@
 							{
 								$items['youtube'] = get_sub_field('youtube');
 							}
-							elseif (get_row_layout() == 'byline' && in_array('byline', $element_array))
+							if ( in_array('byline', $element_array) )
 							{
-								$items['byline'] = get_sub_field('byline');
+								$items['byline'] = true;
+							}
+							if ( in_array('title', $element_array) )
+							{
+								$items['title'] = true;
 							}
 						}
 					}

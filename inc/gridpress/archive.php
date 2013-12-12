@@ -38,7 +38,7 @@
 			require('filter-by-publish-date.php');
 		}
 	}
-echo "string";
+
 	if (!$archive_page)
 	{
     	$archive_page = $paged;
