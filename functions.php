@@ -180,6 +180,7 @@ function mask_login_logo() { ?>
             background: url('<?php bloginfo( 'template_directory' ) ?>/img/wp-login-logo-mask.png') no-repeat 0 0;
 			margin: 0 0 0 23px;
 			width: 100%;
+			height: 70px;
         }
     </style>
 <?php }
