@@ -26,6 +26,7 @@ body {
 	font-family: $body-font;
 }
 a {
+	cursor: pointer;
 	color: $link-color;
 	font-size: 1em;		/* 16x1=16 */
 	text-decoration: none;

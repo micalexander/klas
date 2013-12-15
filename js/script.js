@@ -19,5 +19,6 @@
 //= require "framework/flexslider"
 //= require "framework/fancybox"
 //= require "framework/enquire"
+//= require "framework/pointer-scroll"
 
 
