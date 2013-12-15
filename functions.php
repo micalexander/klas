@@ -179,6 +179,7 @@ function mask_login_logo() { ?>
         body.login div#login h1 a {
             background: url('<?php bloginfo( 'template_directory' ) ?>/img/wp-login-logo-mask.png') no-repeat 0 0;
 			margin: 0 0 0 23px;
+			width: 100%;
         }
     </style>
 <?php }
@@ -241,8 +242,9 @@ endif; // ends check for _s_comment()
 
 // require acf
 require_once( 'inc/gridpress/_page-array.php' );
-require_once( 'inc/gridpress/_archive-array.php' );
-require_once( 'inc/gridpress/_single-array.php' );
+require_once( 'inc/gridpress/archive/_archive-array.php' );
+require_once( 'inc/gridpress/taxonomy/_taxonomy-array.php' );
+require_once( 'inc/gridpress/single/_single-array.php' );
 
 function run_activate_plugin( $plugin ) {
     $current = get_option( 'active_plugins' );

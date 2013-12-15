@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Archive template
+ * Template Name: Taxonomy template
  */
 ?>
 <?php get_header(); ?>
@@ -9,7 +9,7 @@
 
 			<div class="container">
 				<div class="grid">
-					<?php get_template_part( 'inc/gridpress/archive/_archive-views' ); ?>
+					<?php get_template_part( 'inc/gridpress/taxonomy/_taxonomy-views' ); ?>
 				</div>
 			</div>
 

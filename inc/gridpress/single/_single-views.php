@@ -17,13 +17,13 @@
 						$item_count++;
 							// start accordion_link button
 						if (get_row_layout() == "accordion_button"):
-							require( 'accordion-button.php');
+							require_once(__DIR__ . '/../accordion-button.php');
 							// start accordion_editor
 						elseif (get_row_layout() == "accordion_editor"):
-							require( 'accordion-editor.php');
+							require_once(__DIR__ . '/../accordion-editor.php');
 							// start accordion_links
 						elseif (get_row_layout() == "accordion_links"):
-							require( 'accordion-links.php');
+							require_once(__DIR__ . '/../accordion-links.php');
 							// start archive byline
 						elseif (get_row_layout() == "byline"):
 							require( 'single-byline.php');
@@ -44,61 +44,64 @@
 							require( 'single-full-name.php');
 							// start blockquote
 						elseif (get_row_layout() == "blockquote"):
-							require( 'blockquote.php');
+							require_once(__DIR__ . '/../blockquote.php');
 							// start blockquote rotator
 						elseif (get_row_layout() == "blockquote_rotator"):
-							require( 'blockqoute-rotator.php');
+							require_once(__DIR__ . '/../blockqoute-rotator.php');
 							// start button_link
 						elseif (get_row_layout() == "button_link"):
-							require( 'button-link.php');
+							require_once(__DIR__ . '/../button-link.php');
 							// start editor
 						elseif (get_row_layout() == "editor"):
-							require( 'editor.php');
+							require_once(__DIR__ . '/../editor.php');
 							// start heading
 						elseif (get_row_layout() == "heading"):
-							require( 'heading.php');
+							require_once(__DIR__ . '/../heading.php');
 							// start image carousel
 						elseif (get_row_layout() == 'image_carousel'):
-							require( 'image-carousel.php');
+							require_once(__DIR__ . '/../image-carousel.php');
 							// start image rotator
 						elseif (get_row_layout() == 'image_rotator'):
-							require( 'image-rotator.php' );
+							require_once(__DIR__ . '/../image-rotator.php' );
 							// start image
 						elseif (get_row_layout() == "image"):
-							require( 'image.php');
+							require_once(__DIR__ . '/../image.php');
 							// start image gallery
 						elseif (get_row_layout() == "image_gallery"):
-							require( 'image-gallery.php');
+							require_once(__DIR__ . '/../image-gallery.php');
 							// start image with hover
 						elseif (get_row_layout() == "image_with_hover"):
-							require( 'image-with-hover.php');
+							require_once(__DIR__ . '/../image-with-hover.php');
 							// start main image
 						elseif (get_row_layout() == 'main_image'):
-							require( 'main-image.php' );
+							require_once(__DIR__ . '/../main-image.php' );
 							// start map
 						elseif (get_row_layout() == 'map'):
-							require( 'map.php');
+							require_once(__DIR__ . '/../map.php');
 							// start pdf link
 						elseif (get_row_layout() == "pdf_link"):
-							require( 'pdf-link.php');
+							require_once(__DIR__ . '/../pdf-link.php');
 							// start sub-nav
 						elseif (get_row_layout() == 'sub_menu'):
-							require( 'sub-menu.php');
+							require_once(__DIR__ . '/../sub-menu.php');
 							// start text_link
 						elseif (get_row_layout() == "text_link"):
-							require( 'text-link.php');
+							require_once(__DIR__ . '/../text-link.php');
 							// start text to image link (lightbox)
 						elseif (get_row_layout() == "text_to_image_link"):
-							require( 'text-image-link.php');
+							require_once(__DIR__ . '/../text-image-link.php');
 							// start text_rotator
 						elseif (get_row_layout() == "text_rotator"):
-							require( 'text-rotator.php');
+							require_once(__DIR__ . '/../text-rotator.php');
+							// single title
+						elseif (get_row_layout() == "title"):
+							require_once(__DIR__ . '/../title.php');
 							// start youtube video
 						elseif (get_row_layout() == "youtube"):
-							require( 'youtube.php');
+							require_once(__DIR__ . '/../youtube.php');
 							// start vimeo video
 						elseif (get_row_layout() == "vimeo"):
-							require( 'vimeo.php');
+							require_once(__DIR__ . '/../vimeo.php');
 							// end flexible editor
 						endif;
 					endwhile;

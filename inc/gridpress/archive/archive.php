@@ -27,15 +27,15 @@
 	{
 		if ($filter_by == 'last_name')
 		{
-			require('filter-by-last-name.php');
+			require('archive-filter-by-last-name.php');
 		}
 		elseif ($filter_by == 'start_date')
 		{
-			require('filter-by-start-date.php');
+			require('archive-filter-by-start-date.php');
 		}
 		elseif ($filter_by == 'published_date')
 		{
-			require('filter-by-publish-date.php');
+			require('archive-filter-by-publish-date.php');
 		}
 	}
 

@@ -189,6 +189,8 @@
 		</div>
 	<?php $month_heading_count++; $month_count++; $archive_unit_count++; endforeach; ?>
 	<?php endforeach; ?>
+	<?php elseif(empty($query_vars_month)): ?>
+		<p class="archive--empty">No <?php echo $post_type_slug; ?> entries found</p>
 	<?php else: ?>
 		<p class="archive--empty">No <?php echo $post_type_slug; ?> entries in the month of <?php echo ucfirst(date('F', strtotime($query_vars_month))); ?></p>
 	<?php endif; ?>
@@ -200,7 +202,7 @@
         if ($total_pages > 1)
         {
 
-          $current_page = max(1, get_query_var('paged'));
+			$current_page = max(1, get_query_var('paged'));
 
 	        $args = array(
 						'base' 		=> get_pagenum_link(1) . '%_%',
@@ -208,7 +210,7 @@
 						'current' 	=> $current_page,
 						'total' 	=> $total_pages,
 
-		            );
+			);
         }
 	?>
     <nav role="navigation" class="archive--archive-posts-nav clearfix">

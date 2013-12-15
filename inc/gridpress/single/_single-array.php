@@ -1,18 +1,19 @@
 <?php
+
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_archive-content',
-		'title' => 'Archive Content',
+		'id' => 'acf_single-content',
+		'title' => 'Single Content',
 		'fields' => array (
 			array (
-				'key' => 'field_qxr6jseoardss6',
-				'label' => __('Archive Grid'),
-				'name' => 'archive_grid',
+				'key' => 'field_ue1u1jf8lnmrd',
+				'label' => __('Single Grid'),
+				'name' => 'single_grid',
 				'type' => 'repeater',
 				'sub_fields' => array (
 					array (
-						'key' => 'field_35x3wyn7wrdnw1',
+						'key' => 'field_b826tcql66vi',
 						'label' => __('Unit Span'),
 						'name' => 'unit_span',
 						'type' => 'select',
@@ -34,7 +35,7 @@ if(function_exists("register_field_group"))
 						'multiple' => 0,
 					),
 					array (
-						'key' => 'field_7778s5888ds8d88sd',
+						'key' => 'field_7778s58c6e011d',
 						'label' => __('Class'),
 						'name' => 'class',
 						'type' => 'text',
@@ -42,13 +43,13 @@ if(function_exists("register_field_group"))
 						'default_value' => '',
 					),
 					array (
-						'key' => 'field_ezmltlwwjnukmy',
+						'key' => 'field_lo6mr1rpmiqpqd',
 						'label' => __('Unit'),
 						'name' => 'unit',
 						'type' => 'repeater',
 						'sub_fields' => array (
 							array (
-								'key' => 'field_bd7ekjqlmlrlq2',
+								'key' => 'field_2ibkvdjohxcvip',
 								'label' => __('Nested Unit Span'),
 								'name' => 'nested_unit_span',
 								'type' => 'select',
@@ -70,7 +71,7 @@ if(function_exists("register_field_group"))
 								'multiple' => 0,
 							),
 							array (
-								'key' => 'field_7778s5888ds8d88sd',
+								'key' => 'field_7778s58c6e011d',
 								'label' => __('Class'),
 								'name' => 'class',
 								'type' => 'text',
@@ -78,55 +79,12 @@ if(function_exists("register_field_group"))
 								'default_value' => '',
 							),
 							array (
-								'key' => 'field_3yjai0r3rnmjfs',
+								'key' => 'field_qtvxfqzcn2fukv',
 								'label' => __('Nested Unit'),
 								'name' => 'nested_unit',
 								'type' => 'flexible_content',
 								'column_width' => '',
 								'layouts' => array (
-									array (
-										'label' => __('Accordion button'),
-										'name' => 'accordion_button',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_ovpsm4gt4wya4o',
-												'label' => __('Button text'),
-												'name' => 'button_text',
-												'type' => 'text',
-												'column_width' => '',
-												'default_value' => '',
-												'placeholder' => '',
-												'prepend' => '',
-												'append' => '',
-												'formatting' => 'html',
-												'maxlength' => '',
-											),
-											array (
-												'key' => 'field_vl5k7lys4wpefl',
-												'label' => __('Editor'),
-												'name' => 'editor',
-												'type' => 'text',
-												'column_width' => '',
-												'default_value' => '',
-												'placeholder' => '',
-												'prepend' => '',
-												'append' => '',
-												'formatting' => 'html',
-												'maxlength' => '',
-											),
-											array (
-												'key' => 'field_7778s5888ds8d88sd',
-												'label' => __('Class'),
-												'name' => 'class',
-												'type' => 'text',
-												'column_width' => '',
-												'default_value' => '',
-											),
-										),
-									),
 									array (
 										'label' => __('Accordion editor'),
 										'name' => 'accordion_editor',
@@ -135,7 +93,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_nvtq4qbkxsqs9k',
+												'key' => 'field_rqngx7b1vhfo4p',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -152,14 +110,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_jeyq1ysqb84829',
+												'key' => 'field_uiltqtkkspoel9',
 												'label' => __('Accordions'),
 												'name' => 'accordion',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_14tflcxwtv7wni',
+														'key' => 'field_8isnpe7pl0g7k1',
 														'label' => __('Heading'),
 														'name' => 'heading',
 														'type' => 'text',
@@ -172,7 +130,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_3q83i68ju7jfif',
+														'key' => 'field_43d55qwej40hpw',
 														'label' => __('Editor'),
 														'name' => 'editor',
 														'type' => 'wysiwyg',
@@ -182,7 +140,7 @@ if(function_exists("register_field_group"))
 														'media_upload' => 'yes',
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -196,7 +154,50 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Accordion',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
+												'label' => __('Class'),
+												'name' => 'class',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Accordion button'),
+										'name' => 'accordion_button',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_qj2m5dgdsfmuig',
+												'label' => __('Button text'),
+												'name' => 'button_text',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+												'formatting' => 'html',
+												'maxlength' => '',
+											),
+											array (
+												'key' => 'field_0qchrl59u58gv3',
+												'label' => __('Editor'),
+												'name' => 'editor',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+												'formatting' => 'html',
+												'maxlength' => '',
+											),
+											array (
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -213,7 +214,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_t80stcpiwfaesh',
+												'key' => 'field_f9igtty3qlao6u',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -230,14 +231,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_3yruqg5ghciww1',
+												'key' => 'field_itw8hjx2rkxc8z',
 												'label' => __('Accordions'),
 												'name' => 'accordion',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_e1pxsgc79pg0ry',
+														'key' => 'field_2q4m39fc04r04l',
 														'label' => __('Heading'),
 														'name' => 'heading',
 														'type' => 'text',
@@ -250,14 +251,14 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_lnb3yza4cruzi9',
+														'key' => 'field_gs37t6h9m1oraj',
 														'label' => __('Links'),
 														'name' => 'links',
 														'type' => 'repeater',
 														'column_width' => '',
 														'sub_fields' => array (
 															array (
-																'key' => 'field_xndr1qepc7j97l',
+																'key' => 'field_gtgcq0qpp1hv9z',
 																'label' => __('Text'),
 																'name' => 'text',
 																'type' => 'text',
@@ -270,7 +271,7 @@ if(function_exists("register_field_group"))
 																'maxlength' => '',
 															),
 															array (
-																'key' => 'field_4w50s9zvwg0usj',
+																'key' => 'field_nz1y59vb6kkjj7',
 																'label' => __('Text 2'),
 																'name' => 'text_2',
 																'type' => 'text',
@@ -283,7 +284,7 @@ if(function_exists("register_field_group"))
 																'maxlength' => '',
 															),
 															array (
-																'key' => 'field_4aiwod1qdszdja',
+																'key' => 'field_2pdby0iekaiz3w',
 																'label' => __('Text 2 type'),
 																'name' => 'text_2_type',
 																'type' => 'select',
@@ -298,14 +299,6 @@ if(function_exists("register_field_group"))
 																'allow_null' => 1,
 																'multiple' => 0,
 															),
-															array (
-																'key' => 'field_7778s5888ds8d88sd',
-																'label' => __('Class'),
-																'name' => 'class',
-																'type' => 'text',
-																'column_width' => '',
-																'default_value' => '',
-															),
 														),
 														'row_min' => '',
 														'row_limit' => '',
@@ -313,7 +306,7 @@ if(function_exists("register_field_group"))
 														'button_label' => 'Add a link',
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -327,220 +320,12 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Accordion',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
 												'column_width' => '',
 												'default_value' => '',
-											),
-										),
-									),
-									array (
-										'label' => __('Archive'),
-										'name' => 'archive',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_psidud546c',
-												'label' => __('Post Per Page'),
-												'name' => 'post_per_page',
-												'type' => 'number',
-												'instructions' => __(''),
-												'column_width' => 15,
-												'default_value' => 10,
-												'placeholder' => '',
-												'prepend' => '',
-												'append' => '',
-												'min' => -1,
-												'max' => '',
-												'step' => '',
-											),
-											array (
-												'key' => 'field_bd7ekjqdsfdmlrlq2',
-												'label' => __('Archive Unit Span'),
-												'name' => 'archive_unit_span',
-												'type' => 'select',
-												'column_width' => '',
-												'choices' => array (
-													'one-of-one' => 'One of one',
-													'one-of-two' => 'One of two',
-													'one-of-three' => 'One of three',
-													'one-of-four' => 'One of four',
-													'one-of-five' => 'One of five',
-													'two-of-three' => 'Two of three',
-													'two-of-five' => 'Two of five',
-													'three-of-four' => 'Three of four',
-													'three-of-five' => 'Three of five',
-													'four-of-five' => 'Four of five',
-												),
-												'default_value' => 'one-of-one',
-												'allow_null' => 0,
-												'multiple' => 0,
-											),
-											array (
-												'key' => 'field_5qpwsdonsds10',
-												'label' => __('Filter by'),
-												'name' => 'filter_by',
-												'type' => 'select',
-												'column_width' => '',
-												'choices' => array (
-													'category' => 'Category*',
-													'start_date' => 'Start date',
-													'published_date' => 'Published date',
-													'last_name' => 'Last Name',
-													'title' => 'Title*',
-												),
-												'default_value' => 'title',
-												'allow_null' => 0,
-												'multiple' => 0,
-											),
-											array (
-												'key' => 'field_5qpwsdons10',
-												'label' => __('Elements to Display'),
-												'name' => 'elements',
-												'type' => 'repeater',
-												'column_width' => '',
-												'sub_fields' => array (
-													array (
-														'key' => 'field_df09ushkwse3',
-														'label' => __('Element'),
-														'name' => 'element',
-														'type' => 'select',
-														'column_width' => '',
-														'choices' => array (
-															'byline' => 'Byline',
-															'dates' => 'Dates',
-															'days' => 'Days',
-															'email' => 'Email',
-															'excerpt' => 'Excerpt',
-															'full_name' => 'Full name',
-															// 'relationship' => 'Relationship',
-															'main_image' => 'Main image',
-															'title' => 'Title',
-															'vimeo' => 'Vimeo',
-															'youtube' => 'Youtube',
-														),
-														'default_value' => 'main_image',
-														'allow_null' => 0,
-														'multiple' => 0,
-													),
-													array (
-														'key' => 'field_df0sdfaswse3',
-														'label' => __('Unit span'),
-														'name' => 'unit-span',
-														'type' => 'select',
-														'column_width' => '',
-														'choices' => array (
-															'one-of-one' => 'One of one',
-															'one-of-two' => 'One of two',
-															'one-of-three' => 'One of three',
-															'one-of-four' => 'One of four',
-															'one-of-five' => 'One of five',
-															'two-of-three' => 'Two of three',
-															'two-of-five' => 'Two of five',
-															'three-of-four' => 'Three of four',
-															'three-of-five' => 'Three of five',
-															'four-of-five' => 'Four of five',
-														),
-														'default_value' => 'one-of-one',
-														'allow_null' => 0,
-														'multiple' => 0,
-													),
-												),
-											'button_label' => 'Add another Element',
-											),
-										),
-									),
-									array (
-										'label' => __('Archive accordion last name'),
-										'name' => 'accordion_last_name',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_dsdpooer556a',
-												'label' => __('Archive accordion last name'),
-												'name' => 'accordion_last_name',
-												'type' => 'true_false',
-												'column_width' => '',
-												'message' => '',
-												'default_value' => 1,
-											),
-										),
-									),
-									array (
-										'label' => __('Archive accordion publish date'),
-										'name' => 'accordion_publish_date',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_sdfs55e7sd7786a',
-												'label' => __('Archive accordion publish date'),
-												'name' => 'accordion_publish_date',
-												'type' => 'true_false',
-												'column_width' => '',
-												'message' => '',
-												'default_value' => 1,
-											),
-										),
-									),
-									array (
-										'label' => __('Archive accordion start date'),
-										'name' => 'accordion_start_date',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_ssd54a6as46a',
-												'label' => __('Archive accordion start date'),
-												'name' => 'accordion_start_date',
-												'type' => 'true_false',
-												'column_width' => '',
-												'message' => '',
-												'default_value' => 1,
-											),
-										),
-									),
-									array (
-										'label' => __('Archive start date'),
-										'name' => 'archive_start_date',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_dfs56as46a',
-												'label' => __('Archive start date'),
-												'name' => 'archive_start_date',
-												'type' => 'true_false',
-												'column_width' => '',
-												'message' => '',
-												'default_value' => 1,
-											),
-										),
-									),
-									array (
-										'label' => __('Archive last name'),
-										'name' => 'archive_last_name',
-										'display' => 'row',
-										'min' => '',
-										'max' => '',
-										'sub_fields' => array (
-											array (
-												'key' => 'field_dsdpooieas46a',
-												'label' => __('Archive last name'),
-												'name' => 'archive_last_name',
-												'type' => 'true_false',
-												'column_width' => '',
-												'message' => '',
-												'default_value' => 1,
 											),
 										),
 									),
@@ -552,7 +337,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_o3mtp9f43yw71p',
+												'key' => 'field_hvsdk8y8fmo5lg',
 												'label' => __('Quote'),
 												'name' => 'quote',
 												'type' => 'text',
@@ -565,7 +350,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_ik8p26ory1ljxk',
+												'key' => 'field_2fa6m93elgku0f',
 												'label' => __('Credit line 1'),
 												'name' => 'credit_line_1',
 												'type' => 'text',
@@ -578,7 +363,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_scmdlm9iythdgk',
+												'key' => 'field_23p6vvlfxy1qt7',
 												'label' => __('Credit line 2'),
 												'name' => 'credit_line_2',
 												'type' => 'text',
@@ -591,7 +376,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_t0dsr6etzt33dt',
+												'key' => 'field_jnezdz3axnhfro',
 												'label' => __('Credit line 2 type'),
 												'name' => 'credit_line_2_type',
 												'type' => 'select',
@@ -606,7 +391,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_7t5738fbapea8u',
+												'key' => 'field_1mle7ck2uabdkl',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -615,7 +400,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -632,14 +417,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_3mzeg7smctqo40',
+												'key' => 'field_unehjz64ajcq9h',
 												'label' => __('Quotes'),
 												'name' => 'quotes',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_7eixev1s837zcv',
+														'key' => 'field_4awbqob3tzxr7s',
 														'label' => __('Quote'),
 														'name' => 'quote',
 														'type' => 'text',
@@ -652,7 +437,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_wvldxugrmtpui1',
+														'key' => 'field_7kxvc2p8g0egdf',
 														'label' => __('Credit line 1'),
 														'name' => 'credit_line_1',
 														'type' => 'text',
@@ -665,7 +450,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_wq6uq7op6x49of',
+														'key' => 'field_6yh9vta0vhz0pt',
 														'label' => __('Credit line 2'),
 														'name' => 'credit_line_2',
 														'type' => 'text',
@@ -678,7 +463,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_rya0wh6tqvto1r',
+														'key' => 'field_aagd7dbc75zcvr',
 														'label' => __('Credit line 2 type'),
 														'name' => 'credit_line_2_type',
 														'type' => 'select',
@@ -693,7 +478,7 @@ if(function_exists("register_field_group"))
 														'multiple' => 0,
 													),
 													array (
-														'key' => 'field_26m66ti9vlu925',
+														'key' => 'field_b9a08rjsml8ta9',
 														'label' => __('New window'),
 														'name' => 'new_window',
 														'type' => 'true_false',
@@ -702,7 +487,7 @@ if(function_exists("register_field_group"))
 														'default_value' => 0,
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -716,7 +501,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add a Quote',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -733,7 +518,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_gsfzluwubr32j8',
+												'key' => 'field_vcvbfknjj2i3ve',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -746,7 +531,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_oi9q8wl0wrf4bk',
+												'key' => 'field_7k2sxqe84ngwn7',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -759,7 +544,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_rxe3i4w6o5keks',
+												'key' => 'field_dkkj28xbb60zxa',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -768,7 +553,115 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
+												'label' => __('Class'),
+												'name' => 'class',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Byline'),
+										'name' => 'byline',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_8fs6d59085dszxa',
+												'label' => __('Byline'),
+												'name' => 'byline',
+												'type' => 'true_false',
+												'column_width' => '',
+												'message' => '',
+												'default_value' => 1,
+											),
+											array (
+												'key' => 'field_7778s58c6e011d',
+												'label' => __('Class'),
+												'name' => 'class',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Dates'),
+										'name' => 'dates',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_woj20awuz9ba9j',
+												'label' => __('Date start'),
+												'name' => 'date_start',
+												'type' => 'date_picker',
+												'date_format' => 'yymmdd',
+												'display_format' => 'mm/dd/yy',
+												'first_day' => 1,
+											),
+											array (
+												'key' => 'field_82cqctpbywhm37',
+												'label' => __('Date end'),
+												'name' => 'date_end',
+												'type' => 'date_picker',
+												'date_format' => 'yymmdd',
+												'display_format' => 'mm/dd/yy',
+												'first_day' => 1,
+											),
+											array (
+												'key' => 'field_7778s58c6e011d',
+												'label' => __('Class'),
+												'name' => 'class',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Days'),
+										'name' => 'days',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_ipve58ql3ryqjv',
+												'label' => __('Days'),
+												'name' => 'days',
+												'type' => 'repeater',
+												'sub_fields' => array (
+													array (
+														'key' => 'field_it2axg4l0xdvbv',
+														'label' => __('Day'),
+														'name' => 'day',
+														'type' => 'date_picker',
+														'column_width' => '',
+														'date_format' => 'yymmdd',
+														'display_format' => 'mm/dd/yy',
+														'first_day' => 1,
+													),
+													array (
+														'key' => 'field_7778s58c6e011d',
+														'label' => __('Class'),
+														'name' => 'class',
+														'type' => 'text',
+														'column_width' => '',
+														'default_value' => '',
+													),
+												),
+												'row_min' => '',
+												'row_limit' => '',
+												'layout' => 'table',
+												'button_label' => 'Add Day',
+											),
+											array (
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -785,14 +678,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_vcadob0nlad8uo',
+												'key' => 'field_bs9fch9x6x00ua',
 												'label' => __('Editors'),
 												'name' => 'editor',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_ef4aa2h38f6e4k',
+														'key' => 'field_x3e0353vexvhbl',
 														'label' => __('Editor'),
 														'name' => 'editor',
 														'type' => 'wysiwyg',
@@ -801,14 +694,6 @@ if(function_exists("register_field_group"))
 														'toolbar' => 'full',
 														'media_upload' => 'yes',
 													),
-													array (
-														'key' => 'field_7778s5888ds8d88sd',
-														'label' => __('Class'),
-														'name' => 'class',
-														'type' => 'text',
-														'column_width' => '',
-														'default_value' => '',
-													),
 												),
 												'row_min' => '',
 												'row_limit' => '',
@@ -816,12 +701,70 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Editor',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
 												'column_width' => '',
 												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Email'),
+										'name' => 'email',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_528cfs544504',
+												'label' => __('Email'),
+												'name' => 'email',
+												'type' => 'email',
+												'default_value' => '',
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Excerpt'),
+										'name' => 'excerpt',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_vcpouknl4er5',
+												'label' => __('Excerpt'),
+												'name' => 'excerpt',
+												'type' => 'text',
+												'column_width' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Full Name'),
+										'name' => 'full_name',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_vcpouknlad8uo',
+												'label' => __('First name'),
+												'name' => 'first_name',
+												'type' => 'text',
+												'column_width' => '',
+											),
+											array (
+												'key' => 'field_vcpou6455fd8uo',
+												'label' => __('Last name'),
+												'name' => 'last_name',
+												'type' => 'text',
+												'column_width' => '',
 											),
 										),
 									),
@@ -833,7 +776,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_50cbbn2qi7itum',
+												'key' => 'field_l24cozxgl2jga4',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -846,7 +789,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_zhm78sawnc4dad',
+												'key' => 'field_g18v71t674x13k',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -862,7 +805,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_48p9bjuuawk0cl',
+												'key' => 'field_cw90ttw88rrfv6',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -875,7 +818,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_qu25lrf1hior48',
+												'key' => 'field_nzlfwjf17t6k4o',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -884,7 +827,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -901,7 +844,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_r9vjevhi6j4iia',
+												'key' => 'field_96w61d29k9d2qf',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -914,7 +857,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_elxlzj24ktlv9s',
+												'key' => 'field_t8noz6201ou07v',
 												'label' => __('Image link'),
 												'name' => 'image_link',
 												'type' => 'text',
@@ -927,7 +870,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_bzp4sup7wihhe9',
+												'key' => 'field_lfxang6v7hdux7',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -936,7 +879,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -953,21 +896,13 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_b3i767b3yfa3y5',
+												'key' => 'field_unf45mauh6vjlm',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
 												'column_width' => '',
 												'preview_size' => 'thumbnail',
 												'library' => 'all',
-											),
-											array (
-												'key' => 'field_7778s5888ds8d88sd',
-												'label' => __('Class'),
-												'name' => 'class',
-												'type' => 'text',
-												'column_width' => '',
-												'default_value' => '',
 											),
 										),
 									),
@@ -979,7 +914,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_54v8nksze0ec8j',
+												'key' => 'field_tyur86dmjv71xd',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -988,7 +923,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1005,7 +940,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_102d55a6eeefs4d65465',
+												'key' => 'field_12ds66sees4d65465',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -1014,7 +949,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_10sssq88d4sascbkos',
+												'key' => 'field_12s99xxsscbkos',
 												'label' => __('Columns'),
 												'name' => 'columns',
 												'type' => 'number',
@@ -1024,7 +959,7 @@ if(function_exists("register_field_group"))
 												'max' => '',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1041,7 +976,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_v5zbkj5mbdq3ad',
+												'key' => 'field_y5xky8x2td04vw',
 												'label' => __('Images'),
 												'name' => 'images',
 												'type' => 'gallery',
@@ -1050,7 +985,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1067,7 +1002,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_ipsbpprbwxfx95',
+												'key' => 'field_g4x9zsd269kgll',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -1077,7 +1012,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_iiyas0k1jtcdhw',
+												'key' => 'field_6nnmsdx0j0x6m1',
 												'label' => __('Hover image'),
 												'name' => 'hover_image',
 												'type' => 'image',
@@ -1087,7 +1022,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_zb3jrfwwu3p8gt',
+												'key' => 'field_mrv4u8vhj10hzd',
 												'label' => __('Link'),
 												'name' => 'link',
 												'type' => 'text',
@@ -1100,7 +1035,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_jvsy0suq2uh4zw',
+												'key' => 'field_1c5f84dbin05pr',
 												'label' => __('New Window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -1109,7 +1044,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1126,7 +1061,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_b6li42nze9fgcm',
+												'key' => 'field_963dflwmrncucg',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -1136,7 +1071,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1153,7 +1088,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_cbms80doj6c93h',
+												'key' => 'field_48odhep6z5ubsx',
 												'label' => __('Map'),
 												'name' => 'map',
 												'type' => 'google_map',
@@ -1163,7 +1098,7 @@ if(function_exists("register_field_group"))
 												'height' => '',
 											),
 											array (
-												'key' => 'field_v3ws12hsdx6iwh',
+												'key' => 'field_9itcwqmouhrhd9',
 												'label' => __('Map height'),
 												'name' => 'map_height',
 												'type' => 'number',
@@ -1178,7 +1113,7 @@ if(function_exists("register_field_group"))
 												'step' => '',
 											),
 											array (
-												'key' => 'field_42prohsdli77n8',
+												'key' => 'field_o1n2zq18nujd0m',
 												'label' => __('Style ID'),
 												'name' => 'style_id',
 												'type' => 'text',
@@ -1192,7 +1127,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_si3hjfizlaz3fd',
+												'key' => 'field_rfe6leswfxfshq',
 												'label' => __('Zoom level'),
 												'name' => 'zoom_level',
 												'type' => 'number',
@@ -1206,14 +1141,14 @@ if(function_exists("register_field_group"))
 												'step' => '',
 											),
 											array (
-												'key' => 'field_s24pasdf4fqjhk',
+												'key' => 'field_thrg1s669z9umy',
 												'label' => __('Markers'),
 												'name' => 'markers',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_t8yt5qzz1bui78',
+														'key' => 'field_oh46oz690dhm7f',
 														'label' => __('Location'),
 														'name' => 'location',
 														'type' => 'google_map',
@@ -1223,7 +1158,7 @@ if(function_exists("register_field_group"))
 														'height' => '',
 													),
 													array (
-														'key' => 'field_nxsv9asardhdy2',
+														'key' => 'field_b01bj7kb94jf9e',
 														'label' => __('Image'),
 														'name' => 'image',
 														'type' => 'image',
@@ -1234,7 +1169,7 @@ if(function_exists("register_field_group"))
 														'library' => 'all',
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1257,7 +1192,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_8uj1aounza5lbz',
+												'key' => 'field_7kh7iwpfqtlk2k',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -1270,7 +1205,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_v0a54vja006ip6',
+												'key' => 'field_1rr9xa8vq1b8i8',
 												'label' => __('Text type'),
 												'name' => 'text_type',
 												'type' => 'select',
@@ -1287,7 +1222,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_byfxk0m2nnyg4o',
+												'key' => 'field_jcmyqhcq1a8u9w',
 												'label' => __('PDF'),
 												'name' => 'pdf',
 												'type' => 'file',
@@ -1296,7 +1231,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_r4txc9e0u4t3ko',
+												'key' => 'field_q0rmfj5tzmjf5a',
 												'label' => __('New window'),
 												'name' => 'new_window',
 												'type' => 'true_false',
@@ -1305,7 +1240,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1322,7 +1257,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_2xndakush8k1kq',
+												'key' => 'field_onbdnuqiwtg6n1',
 												'label' => __('Primary header menu'),
 												'name' => 'primary_header_menu',
 												'type' => 'true_false',
@@ -1331,7 +1266,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 1,
 											),
 											array (
-												'key' => 'field_nkehcamubdanlq',
+												'key' => 'field_02z62n93upvymx',
 												'label' => __('Custom theme menu location'),
 												'name' => 'custom_theme_menu_location',
 												'type' => 'text',
@@ -1347,14 +1282,14 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_bsx6pq9va5zmoe',
+												'key' => 'field_e6uevc1x40vi13',
 												'label' => __('Text links'),
 												'name' => 'text_link',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_cfm0w5sowdkuar',
+														'key' => 'field_q6jdsraag9fl6v',
 														'label' => __('Text'),
 														'name' => 'text',
 														'type' => 'text',
@@ -1367,7 +1302,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_m2zhtzusfs7ixs',
+														'key' => 'field_kgkd9296nr57t8',
 														'label' => __('Link'),
 														'name' => 'link',
 														'type' => 'text',
@@ -1380,7 +1315,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_a0bm5466yd74zh',
+														'key' => 'field_f6mg1b3upfcr8e',
 														'label' => __('New window'),
 														'name' => 'new_window',
 														'type' => 'true_false',
@@ -1389,7 +1324,7 @@ if(function_exists("register_field_group"))
 														'default_value' => 0,
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1403,7 +1338,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add a Text Link',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1420,7 +1355,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_66m2arw0adipyw',
+												'key' => 'field_aqwum90dmff5wx',
 												'label' => __('Text'),
 												'name' => 'text',
 												'type' => 'text',
@@ -1433,7 +1368,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_l85kyqisslsd2f',
+												'key' => 'field_dnv7rb2gre0l1v',
 												'label' => __('Text type'),
 												'name' => 'text_type',
 												'type' => 'select',
@@ -1450,7 +1385,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_g2z0kct6igw179',
+												'key' => 'field_vvrc1h9c8dgrzh',
 												'label' => __('Image'),
 												'name' => 'image',
 												'type' => 'image',
@@ -1460,7 +1395,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1477,7 +1412,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_m4gmm2851imcx3',
+												'key' => 'field_7q1wnl543xivr1',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1490,7 +1425,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_vo4gapzv90ad0q',
+												'key' => 'field_pfcfgidyoqyv6k',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1507,14 +1442,14 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_hqk0lt6h7a1rxr',
+												'key' => 'field_rn9rqzu10dkmw1',
 												'label' => __('Texts'),
 												'name' => 'text',
 												'type' => 'repeater',
 												'column_width' => '',
 												'sub_fields' => array (
 													array (
-														'key' => 'field_rvws7ttejwe9xk',
+														'key' => 'field_qd4u9aev7iv7ml',
 														'label' => __('Text'),
 														'name' => 'text',
 														'type' => 'text',
@@ -1527,7 +1462,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_7778s5888ds8d88sd',
+														'key' => 'field_7778s58c6e011d',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1541,7 +1476,71 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add Text',
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
+												'label' => __('Class'),
+												'name' => 'class',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+											),
+										),
+									),
+									array (
+										'label' => __('Title'),
+										'name' => 'title',
+										'display' => 'row',
+										'min' => '',
+										'max' => '',
+										'sub_fields' => array (
+											array (
+												'key' => 'field_ad4f165346276',
+												'label' => __('Title'),
+												'name' => 'title',
+												'type' => 'true_false',
+												'column_width' => '',
+												'message' => '',
+												'default_value' => 1,
+											),
+											array (
+												'key' => 'field_tyutyiy6deee25654',
+												'label' => __('Title type'),
+												'name' => 'title_type',
+												'type' => 'select',
+												'column_width' => '',
+												'choices' => array (
+													'heading_1' => 'Heading 1',
+													'heading_2' => 'Heading 2',
+													'heading_3' => 'Heading 3',
+													'heading_4' => 'Heading 4',
+												),
+												'default_value' => 'heading_1',
+												'allow_null' => 0,
+												'multiple' => 0,
+											),
+											array (
+												'key' => 'field_rtyrt87960a',
+												'label' => __('Link'),
+												'name' => 'link',
+												'type' => 'text',
+												'column_width' => '',
+												'default_value' => '',
+												'placeholder' => '',
+												'prepend' => '',
+												'append' => '',
+												'formatting' => 'html',
+												'maxlength' => '',
+											),
+											array (
+												'key' => 'field_rtytryrtyrty787',
+												'label' => __('New window'),
+												'name' => 'new_window',
+												'type' => 'true_false',
+												'column_width' => '',
+												'message' => '',
+												'default_value' => 0,
+											),
+											array (
+												'key' => 'field_rty44fe011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1558,7 +1557,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_tcbmubm6gdwhvj',
+												'key' => 'field_yhvfhctkiennxl',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1571,7 +1570,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_gi616zgmfyho2a',
+												'key' => 'field_bnbsdengn00ul0',
 												'label' => __('Video link'),
 												'name' => 'video_link',
 												'type' => 'text',
@@ -1584,7 +1583,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_3vb4fn3ybfrn1n',
+												'key' => 'field_dn8pgta8tls5x7',
 												'label' => __('Video image'),
 												'name' => 'video_image',
 												'type' => 'image',
@@ -1594,7 +1593,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_h8kzr8rwan1saa',
+												'key' => 'field_oth2vxw2okq5oa',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1606,7 +1605,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1623,7 +1622,7 @@ if(function_exists("register_field_group"))
 										'max' => '',
 										'sub_fields' => array (
 											array (
-												'key' => 'field_392u28xj9ylukq',
+												'key' => 'field_h2lmob17pxs4zv',
 												'label' => __('Heading'),
 												'name' => 'heading',
 												'type' => 'text',
@@ -1636,7 +1635,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_gtwz0ktb7dyigw',
+												'key' => 'field_e1mkup32bzhw67',
 												'label' => __('Video link'),
 												'name' => 'video_link',
 												'type' => 'text',
@@ -1649,7 +1648,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_8vu24fw25iotjj',
+												'key' => 'field_idvo2vmq8xt3mw',
 												'label' => __('Video image'),
 												'name' => 'video_image',
 												'type' => 'image',
@@ -1659,7 +1658,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_07a7c9nh9om95d',
+												'key' => 'field_cji484z295l5i4',
 												'label' => __('Heading type'),
 												'name' => 'heading_type',
 												'type' => 'select',
@@ -1676,7 +1675,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_7778s5888ds8d88sd',
+												'key' => 'field_7778s58c6e011d',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1707,10 +1706,24 @@ if(function_exists("register_field_group"))
 				array (
 					array (
 						'param' => 'page_template',
-						'operator' => '==',
-						'value' => 'archive.php',
+						'operator' => '!=',
+						'value' => 'default',
 						'order_no' => 0,
 						'group_no' => 0,
+					),
+					array (
+						'param' => 'page_template',
+						'operator' => '!=',
+						'value' => 'archive.php',
+						'order_no' => 0,
+						'group_no' => 1,
+					),
+					array (
+						'param' => 'page_template',
+						'operator' => '!=',
+						'value' => 'taxonomy.php',
+						'order_no' => 0,
+						'group_no' => 1,
 					),
 				),
 			),
