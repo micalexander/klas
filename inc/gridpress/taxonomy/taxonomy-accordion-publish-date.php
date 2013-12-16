@@ -57,7 +57,7 @@ endwhile; endif;
 				<?php foreach ($entries as $entry): ?>
 				<a href="<?php echo $entry['permalink']; ?>"><?php echo $entry['title']; ?></a>
 				<?php $i++; ?>
-				<?php if ($i == 1): ?>
+				<?php if ($i == 5): ?>
 				<div class="more"><a href="<?php echo get_post_type_archive_link( $post_type ) . $years . '/' . date('m', strtotime($months)); ?> ">more</a></div>
 					<?php break; ?>
 				<?php endif ?>

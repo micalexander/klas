@@ -37,6 +37,10 @@
 		{
 			require('archive-filter-by-publish-date.php');
 		}
+		elseif ($filter_by == 'category')
+		{
+			require('archive-filter-by-taxonomy.php');
+		}
 	}
 
 	if (!$archive_page)

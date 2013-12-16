@@ -1,5 +1,18 @@
 <?php
 
+	$post_type_slug 		= get_post_type_object( get_post_type() )->rewrite['slug'];
+	$taxonomies 		    = get_object_taxonomies( $post_type );
+	$terms          	    = get_terms( $taxonomies );
+	$term 					= get_the_terms( $post->ID, $taxonomies[0] );
+	$months 				= array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+	$last_month 			= date('m') -1;
+	// get position of the current month to the end of the year
+	$month_start 			= array_slice($months, $last_month);
+	// get jan all the way to the current month
+	$month_end 				= array_slice($months, 0, $last_month);
+	// merge these two arrays together to make a month filter that starts with this current month
+	$new_months 			= array_merge($month_start,$month_end);
+
 	if (get_field('single_grid')) : while(has_sub_field('single_grid')):
 
 		$unit_count++;
@@ -24,22 +37,40 @@
 							// start accordion_links
 						elseif (get_row_layout() == "accordion_links"):
 							require_once(__DIR__ . '/../accordion-links.php');
-							// start archive byline
+							// start single accordion last name
+						elseif (get_row_layout() == "accordion_last_name"):
+							require( 'single-accordion-last-name.php');
+							// start single last name
+						elseif (get_row_layout() == "single_last_name"):
+							require( 'single-last-name.php');
+							// start single accordion publish date
+						elseif (get_row_layout() == "accordion_publish_date"):
+							require( 'single-accordion-publish-date.php');
+							// start single accordion start date
+						elseif (get_row_layout() == "accordion_start_date"):
+							require( 'single-accordion-start-date.php');
+							// start single start date
+						elseif (get_row_layout() == "single_start_date"):
+							require( 'single-start-date.php');
+							// start single accordion taxonomy term
+						elseif (get_row_layout() == "accordion_taxonomy_term"):
+							require( 'single-accordion-taxonomy-term.php');
+							// start single byline
 						elseif (get_row_layout() == "byline"):
 							require( 'single-byline.php');
-							// start archive dates
+							// start single dates
 						elseif (get_row_layout() == "dates"):
 							require( 'single-dates.php');
-							// start archive days
+							// start single days
 						elseif (get_row_layout() == "days"):
 							require( 'single-days.php');
-							// start archive email
+							// start single email
 						elseif (get_row_layout() == "email"):
 							require( 'single-email.php');
-							// start archive excerpt
+							// start single excerpt
 						elseif (get_row_layout() == "excerpt"):
 							require( 'single-excerpt.php');
-							// start archive full name
+							// start single full name
 						elseif (get_row_layout() == "full_name"):
 							require( 'single-full-name.php');
 							// start blockquote

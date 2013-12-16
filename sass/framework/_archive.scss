@@ -3,12 +3,12 @@
 		&.clearleft {
 			clear: left;
 		}
-		.month-heading-wrapper {
+		.month-heading-wrapper, .taxonomy-heading-wrapper {
 			// background: #eee;
 			&.even {
 				// background: #ccc;
 			}
-			.subsequent.month-heading {
+			.subsequent.month-heading, .subsequent.taxonomy-heading {
 				visibility: hidden;
 			}
 		}

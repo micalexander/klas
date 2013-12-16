@@ -8,6 +8,8 @@
 	$item_count 			= 0;
 
 	$post_type_slug 		= get_post_type_object( get_post_type() )->rewrite['slug'];
+	$taxonomies 		    = get_object_taxonomies( $post_type );
+	$terms          	    = get_terms( $taxonomies );
 	$months 				= array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 	$last_month 			= date('m') -1;
 	// get position of the current month to the end of the year
@@ -122,9 +124,15 @@
 							// start archive accordion start date
 						elseif (get_row_layout() == "accordion_start_date"):
 							require( 'archive-accordion-start-date.php');
+							// start archive accordion taxonomy term
+						elseif (get_row_layout() == "accordion_taxonomy_term"):
+							require( 'archive-accordion-taxonomy-term.php');
 							// start archive start date
 						elseif (get_row_layout() == "archive_start_date"):
 							require( 'archive-start-date.php');
+							// start archive taxonomy
+						elseif (get_row_layout() == "archive_taxonomy"):
+							require( 'archive-taxonomy-term.php');
 							// start youtube video
 						elseif (get_row_layout() == "youtube"):
 							require_once(__DIR__ . '/../youtube.php');

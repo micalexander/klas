@@ -2,16 +2,12 @@
 	$post_by_months = array();
 	$post_by_years = array();
 
-	// Declare some helper vars
-	// $previous_year = $year = 0;
-	// $previous_month = $month = 0;
-
 	$args = array(
-				'posts_per_page' => $archive_post_per_page,
+				'posts_per_page' => -1,
 				'post_type' => $post_type,
-				'offset' => $archive_offset,
 				'orderby' => 'date',
-				'order' => 'DSC'
+				'order' => 'DSC',
+
 	);
 
 	// Get the posts
@@ -50,7 +46,7 @@ endwhile; endif;
 				<?php foreach ($entries as $entry): ?>
 				<a href="<?php echo $entry['permalink']; ?>"><?php echo $entry['title']; ?></a>
 				<?php $i++; ?>
-				<?php if ($i == 5): ?>
+				<?php if ($i == 1): ?>
 				<div class="more"><a href="<?php echo get_post_type_archive_link( $post_type ) . $years . '/' . date('m', strtotime($months)); ?> ">more</a></div>
 					<?php break; ?>
 				<?php endif ?>
