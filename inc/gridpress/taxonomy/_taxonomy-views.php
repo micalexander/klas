@@ -6,14 +6,9 @@
 	$unit_count = 0;
 	$sub_unit_count = 0;
 	$item_count = 0;
-	foreach (get_post_types() as $key => $type)
-	{
-		if (get_object_taxonomies( $type )[0] == $pagename)
-		{
-			$post_type = $type;
-		}
-	}
-	$post_type_slug 	= get_post_type_object( get_post_type() )->rewrite['slug'];
+
+	$post_type 			= get_post_type();
+	$post_type_slug 	= get_post_type_object( $post_type )->rewrite['slug'];
 	$months 			= array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 	$last_month 		= date('m') -1;
 	// get position of the current month to the end of the year
@@ -41,8 +36,7 @@
 				'caller_get_posts'=> 1
 	);
 	$taxonomy_post = get_posts($args);
-
-	if (get_field('taxonomy_grid', $taxonomy_post[0]->ID)) : while(has_sub_field('taxonomy_grid', $taxonomy_post[0]->ID)):
+	if (get_field('taxonomy_grid', get_page_by_path($taxonomy)->ID)) : while(has_sub_field('taxonomy_grid', get_page_by_path($taxonomy)->ID)):
 
 		$unit_count++;
 		$unit_size = get_sub_field('unit_span');

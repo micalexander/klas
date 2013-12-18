@@ -3,7 +3,7 @@
 		<section>
 			<div class="container">
 				<div class="grid">
-					<?php get_template_part( 'inc/gridpress/_single-views' ); ?>
+					<?php get_template_part( 'inc/gridpress/single/_single-views' ); ?>
 				</div>
 			</div>
 		</section>
