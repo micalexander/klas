@@ -21,7 +21,7 @@
         "dependencies": {
         "enquire": "~2.1.0",
         "fancybox": "~2.1.5",
-        "flexslider": "~2.2.2",
+        "flexslider": "https://github.com/woothemes/FlexSlider/archive/master.zip",
         "responsive-nav": "~1.0.23",
         "matchmedia": "~0.1.0",
         "leaflet": "~0.6.4",
