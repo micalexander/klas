@@ -1804,6 +1804,13 @@ if(function_exists("register_field_group"))
 						'order_no' => 0,
 						'group_no' => 0,
 					),
+					array (
+						'param' => 'ef_media',
+						'operator' => '!=',
+						'value' => 'all',
+						'order_no' => 3,
+						'group_no' => 0,
+					),
 				),
 			),
 			'options' => array (
