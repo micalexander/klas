@@ -242,6 +242,7 @@ endif; // ends check for _s_comment()
 
 
 // require acf
+require_once( 'inc/gridpress/_attachment-array.php' );
 require_once( 'inc/gridpress/_page-array.php' );
 require_once( 'inc/gridpress/archive/_archive-array.php' );
 require_once( 'inc/gridpress/taxonomy/_taxonomy-array.php' );

@@ -37,6 +37,7 @@
 					margin: 0;
 					padding: 0;
 					list-style: none;
+					@include clearfix;
 				}
 				li.menu-item {
 					background: #ccc;
@@ -45,6 +46,7 @@
 					white-space: nowrap;
 					display: block;
 					width: 100%;
+					line-height: normal;
 					@include breakpoint(desktop) {
 						height: 100%;
 						border-top: 0;
@@ -105,7 +107,6 @@
 						float: left;
 						width: auto;
 						padding: 10px 3%;
-						line-height: 2em;
 						border-top: none;
 						ul.sub-menu {
 							display: none;

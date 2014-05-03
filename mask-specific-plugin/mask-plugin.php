@@ -28,143 +28,6 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'four-of-five-image', 795, 477, true ); //(cropped)
 }
 
-/**
- * Add fields to media uploader
- *
- * @param $form_fields array, fields to include in attachment form
- * @param $post object, attachment record in database
- * @return $form_fields, modified form fields
- */
-
-function mask_attachment_field_credit( $form_fields, $post ) {
-
-	$form_fields['mask-text-1'] = array(
-		'label' => 'Text Line 1',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'text-1', true ),
-	);
-
-	$form_fields['mask-text-2'] = array(
-		'label' => 'Text Line 2',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'text-2', true ),
-	);
-
-	$form_fields['mask-text-3'] = array(
-		'label' => 'Text Line 3',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'text-3', true ),
-	);
-
-
-	$form_fields['mask-url-text'] = array(
-		'label' => 'URL Text',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'url-text', true ),
-	);
-
-	$form_fields['mask-url'] = array(
-		'label' => 'URL',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'url', true ),
-	);
-
-	$form_fields['mask-image-url'] = array(
-		'label' => 'Image Url',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'image-url', true ),
-	);
-
-	$form_fields['mask-map-text-1'] = array(
-		'label' => 'Map Line 1',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-text-1', true ),
-	);
-
-	$form_fields['mask-map-text-2'] = array(
-		'label' => 'Map Line 2',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-text-2', true ),
-	);
-
-	$form_fields['mask-map-text-3'] = array(
-		'label' => 'Map Line 3',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-text-3', true ),
-	);
-
-	$form_fields['mask-map-text-4'] = array(
-		'label' => 'Map Line 4',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-text-4', true ),
-	);
-
-	$form_fields['mask-map-url-text'] = array(
-		'label' => 'Map URL Text',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-url-text', true ),
-	);
-
-	$form_fields['mask-map-url'] = array(
-		'label' => 'Map URL',
-		'input' => 'text',
-		'value' => get_post_meta( $post->ID, 'map-url', true ),
-	);
-
-	return $form_fields;
-}
-
-add_filter( 'attachment_fields_to_edit', 'mask_attachment_field_credit', 10, 2 );
-
-/**
- * Save values of fields in media uploader
- *
- * @param $post array, the post data for database
- * @param $attachment array, attachment fields from $_POST form
- * @return $post array, modified post data
- */
-
-function mask_attachment_field_credit_save( $post, $attachment ) {
-
-	if( isset( $attachment['mask-text-1'] ) )
-		update_post_meta( $post['ID'], 'text-1', $attachment['mask-text-1'] );
-
-	if( isset( $attachment['mask-text-2'] ) )
-		update_post_meta( $post['ID'], 'text-2', $attachment['mask-text-2'] );
-
-	if( isset( $attachment['mask-text-3'] ) )
-		update_post_meta( $post['ID'], 'text-3', $attachment['mask-text-3'] );
-
-	if( isset( $attachment['mask-url-text'] ) )
-		update_post_meta( $post['ID'], 'url-text', $attachment['mask-url-text'] );
-
-	if( isset( $attachment['mask-url'] ) )
-		update_post_meta( $post['ID'], 'url', $attachment['mask-url'] );
-
-	if( isset( $attachment['mask-image-url'] ) )
-		update_post_meta( $post['ID'], 'image-url', $attachment['mask-image-url'] );
-
-	if( isset( $attachment['mask-map-text-1'] ) )
-		update_post_meta( $post['ID'], 'map-text-1', $attachment['mask-map-text-1'] );
-
-	if( isset( $attachment['mask-map-text-2'] ) )
-		update_post_meta( $post['ID'], 'map-text-2', $attachment['mask-map-text-2'] );
-
-	if( isset( $attachment['mask-map-text-3'] ) )
-		update_post_meta( $post['ID'], 'map-text-3', $attachment['mask-map-text-3'] );
-
-	if( isset( $attachment['mask-map-text-4'] ) )
-		update_post_meta( $post['ID'], 'map-text-4', $attachment['mask-map-text-4'] );
-
-	if( isset( $attachment['mask-map-url-text'] ) )
-		update_post_meta( $post['ID'], 'map-url-text', $attachment['mask-map-url-text'] );
-
-	if( isset( $attachment['mask-map-url'] ) )
-		update_post_meta( $post['ID'], 'map-url', $attachment['mask-map-url'] );
-
-	return $post;
-}
-
 add_filter( 'attachment_fields_to_save', 'mask_attachment_field_credit_save', 10, 2 );
 
 // filter_hook function to react on sub_menu flag
@@ -249,6 +112,31 @@ function get_sched_year($int_month)
 		$year = date('Y');
 	}
 		return $year;
+}
+
+function slugify($text)
+{
+	// replace non letter or digits by -
+	$text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+
+	// trim
+	$text = trim($text, '-');
+
+	// transliterate
+	$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+	// lowercase
+	$text = strtolower($text);
+
+	// remove unwanted characters
+	$text = preg_replace('~[^-\w]+~', '', $text);
+
+	if (empty($text))
+	{
+	return 'n-a';
+	}
+
+  return $text;
 }
 
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );

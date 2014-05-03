@@ -6,6 +6,17 @@ $link-color: #000;
 $link-hover: #333;
 $p: .7em;
 
+// Better font-rendering on OSX (http://maximilianhoffmann.com/posts/better-font-rendering-on-osx)
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
 
 // Rem Font Sizing
 @mixin font-size-rem($size: 1.6){
