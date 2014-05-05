@@ -1,124 +1,55 @@
+/*
+Examples can be found at the top of
+the "framework/mask-framework" file
+
+TABLE OF CONTENTS
+
+01 - framework
+02 - global
+03 - vendor
+04 - overrides
+05 - partials
+06 - modules
+07 - pages
+*/
+
+/* -------------------------------------------------
+** 01 - framework
+** ---------------------------------------------- */
 @import "framework/reset";
 @import "framework/mask-framework";
-@import "framework/image-rotator";
-@import "framework/image-gallery";
-@import "framework/image-link-gallery";
-@import "framework/accordion";
-@import "framework/archive-start-date";
-@import "framework/archive-last-name";
-@import "framework/archive-taxonomy-terms";
-@import "framework/archive-accordion-start-date";
-@import "framework/archive-accordion-last-name";
-@import "framework/archive-accordion-published";
-@import "framework/map";
-@import "framework/archive";
-@import "../../../../bower_components/flexslider/flexslider";
-@import "../../../../bower_components/fancybox/source/jquery.fancybox";
-@import "../../../../bower_components/leaflet/dist/leaflet";
-@import "framework/isotope";
-@import "framework/flexslider";
-@import "framework/fancybox";
-@import "framework/responsive-nav";
-
-// Uncomment @import, to import Bower assets
-// Example: bower install [vendor] (in the root of your project)
-// @import "../../../../bower_components/";
-
-// COMPASS SPRITE EXAMPLE ( Place images to be sprited in img/icon/ e.g. "img/icon/logo.png" )
-// .icon-logo {
-// 	@include sprite-dimensions($icon-sprites, logo );
-// }
+@import "framework/typography/font-styles";
+@import "framework/modules/*";
 
 /* -------------------------------------------------
-** TEMPLATE
+** 02 - global
 ** ---------------------------------------------- */
-* { @include box-sizing('border-box'); }
-
-/* iOS fixes */
-html { -webkit-text-size-adjust: none; }
-input[type=submit] { -webkit-appearance: none; -moz-appearance: none; }
-
-/* Media Queries for determining javascript events, via http://adactio.com/journal/5429/ */
-body:after { content: 'mobile'; display: none; }
-@media only screen and (min-width: $mq-desktop) {
-	body:after { content: 'desktop'; }
-}
-// STANDARD MEDIA QUERY EXAMPLE
-
-// @media screen and (min-width: $mq-desktop) {
-// /* styles here */
-// } // END @media: $mq-desktop
-
-// SLECTOR SPECIFIC MEDIA QUERY EXAMPLE
-// .example-selector
-// /* mobile styles here */
-// @include breakpoint(tablet) {
-// /* tablet styles here */
-// }
-// @include breakpoint(desktop) {
-// /* desktop styles here */
-// }
-// }
+@import "global/*";
 
 /* -------------------------------------------------
-** Body structure
+** 03 - vendor
+** ----------------------------------------------- */
+@import "flexslider/flexslider";
+@import "fancybox/source/jquery.fancybox";
+@import "leaflet/dist/leaflet";
+@import "vendors/*";
+/* -------------------------------------------------
+** 04 - overrides
 ** ---------------------------------------------- */
-body {
-	overflow: hidden;
-	.container {
-		.grid {
-			.unit {
-				// uncomment to remove grey bg
-				// background: transparent;
-			}
-		}
-	}
-	@include breakpoint(desktop) {
-		padding: 0;
-	}
-	.header-wrapper {
-		margin: 0 auto;
-		padding: 0 3%;
-		& + .content-wrapper {
-			margin-top: 20px;
-		}
-		@include breakpoint(desktop) {
-			width: $page-width;
-			padding: 0;
-		}
-		// Header
-		@import "partials/header";
-	}
-	.content-wrapper {
-		margin: 0 auto;
-		padding: 0 3%;
-		& + .footer-wrapper {
-			margin-top: 20px;
-		}
-		@include breakpoint(desktop) {
-			width: $page-width;
-			padding: 0;
-		}
-		// Section
-		@import "partials/section";
-		// Sidebar
-		@import "partials/sidebar";
-	}
-	.footer-wrapper {
-		margin: 0 auto;
-		padding: 0 3%;
-		@include breakpoint(desktop) {
-			width: $page-width;
-			padding: 0;
-		}
-		// Footer
-		@import "partials/footer";
-	}
-}
+@import "overrides/*";
 
 /* -------------------------------------------------
-** Pages and additional Partials
+** 05 - partials
 ** ---------------------------------------------- */
-@import "pages/home";
-@import "pages/about-us";
-@import "pages/contact-us";
+@import "partials/*";
+
+/* -------------------------------------------------
+** 06 - modules
+** ---------------------------------------------- */
+@import "modules/*";
+
+/* -------------------------------------------------
+** 07 - pages
+** ---------------------------------------------- */
+@import "pages/*";
+

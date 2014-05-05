@@ -13,12 +13,8 @@
 //= require "flexslider/jquery.flexslider"
 //= require "fancybox/source/jquery.fancybox.pack"
 //= require "fancybox/source/helpers/jquery.fancybox-media"
+//= require_directory "./vendors"
 //= require "framework/mask-framework"
-//= require "framework/image-gallery"
-//= require "framework/responsive-nav"
-//= require "framework/flexslider"
-//= require "framework/fancybox"
-//= require "framework/enquire"
-//= require "framework/pointer-scroll"
-
-
+//= require_directory "./framework/modules"
+//= require_directory "./overrides"
+//= require_directory "./modules"

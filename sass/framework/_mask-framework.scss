@@ -1,9 +1,48 @@
-
 /* SCSS Framework boilerplate from MASK: https://github.com/micalexander/mask */
+
+/* -------------------------------------------------
+** examples
+** -------------------------------------------------
+
+ BOWER INSTALL EXAMPLE
+
+ // bower install [vendor] (in the root of your project)
+ @import "[vendor-folder]/[vendor-css/scss]";
+
+ COMPASS SPRITE EXAMPLE
+ // Place images to be sprited in img/icon/ e.g. "img/icon/logo.png"
+ .icon-logo {
+ 	@include sprite-dimensions($icon-sprites, logo );
+ }
+
+----------------------------------------------------
+
+ STANDARD MEDIA QUERY EXAMPLE
+
+ @media screen and (min-width: $mq-desktop) {
+ 	// styles here
+ }  // END @media: $mq-desktop
+
+----------------------------------------------------
+
+ SLECTOR SPECIFIC MEDIA QUERY EXAMPLE (mixin)
+
+ .example-selector
+ 	// mobile styles here
+	 @include breakpoint(tablet) {
+	// tablet styles here
+	 }
+	 @include breakpoint(desktop) {
+	// desktop styles here
+	 }
+ }
+
+----------------------------------------------------
+*/
+
 // -------------------------------------------------
 // MASK Compass Imports
 // ---------------------------------------------- */
-@import "framework/reset";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/box-sizing";
@@ -294,5 +333,3 @@ body,select,input,textarea{color:#333;}
 		}
 	}
 }
-
-@import "framework/font-styles";
