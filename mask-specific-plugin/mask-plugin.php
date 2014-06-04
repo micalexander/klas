@@ -6,6 +6,13 @@ Description: Site specific code changes for mask
 */
 /* Start Adding Functions Below this Line */
 
+// gridpress variables
+// short codes
+$shortcode_choices = array (
+	// '[sidebar-ads]' => 'Sidebar ads',
+);
+
+
 /**
 * Add image sizes to the template
 */
