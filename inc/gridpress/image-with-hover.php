@@ -3,11 +3,11 @@
 		$image_link = get_sub_field('image_link');
 		$image_hover = get_sub_field("image_hover");
 		$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
-		$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+		$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 
 	if ($image):
 ?>
-<a class=" img-link <?php echo $class; ?><?php echo 'item-' . $item_count; ?>" <?php echo $target; ?>  href="<?php echo $image_link; ?>" >
+<a class=" img-link <?php echo $class; ?>" <?php echo $target; ?>  href="<?php echo $image_link; ?>" >
 	<div class="image-frame-hover">
 		<img src="<?php echo $image['url']; ?>" alt="">
 		<img src="<?php echo $image_hover['url']; ?>" alt="">

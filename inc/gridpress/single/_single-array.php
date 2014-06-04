@@ -35,7 +35,7 @@ if(function_exists("register_field_group"))
 						'multiple' => 0,
 					),
 					array (
-						'key' => 'field_7778s58c6e011d',
+						'key' => 'field_7778s5888ds8d88sd',
 						'label' => __('Class'),
 						'name' => 'class',
 						'type' => 'text',
@@ -71,7 +71,7 @@ if(function_exists("register_field_group"))
 								'multiple' => 0,
 							),
 							array (
-								'key' => 'field_7778s58c6e011d',
+								'key' => 'field_7778s5888ds8d88sd',
 								'label' => __('Class'),
 								'name' => 'class',
 								'type' => 'text',
@@ -140,7 +140,7 @@ if(function_exists("register_field_group"))
 														'media_upload' => 'yes',
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -154,7 +154,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Accordion',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -197,7 +197,7 @@ if(function_exists("register_field_group"))
 												'maxlength' => '',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -306,7 +306,7 @@ if(function_exists("register_field_group"))
 														'button_label' => 'Add a link',
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -320,7 +320,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Accordion',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -472,7 +472,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -559,7 +559,7 @@ if(function_exists("register_field_group"))
 														'default_value' => 0,
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -573,7 +573,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add a Quote',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -625,7 +625,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -651,7 +651,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 1,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -686,7 +686,7 @@ if(function_exists("register_field_group"))
 												'first_day' => 1,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -719,7 +719,7 @@ if(function_exists("register_field_group"))
 														'first_day' => 1,
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -733,7 +733,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add Day',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -773,7 +773,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add an Editor',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -899,7 +899,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -951,7 +951,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -995,7 +995,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1031,7 +1031,7 @@ if(function_exists("register_field_group"))
 												'max' => '',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1057,7 +1057,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1116,7 +1116,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1143,7 +1143,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1241,7 +1241,7 @@ if(function_exists("register_field_group"))
 														'library' => 'all',
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1312,7 +1312,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1396,7 +1396,7 @@ if(function_exists("register_field_group"))
 														'default_value' => 0,
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1410,7 +1410,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add a Text Link',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1467,7 +1467,7 @@ if(function_exists("register_field_group"))
 												'library' => 'all',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1534,7 +1534,7 @@ if(function_exists("register_field_group"))
 														'maxlength' => '',
 													),
 													array (
-														'key' => 'field_7778s58c6e011d',
+														'key' => 'field_7778s5888ds8d88sd',
 														'label' => __('Class'),
 														'name' => 'class',
 														'type' => 'text',
@@ -1548,7 +1548,7 @@ if(function_exists("register_field_group"))
 												'button_label' => 'Add Text',
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1612,7 +1612,7 @@ if(function_exists("register_field_group"))
 												'default_value' => 0,
 											),
 											array (
-												'key' => 'field_rty44fe011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1677,7 +1677,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',
@@ -1747,7 +1747,7 @@ if(function_exists("register_field_group"))
 												'multiple' => 0,
 											),
 											array (
-												'key' => 'field_7778s58c6e011d',
+												'key' => 'field_7778s5888ds8d88sd',
 												'label' => __('Class'),
 												'name' => 'class',
 												'type' => 'text',

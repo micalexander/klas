@@ -19,9 +19,9 @@
 			break;
 	}
 ?>
-	<ul class=" accordion-editor <?php echo 'item-' . $item_count; ?>">
+	<ul class="accordion accordion-editor <?php echo 'item-' . $item_count; ?>">
 		<?php foreach ($accordions as $accordion): ?>
-		<li>
+		<li class="accordion-key">
 			<<?php echo $tag; ?> class="accordion-heading icon-accordion-heading <?php echo $item_count; ?>">
 				<?php echo $accordion['heading'] ? $accordion['heading'] : ''; ?>
 			</<?php echo $tag; ?>>

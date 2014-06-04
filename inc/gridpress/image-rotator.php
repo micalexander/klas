@@ -1,12 +1,15 @@
 <?php
 		$images = get_sub_field('images');
-		$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+		$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	 	if( $images ):
 	 ?>
-	    <div id="slider" class=" flexslider <?php echo $class; ?><?php echo 'item-'  . $item_count; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
+	    <div id="slider" class=" flexslider <?php echo $class; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
 	        <ul class="slides">
+				<div class="progress_bar_container">
+					<div class="progress-bar"></div>
+				</div>
 	            <?php foreach( $images as $image ): ?>
-	                <li class="<?php echo $item_count; ?>">
+	                <li class="">
 	                    <?php
 							$image_inscription = get_post_meta($image['id'], 'inscription', true);
 							$image_url  = get_post_meta($image['id'], 'url', true);
@@ -36,7 +39,7 @@
 							}
 	                    ?>
 						<?php echo $url = $image_url ? '<a href="' . $image_url . '"' . $target . '">': ''; // open "a" tag ?>
-								<img class="image" src="<?php echo $image['sizes']['rotator-image']; ?>" alt="<?php echo $image['alt']; ?>" >
+								<div class="image" style="background-image: url(<?php echo $image['sizes']['rotator-image']; ?>);" alt="<?php echo $image['alt']; ?>" >
 						<?php echo $close_url = $image_url ? '</a>' : ''; // closing "a" tag ?>
 	                    <?php if ($image['caption']): ?>
 		                    <p class="flex-caption"><span class="icon-caption-arrow"></span><?php echo $image['caption']; ?> <a href="<?php echo $image_url; ?>"><?php echo $image_text; ?><span class="icon-caption-link-arrow"></span></a></p>

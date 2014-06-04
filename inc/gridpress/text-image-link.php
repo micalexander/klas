@@ -2,7 +2,7 @@
 	$image = get_sub_field('image');
 	$text = get_sub_field("text");
 	$type = get_sub_field("text_type");
-	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	switch ($type) {
 		case 'paragraph_text':
 			$tag = 'p';
@@ -21,7 +21,7 @@
 			break;
 	}
 ?>
-	<div class="text-lightbox <?php echo $class; ?><?php echo 'item-'  . $item_count; ?>">
+	<div class="text-lightbox <?php echo $class; ?>">
 		<div class="icon-text-lightbox">
 		</div>
 		<<?php echo $tag; ?>>

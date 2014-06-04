@@ -2,10 +2,10 @@
     $text = get_sub_field('text');
     $link = get_sub_field('link');
     $target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
-    $class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+    $class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
     if ($text):
 ?>
-    <div class=" button-wrapper <?php echo $class; ?><?php echo 'item-'  . $item_count; ?>">
+    <div class=" button-wrapper <?php echo $class; ?>">
         <div class="button">
             <?php echo $open_anchor = $link ? '<a href="' . $link . '" ' . $target .' >' : ''; ?>
                 <?php echo $text; ?>

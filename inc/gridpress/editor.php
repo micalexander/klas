@@ -1,16 +1,13 @@
 <?php
-	$editors = get_sub_field("editor");
-	if ($editors):
+	$editor = get_sub_field("editor");
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
+	if ($editor):
+		?>
 
-		foreach ($editors as $editor):
-		$class = $editor['class'] ? str_replace(' ', '-', strtolower(rtrim($editor['class']))) . ' ' : '' ;
-	?>
-			<div class=" editor <?php echo $class; ?><?php echo 'item-'  . $item_count; ?>"><?php echo $editor['editor']; ?></div>
 	<?php
-				$item_count++;
-			if($editor = end($editors)) {
-			}
-		endforeach;
+	?>
+		<div class=" editor <?php echo $class; ?>"><?php echo $editor; ?></div>
+	<?php
 	endif;
 	// end editor
 ?>

@@ -1,10 +1,10 @@
 <?php
 	$images = get_sub_field('images');
-	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	$columns = get_sub_field('columns');
 	$column_count = $columns;
 ?>
-	<div class=" image-link-gallery <?php echo $class; ?><?php echo 'item-' . $item_count; ?>">
+	<div class=" image-link-gallery <?php echo $class; ?>">
 		<?php
 		foreach ($images as $image):
 

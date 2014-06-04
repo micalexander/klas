@@ -1,7 +1,7 @@
 <?php
 	$heading = get_sub_field("heading");
 	$type = get_sub_field("heading_type");
-	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	switch ($type) {
 		case 'paragraph_text':
 			$tag = 'p';
@@ -21,7 +21,7 @@
 	}
 	if ($heading):
 ?>
-	<<?php echo $tag . ' class=" rotator item-'  . $item_count; ?>><?php echo $heading; ?></<?php echo $tag; ?>>
+	<<?php echo $tag . ' class="rotator"' ?>><?php echo $heading; ?></<?php echo $tag; ?>>
 <?php
 	endif;
 	$items = get_sub_field('text');
@@ -30,7 +30,7 @@
 	<div id="slider" class="text-rotator <?php echo $class; ?>">
 	    <ul class="slides">
 	        <?php foreach ($items as $item): ?>
-				<li class="<?php echo $item_count; ?>" ><p><?php echo $item['text']; ?></p></li>
+				<li class="" ><p><?php echo $item['text']; ?></p></li>
 	        <?php
 				if($item != end($items)) {
 					$item_count++;

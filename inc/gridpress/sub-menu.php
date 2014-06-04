@@ -1,11 +1,11 @@
 <?php
 	$custom_theme_menu_location = get_sub_field('custom_theme_menu_location');
 	$primary_header_menu = get_sub_field('primary_header_menu');
-	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 
 
 ?>
-	<div class="nav-wrapper <?php echo $class; ?><?php echo 'item-'  . $item_count; ?> sub-nav">
+	<div class="nav-wrapper <?php echo $class; ?> sub-nav">
 		<nav>
 	<?php
 		if ($custom_theme_menu_location){

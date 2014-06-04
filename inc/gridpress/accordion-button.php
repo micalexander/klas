@@ -3,7 +3,7 @@
     $editor = get_sub_field('editor');
     if ($button_text):
 ?>
-        <div class=" accordion-button-wrapper <?php echo 'item-' . $item_count; ?>">
+        <div class=" accordion-button-wrapper ">
             <div class="accordion-button">
                 <?php echo $button_text; ?>
             </div>

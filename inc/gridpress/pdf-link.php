@@ -3,7 +3,7 @@
 	$pdf = get_sub_field('pdf');
 	$target = get_sub_field('new_window') ? 'target="_blank"' : '' ;
 	$type = get_sub_field("text_type");
-	$class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+	$class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	switch ($type) {
 		case 'paragraph_text':
 			$tag = 'p';
@@ -23,7 +23,7 @@
 	}
 	if ($pdf):
 ?>
-	<div class=" pdf <?php echo $class; ?><?php echo 'item-' . $item_count; ?>">
+	<div class=" pdf <?php echo $class; ?>">
 		<a class="text" href="<?php echo $pdf['url']; ?>" <?php echo $target; ?> >
 		<div class="icon-pdf">PDF</div>
 		<<?php echo $tag; ?>>

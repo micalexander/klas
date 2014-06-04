@@ -24,7 +24,7 @@
 			break;
 	}
 ?>
-	<ul class=" accordion-links <?php echo 'item-' . $item_count; ?>">
+	<ul class=" accordion-links ">
 		<?php
 			foreach ($accordions as $accordion):
 				$links = $accordion['links'];
@@ -37,10 +37,10 @@
 			<div class="accordion-section">
 				<div class="accordion-margin">
 					<?php foreach ($links as $link): ?>
-						<<?php echo $link['text_2_type'] == 'url' ? 'a href="' . $link['text_2'] . '"' : $next_tag ; ?><?php echo $link['text_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($link['text_2']))) . ' ' .$item_count . '"' : '' ; ?>>
+						<<?php echo $link['text_2_type'] == 'url' ? 'a href="' . $link['text_2'] . '"' : $next_tag ; ?><?php echo $link['text_2_type'] == 'class' ? ' class="' . str_replace(' ', '-', strtolower(rtrim($link['text_2']))) . '"' : '' ; ?>>
 						<?php echo $link['text'] ? $link['text'] : '' ; ?>
 						</<?php echo $link['text_2_type'] == 'url' ? 'a' : $next_tag ; ?>>
-						<?php echo $link['text_2_type'] == 'text' ? '<' . $next_tag . ' class="' . $item_count . '">' . $link['text_2'] . '</' . $next_tag . '>' : '' ; ?>
+						<?php echo $link['text_2_type'] == 'text' ? '<' . $next_tag . '>' . $link['text_2'] . '</' . $next_tag . '>' : '' ; ?>
 				        <?php
 							if($link != end($links)) {
 								$item_count++;

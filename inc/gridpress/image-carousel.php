@@ -1,12 +1,12 @@
 <?php
     $images = get_sub_field('images');
-    $class = get_sub_field('class') ? str_replace(' ', '-', strtolower(rtrim(get_sub_field('class')))) . ' ' : '' ;
+    $class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
     if( $images ):
  ?>
-    <div id="slider" class=" flexslider carousel <?php echo $class; ?><?php echo 'item-'  . $item_count; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
+    <div id="slider" class=" flexslider carousel <?php echo $class; ?> <?php echo str_replace('_', '-', get_row_layout()); ?>">
         <ul class="slides">
             <?php foreach( $images as $image ): ?>
-                <li class="<?php echo $item_count; ?>">
+                <li class="">
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
                     <?php
                         $image_text = get_post_meta($image['id'], 'text', true);

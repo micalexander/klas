@@ -41,14 +41,16 @@
 
 		$unit_count++;
 		$unit_size = get_sub_field('unit_span');
+		$grid_class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 		?>
-		<div class="unit <?php echo 'unit-'  . $unit_count . ' ' . $unit_size; ?> ">
+		<div class="unit <?php echo $grid_class; ?><?php echo 'unit-'  . $unit_count . ' ' . $unit_size; ?> ">
 		<?php
 			if (get_sub_field('unit')) : while(has_sub_field('unit')):
 				$sub_unit_count++;
 				$sub_unit_size = get_sub_field('nested_unit_span');
+				$sub_class = get_sub_field('class') ? vsprintf("%s" , str_replace(' -', ' ', str_replace(',', ' ', str_replace(' ', '-', strtolower(trim(get_sub_field('class'))))))) . ' ' : '' ;
 	?>
-			<div class="no-margin-unit <?php echo 'unit-'  . $sub_unit_count . ' no-margin-' . $sub_unit_size; ?> ">
+			<div class="no-margin-unit <?php echo $sub_class; ?><?php echo 'unit-'  . $sub_unit_count . ' no-margin-' . $sub_unit_size; ?> ">
 				<?php
 					while(has_sub_field('nested_unit')):
 						$item_count++;
