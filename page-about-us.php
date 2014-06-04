@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-	<?php if(have_posts()) : while(have_posts()) : the_post(); ?><!-- start loop -->
 
 		<section>
 			<div class="container">
@@ -11,5 +10,4 @@
 
 		<?php get_sidebar(); ?>
 
-	<?php endwhile; endif; ?><!-- end loop -->
 <?php get_footer(); ?>

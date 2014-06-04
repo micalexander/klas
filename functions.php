@@ -309,7 +309,8 @@ add_action('admin_head', 'temp_acf_fix');
 
 function unit_size_override() {
 	echo '<style>
-	.field.sub_field.field_type-select.field_key-field_527a6820291f2 {
+	.field.sub_field.field_type-select.field_key-field_527a6820291f2 ,
+		tr.field_type-text.field_key-field_7778s5888ds8d88sd {
 		// display: none;
 	}
 	table.acf_input tbody tr td.label {
@@ -323,6 +324,14 @@ function unit_size_override() {
 	}
 	</style>';
 }
+
+function collapse_flexible_content_script() {
+    // Respects SSL, js file is relative to the current file
+    wp_register_script( 'collapse_flexible_content_script', get_template_directory_uri() . '/inc/gridpress/js/collapse_flexible_content_script.js', array('jquery'));
+    wp_enqueue_script( 'collapse_flexible_content_script');
+}
+
+add_action( 'admin_enqueue_scripts', 'collapse_flexible_content_script' );
 
 add_action('admin_head', 'unit_size_override');
 

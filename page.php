@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-	<?php if(have_posts()) : while(have_posts()) : the_post(); ?><!-- start loop -->
 
 			<section>
 				<?php if ( ! post_password_required() ) :?>
@@ -18,5 +17,4 @@
 
 			<?php get_sidebar(); ?>
 
-	<?php endwhile; endif; ?><!-- end loop -->
 <?php get_footer(); ?>
