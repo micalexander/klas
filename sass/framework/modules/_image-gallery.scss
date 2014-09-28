@@ -1,18 +1,27 @@
 .image-gallery {
 	@include clearfix;
+	.image-gallery-anchor-thumb,
 	.image-gallery-anchor {
 		float: left;
-		opacity: .8;
+		display: inline-block;
+		width: 100%;
+		opacity: 1;
 		@include transition(.5s);
+		@include breakpoint(tablet) {
+
+			width: 33.333333%;
+		}
 		&:hover {
-			opacity: 1;
+			opacity: .8;
 		}
 		.inscription {
 			display: none;
 		}
 		.image {
-			padding-bottom: 2%;
-			width: 98%;
+			width: 100%;
+		}
+		&.hidden-thumbnail {
+			display: none;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 ** FANCYBOX CLEANUP & OVERIDES
 ** ---------------------------------------------- */
 
-.fancybox-overlay, .fancybox-overlay  * {
+.fancybox-overlay, .fancybox-overlay  *, #fancybox-thumbs, #fancybox-thumbs * {
 	@include box-sizing('content-box');
 }
 
@@ -19,17 +19,56 @@
 	background: url('../img/fancybox/fancybox_loading.gif') center center no-repeat;
 }
 #fancybox-loading {
-	background-position: 0 -108px;
+	background-position: 0 -108.5px;
 }
 .fancybox-nav {
 	background: url('../img/fancybox/blank.gif');
 }
 .fancybox-overlay {
-	z-index: 99999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 8010;
 	background: url('../img/fancybox/fancybox_overlay.png');
+}
+.fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8020;
+}
+.fancybox-overlay-fixed {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.fancybox-lock .fancybox-overlay {
+	overflow: auto;
+	overflow-y: scroll;
 }
 .fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened {
 	z-index: 9999999;
+}
+#fancybox-thumbs {
+	z-index: 99999;
+	ul {
+		@include clearfix;
+		li {
+			// margin-right: 5px;
+			border: none;
+			a {
+				border: none;
+				img {
+				}
+			}
+			&.active {
+				border: none;
+			}
+		}
+	}
 }
 .fancybox-skin {
 	border-radius: 0;
@@ -44,24 +83,19 @@
 	opacity: .8;
 	&:hover  { opacity: 1; }
 }
-.fancybox-prev span, .fancybox-next span {
-	top: 50%;
-	width: 30px;
-	height: 30px;
-	margin-top: -40px;
-}
-/*this line needs to stay commented out in fancybox.css line 154 left: -9999px; */
+
 .fancybox-next span {
 	right: 15px;
-	background: url('../img/fancybox/bg_direction_nav_lb.png') -30px 0px no-repeat;
+	background-position: 3px -73px;
 
 }
 .fancybox-prev span {
 	left: 15px;
-	background: url('../img/fancybox/bg_direction_nav_lb.png') 0px 0px no-repeat;
+	background-position: 3px -37.5px;
 
 }
 .fancybox-next span .fancybox-prev span  {
+	height: 28.5px !important;
 	opacity: .8;
 	&:hover  { opacity: 1; }
 }
@@ -74,6 +108,7 @@
 	color: #efefef;
 	background: rgba(0, 0, 0, 0.6);
 }
+
 /*Retina graphics!*/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 	   only screen and (min--moz-device-pixel-ratio: 1.5),

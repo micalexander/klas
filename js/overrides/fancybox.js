@@ -16,6 +16,25 @@
 
 		});
 
+		$('.image-gallery-anchor-thumb').fancybox({
+			padding		 : 0,
+			// openEffect    : 'elastic',
+			// closeEffect   : 'elastic',
+			maxWidth 	  : 1000,
+			speedIn	      : 4000,
+			speedOut	  : 4000,
+			helpers		  : {
+				title         : {
+					type: 'outside'
+				},
+				thumbs	  :		{
+					width: 90,
+					height: 90
+				}
+			}
+
+		});
+
 		$('.bio-lightbox').fancybox({
 			padding		 : 0,
 			autoScale	 : false,
