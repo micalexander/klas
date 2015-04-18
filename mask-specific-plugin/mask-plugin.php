@@ -18,27 +18,15 @@ $shortcode_choices = array (
 */
 
 if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'rotator-image', 1000, 400, true ); //(cropped)
-    add_image_size( 'main-image', 1000, 400, true ); //(cropped)
-    add_image_size( 'gallery-thumbnail', 200, 260, true ); //(cropped)
-    add_image_size( 'headshot-image', 100, 100, true ); //(cropped)
-    add_image_size( 'map-image', 370, 118, true ); //(cropped)
-    add_image_size( 'one-of-one-image', 1000, 600, true ); //(cropped)
-    add_image_size( 'one-of-two-image', 490, 294, true ); //(cropped)
-    add_image_size( 'one-of-three-image', 320, 192, true ); //(cropped)
-    add_image_size( 'one-of-four-image', 230, 140, true ); //(cropped)
-    add_image_size( 'one-of-five-image', 180, 108, true ); //(cropped)
-    add_image_size( 'two-of-three-image', 660, 396, true ); //(cropped)
-    add_image_size( 'two-of-five-image', 385, 231, true ); //(cropped)
-    add_image_size( 'three-of-four-image', 745, 447, true ); //(cropped)
-    add_image_size( 'three-of-five-image', 590, 354, true ); //(cropped)
-    add_image_size( 'four-of-five-image', 795, 477, true ); //(cropped)
+  add_image_size( 'rotator-image', 1000, 400, true ); //(cropped)
+  add_image_size( 'main-image', 1000, 400, true ); //(cropped)
+  add_image_size( 'gallery-thumbnail', 200, 260, true ); //(cropped)
+  add_image_size( 'headshot-image', 100, 100, true ); //(cropped)
 }
 
-add_filter( 'attachment_fields_to_save', 'mask_attachment_field_credit_save', 10, 2 );
+add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
 // filter_hook function to react on sub_menu flag
-
 function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
   if ( isset( $args->sub_menu ) ) {
     $root_id = 0;
@@ -86,8 +74,6 @@ function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
 		return $sorted_menu_items;
 	}
 }
-// add hook
-add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
 add_filter('query_vars', 'add_query_vars');
 
@@ -118,7 +104,7 @@ function get_sched_year($int_month)
 	{
 		$year = date('Y');
 	}
-		return $year;
+	return $year;
 }
 
 function slugify($text)
@@ -140,14 +126,10 @@ function slugify($text)
 
 	if (empty($text))
 	{
-	return 'n-a';
+	 return 'n-a';
 	}
-
   return $text;
 }
-
-add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
-
 
 foreach (glob(plugin_dir_path( __FILE__ ) . 'custom-post-types/*.php') as $filename)
 {

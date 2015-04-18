@@ -240,28 +240,20 @@ if ( ! function_exists( '_s_comment' ) ) :
 	}
 endif; // ends check for _s_comment()
 
-
-// require acf
-require_once( 'inc/gridpress/_attachment-array.php' );
-require_once( 'inc/gridpress/_page-array.php' );
-require_once( 'inc/gridpress/archive/_archive-array.php' );
-require_once( 'inc/gridpress/taxonomy/_taxonomy-array.php' );
-require_once( 'inc/gridpress/single/_single-array.php' );
-
 function run_activate_plugin( $plugin ) {
-    $current = get_option( 'active_plugins' );
-    $plugin = plugin_basename( trim( $plugin ) );
+  $current = get_option( 'active_plugins' );
+  $plugin = plugin_basename( trim( $plugin ) );
 
-    if ( !in_array( $plugin, $current ) ) {
-        $current[] = $plugin;
-        sort( $current );
-        do_action( 'activate_plugin', trim( $plugin ) );
-        update_option( 'active_plugins', $current );
-        do_action( 'activate_' . trim( $plugin ) );
-        do_action( 'activated_plugin', trim( $plugin) );
-    }
+  if ( !in_array( $plugin, $current ) ) {
+    $current[] = $plugin;
+    sort( $current );
+    do_action( 'activate_plugin', trim( $plugin ) );
+    update_option( 'active_plugins', $current );
+    do_action( 'activate_' . trim( $plugin ) );
+    do_action( 'activated_plugin', trim( $plugin) );
+  }
 
-    return null;
+  return null;
 }
 
 function run_options_once() {
@@ -270,12 +262,12 @@ function run_options_once() {
 	if ( $check != "set" ) {
 
 		// set permalinks
-	    global $wp_rewrite;
-	    $wp_rewrite->set_permalink_structure( '/%postname%/' );
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure( '/%postname%/' );
 		$wp_rewrite->flush_rules();
 
-	    // Add marker so it doesn't run in future
-	    add_option('mask_activation_check', "set");
+    // Add marker so it doesn't run in future
+    add_option('mask_activation_check', "set");
 	}
 }
 
@@ -292,48 +284,6 @@ function poststuff_height_fix() {
 
 add_action('admin_head', 'poststuff_height_fix');
 
-function temp_acf_fix() {
-  echo '<style>
-	.acf-fc-layout-controlls li {
-		min-width: 18px;
-		min-height: 18px;
-	}
-	.repeater a.acf-button-add, .repeater a.acf-button-remove {
-		visibility: visible;
-		opacity: 1;
-	}
-	</style>';
-}
-
-add_action('admin_head', 'temp_acf_fix');
-
-function unit_size_override() {
-	echo '<style>
-	.field.sub_field.field_type-select.field_key-field_527a6820291f2 ,
-		tr.field_type-text.field_key-field_7778s5888ds8d88sd {
-		// display: none;
-	}
-	table.acf_input tbody tr td.label {
-		width: 5%;
-	}
-	table.acf_input tbody tr td.label label{
-		// font-size: 10px;
-	}
-	table.acf_input tbody tr td {
-		padding: 12px 6px;
-	}
-	</style>';
-}
-
-function collapse_flexible_content_script() {
-    // Respects SSL, js file is relative to the current file
-    wp_register_script( 'collapse_flexible_content_script', get_template_directory_uri() . '/inc/gridpress/js/collapse_flexible_content_script.js', array('jquery'));
-    wp_enqueue_script( 'collapse_flexible_content_script');
-}
-
-add_action( 'admin_enqueue_scripts', 'collapse_flexible_content_script' );
-
-add_action('admin_head', 'unit_size_override');
 
 function filter_meta_query( $pieces ) {
 
@@ -348,4 +298,3 @@ function filter_meta_query( $pieces ) {
 run_activate_plugin( 'mask-specific-plugin/mask-plugin.php' );
 
 
-?>
