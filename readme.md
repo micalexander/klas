@@ -2,7 +2,8 @@ MASK WordPress Theme Framework
 ================================
 <img align="right" src="https://raw.github.com/micalexander/mask/master/screenshot.png" alt="mask">
 
-A SASS based starter theme for WordPress forked from <a href="http://kylelarkin.com/" target="_blank">Kyle Larkin</a> and <a href="http://astockwell.com/" target="_blank">Alex Stockwell's</a> KL[AS] framework and re-imagined by <a href="http://micalexander.com/" target="_blank">Mic Alexander</a>.
+A starter theme for WordPress forked from <a href="http://kylelarkin.com/" target="_blank">Kyle Larkin</a> and <a href="http://astockwell.com/" target="_blank">Alex Stockwell's</a> KL[AS] framework and re-imagined by <a href="http://micalexander.com/" target="_blank">Mic Alexander</a>.
+The Sass folder structure has been removed in-favor of using "trident" to handle Sass, Compass, and Bower. More on this coming soon...
 
 This theme has been modified to work closely with <a href="https://github.com/micalexander/obi" target="_blank">Obi</a>, a project management tool that simplifies WordPress development.
 
