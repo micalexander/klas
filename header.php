@@ -16,12 +16,11 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="<?php bloginfo( 'template_directory' ); ?>/js/respond.min.js"></script>
-		<script src="<?php bloginfo( 'template_directory' ); ?>/js/ie-min.js"></script>
+		<script src="<?php bloginfo( 'template_directory' ); ?>/js/ie.js"></script>
 		<link href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<![endif]-->
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" />
-	<script src="<?php bloginfo('template_directory'); ?>/js/modernizr.custom.85380.js"></script>
 	<script type="text/javascript">
 		var site_url = location.host;
 	</script>
@@ -32,18 +31,9 @@
 
 		<div class="header-wrapper">
 			<header class="container" role="banner">
-		        <div class="grid">
-		        	<div class="nav-wrapper unit one-of-one">
-		        	    <nav class="nav-collapse">
-		        			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
-		        	    </nav>
-		        	    <div class="toggle-wrapper">
-		        	    	<div id="toggle" class="icon-menu"></div>
-							<a href="<?php echo home_url(); ?>"><div class="mobile-logo"></div></a>
-		        	    </div>
-		        	</div>
-					<a href="<?php echo home_url(); ?>"><div class="desktop-logo"></div></a>
-		        </div>
+				<a href="<?php echo home_url(); ?>"><div class="desktop-logo"></div></a>
+				<!-- <a href="#mmenu">Menu</a> -->
+  			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
 			</header>
 		</div>
 
