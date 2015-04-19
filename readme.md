@@ -11,9 +11,8 @@ This theme has been modified to work closely with <a href="https://github.com/mi
 ## Installation
 1. Copy the repository to your /wp-content/themes folder
 2. Move .htaccess and wp-config.php files out of the theme folder and into the wordpress root directory
-3. Rename the theme folder, and update paths in the following locations: sass/ie.scss
-4. Update your wp-config.php file as usual (add db credentials, salts, etc)
-5. Refresh your permalinks
+3. Update your wp-config.php file as usual (add db credentials, salts, etc)
+4. Refresh your permalinks
 
 **Note for Shared Hosting:** The line `Options All -Indexes` in .htaccess may cause 4xx/5xx errors site-wide on some shared servers. Please remove this line if necessary.
 
