@@ -177,7 +177,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 function mask_login_logo() { ?>
     <style type="text/css">
         body.login div#login h1 a {
-            background: url('<?php bloginfo( 'template_directory' ) ?>/img/wp-login-logo-mask.png') no-repeat 0 0;
+            background: url('<?php bloginfo( 'template_directory' ) ?>/wp-login-logo-mask.png') no-repeat 0 0;
 			margin: 0 0 0 23px;
 			width: 100%;
 			height: 70px;
