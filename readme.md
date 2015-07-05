@@ -19,7 +19,7 @@ This theme has been modified to work closely with <a href="https://github.com/mi
 ## Usage
 1. The `wp-config.php` file is intended for use with the following 3 project lifecycle environments, with the following naming conventions:
   - Development: [optional.]example.dev. Regex will detect this for you automagically.
-  - Staging: any URL structure you'd like, e.g. preview.example.com. **You must define this in the `wp-config.php` file on line 23**.
+  - Staging: any URL structure you'd like, e.g. preview.example.com. **You must define this in the `wp-config.php` file on line 34**.
   - Production: any URL, e.g. example.com. This is the default and the file will fallback to these credentials if the Development/Staging conditions aren't met.
 
 ## Taking inspiration from:
