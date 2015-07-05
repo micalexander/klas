@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>    <html class="lt-ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7 <?php echo $is_logged_in = is_user_logged_in() ? 'wp-logged-in' : ''; ?>" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8 <?php echo $is_logged_in = is_user_logged_in() ? 'wp-logged-in' : ''; ?>" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9 <?php echo $is_logged_in = is_user_logged_in() ? 'wp-logged-in' : ''; ?>" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="<?php echo $is_logged_in = is_user_logged_in() ? 'wp-logged-in' : ''; ?>" <?php language_attributes();  ?>> <!--<![endif]-->
 <head>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -31,9 +31,16 @@
 
 		<div class="header-wrapper">
 			<header class="container" role="banner">
-				<a href="<?php echo home_url(); ?>"><div class="desktop-logo"></div></a>
-				<!-- <a href="#mmenu">Menu</a> -->
-  			<?php wp_nav_menu( array( 'theme_location' => 'primary-header-menu', 'container' => false) ); ?>
+				<a class="logo" href="<?php echo home_url(); ?>"></a>
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary-header-menu',
+							'container'      => 'nav',
+							'container_id'   => 'primary-header-menu'
+						)
+					);
+				?>
 			</header>
 		</div>
 
