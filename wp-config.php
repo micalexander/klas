@@ -31,7 +31,7 @@ if (
 	define('WP_ENV', 'local');
 
 // staging_server_domain
-} elseif (preg_match('/changeme\.dev/', $_SERVER['HTTP_HOST'])) {
+} elseif (preg_match('staging_tld', $_SERVER['HTTP_HOST'])) {
 
 	define('WP_ENV', 'staging');
 
