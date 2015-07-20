@@ -13,7 +13,7 @@
 			</footer>
 		</div>
 
-	<?php wp_enqueue_script( 'js-combo', get_bloginfo( 'template_directory' ) . '/js/public/script.js', array('jquery')); ?>
+	<?php wp_enqueue_script( 'js-combo', get_bloginfo( 'template_directory' ) . '/js/script.js', array('jquery')); ?>
 
 	<?php wp_footer(); ?><!-- required don't remove -->
 

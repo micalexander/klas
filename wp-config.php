@@ -14,99 +14,89 @@
  * @package WordPress
  */
 
-// One wp-config.php file for multiple environments setup from http://www.messaliberty.com/2010/01/how-to-create-a-single-wp-config-file-for-local-and-remote-wordpress-development/
+function db_mask() {
 
-$private_ip = '/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-2]))/';
-$domain_dev = '/^([a-z-_0-9]+\.)*[a-z-_0-9]+\.dev(?!\.)/';
+	$local_ip_match = preg_match(
+		'/^(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-2])|127\.0\.0\.1)/',
+		$_SERVER['REMOTE_ADDR']
+	);
 
-if (
-		// Request IP is in a private block
-		preg_match($private_ip, $_SERVER['REMOTE_ADDR']) ||
+	$staging_domain = preg_match(
+		'/changeme\.dev/',
+		$_SERVER['HTTP_HOST']
+	);
 
-		// Request Domain follows the pattern [xxx.]xxx.dev
-		preg_match($domain_dev, $_SERVER['HTTP_HOST'])
+	if ($local_ip_match) {
 
-	) {
+		return json_decode(
+			$local = '{
+				"db_name": "replace_with_local_db",
+				"db_user": "root",
+				"db_pass": "root",
+				"db_host": "localhost",
+				"domain" : ".dev",
+				"wp_home": ".dev"
+			}'
+		);
 
-	define('WP_ENV', 'local');
+	} elseif ($staging_domain) {
 
-// staging_server_domain
-} elseif (preg_match('/changeme\.dev/', $_SERVER['HTTP_HOST'])) {
+		return json_decode(
+			$staging = '{
+				"db_name": "",
+				"db_user": "",
+				"db_pass": "",
+				"db_host": "",
+				"domain": ".com",
+				"wp_home": ".com"
+			}'
+		);
 
-	define('WP_ENV', 'staging');
+	} else {
 
-} else {
-
-	define('WP_ENV', 'production');
-
+		return json_decode(
+			$production = '{
+				"db_name": "",
+				"db_user": "",
+				"db_pass": "",
+				"db_host": "",
+				"domain": ".com",
+				"wp_home": ".com"
+			}'
+		);
+	}
 }
 
-if ( WP_ENV == 'local' ) {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'replace_with_local_db'); // local_db_name
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME',            db_mask()->db_name);
 
-	/** MySQL database username */
-	define('DB_USER', 'root'); // local_db_user
+/** MySQL database username */
+define('DB_USER',            db_mask()->db_user);
 
-	/** MySQL database password */
-	define('DB_PASSWORD', 'root'); // local_db_password
+/** MySQL database password */
+define('DB_PASSWORD',        db_mask()->db_pass);
 
-	/** MySQL hostname */
-	define('DB_HOST', 'localhost'); // local_db_host
+/** MySQL hostname */
+define('DB_HOST',            db_mask()->db_host);
 
-	define('WP_SITEURL', ".dev"); // local_site_url
+/** Wordpress Site URL */
+define('WP_SITEURL',         db_mask()->domain);
 
-	define('WP_HOME', ".dev"); // local_home_url
+/** Wordpress Home URL */
+define('WP_HOME',            db_mask()->wp_home);
 
-} elseif ( WP_ENV == 'staging') {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', 'staging'); // staging_db_name
-
-	/** MySQL database username */
-	define('DB_USER', ''); // staging_db_user
-
-	/** MySQL database password */
-	define('DB_PASSWORD', ''); // staging_db_password
-
-	/** MySQL hostname */
-	define('DB_HOST', ''); // staging_db_host
-
-	define('WP_SITEURL', ".com"); // staging_site_url
-
-	define('WP_HOME', ".com"); // staging_home_url
-
-} else {
-	// ** MySQL settings - You can get this info from your web host ** //
-	/** The name of the database for WordPress */
-	define('DB_NAME', ''); // production_db_name
-
-	/** MySQL database username */
-	define('DB_USER', ''); // production_db_user
-
-	/** MySQL database password */
-	define('DB_PASSWORD', ''); // production_db_password
-
-	/** MySQL hostname */
-	define('DB_HOST', ''); // production_db_host
-
-	define('WP_SITEURL', ".com"); // production_site_url
-
-	define('WP_HOME', ".com"); // production_home_url
-
-}
 /** Set mask to the default template for WordPress to use. */
-define('WP_DEFAULT_THEME', 'mask');
+define('WP_DEFAULT_THEME',  'mask');
 
 /** Set reasonable number of post revisions to maintain per post. */
 define( 'WP_POST_REVISIONS', 15 );
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+define('DB_CHARSET',        'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+define('DB_COLLATE',        '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
