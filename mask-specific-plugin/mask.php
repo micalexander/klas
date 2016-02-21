@@ -153,17 +153,12 @@ class mask extends Inflector {
    */
   function partial_exist($pagename) {
 
-    $partials = glob(get_template_directory() .  '/partial-*.php');
-
-    if (in_array(get_template_directory() .  '/partial-' . $pagename . '.php', $partials )) {
+    if (file_exists(get_template_directory() .  '/partial-' . $pagename . '.php' )) {
 
       return true;
     }
-    else {
 
-      return false;
-
-    }
+    return false;
   }
 
   /**
