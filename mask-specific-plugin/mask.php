@@ -1,4 +1,12 @@
 <?php
+/*
+Plugin Name:  mask framework
+Description: This plugin is used by your theme to add required functionality for it to work. Disabling this plugin could possibly render you website unusable.
+Author: michael alexander
+Author URL: http://www.micalexander.com/
+Copyright: Micahel Alexander
+Text Domain: mask
+*/
 
 require_once plugin_dir_path( __FILE__ ) . '/vendor/inflector.php';
 
@@ -153,7 +161,13 @@ class mask extends Inflector {
    */
   function partial_exist($pagename) {
 
-    if (file_exists(get_template_directory() .  '/partial-' . $pagename . '.php' )) {
+    $pathinfo  = pathinfo(get_template_directory());
+    $themename = $pathinfo['basename'];
+
+
+    if (
+        file_exists(get_template_directory().'partial-'.$pagename.'.php' ) ||
+        file_exists(get_template_directory().'/../'.$themename.'-child/partial-'.$pagename.'.php' )) {
 
       return true;
     }

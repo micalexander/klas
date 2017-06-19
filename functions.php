@@ -9,6 +9,17 @@ function mask_scripts_init() {
 
 add_action('wp_enqueue_scripts', 'mask_scripts_init');
 
+
+// Add image sizes to the template
+if ( function_exists( 'add_image_size' ) ) {
+
+  add_image_size( 'rotator-image',     1200, 500, true );
+  add_image_size( 'main-image',        1000, 400, true );
+  add_image_size( 'gallery-thumbnail', 200,  260, true );
+  add_image_size( 'headshot-image',    100,  100, true );
+
+}
+
 // Adding default menu items
 function mask_menus_init() {
 
@@ -239,6 +250,17 @@ function run_activate_plugin( $plugin ) {
 
   return null;
 }
+
+// BrowserSync
+function apply_browsersync() {
+?>
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+<?php
+}
+
+add_action( 'wp_footer', 'apply_browsersync' );
 
 // Set permalink structure to post name
 function run_options_once() {
